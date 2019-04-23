@@ -3,7 +3,7 @@
 public class UnitBoardSide : MonoBehaviour
 {
     public UnitSet playerSide;
-    public UnitSet enemySide;
+    public UnitSet NPCSide;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,11 +13,11 @@ public class UnitBoardSide : MonoBehaviour
             if (playerSide.items.Contains(unit))
             {
                 playerSide.Remove(unit);
-                enemySide.Add(unit);
+                NPCSide.Add(unit);
             }
             else
             {
-                enemySide.Remove(unit);
+                NPCSide.Remove(unit);
                 playerSide.Add(unit);
             }
         }
