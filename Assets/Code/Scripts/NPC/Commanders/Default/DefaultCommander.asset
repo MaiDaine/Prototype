@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17adf6770f136e40a2635f1de7916b8, type: 3}
   m_Name: DefaultCommander
   m_EditorClassIdentifier: 
-  deck: {fileID: 0}
+  deck: {fileID: 11400000, guid: 79eeb9a6b0c6f2c4498a082e59363b1d, type: 2}
   board:
-    useConstant: 1
+    useConstant: 0
     constantValue:
       playerSpawnPosition: {fileID: 0}
       npcSpawnPosition: {fileID: 0}
-    variable: {fileID: 0}
-  playerUnits: {fileID: 0}
-  npcUnits: {fileID: 0}
+    variable: {fileID: 11400000, guid: f1906cfb86ea1094da8679821191a28e, type: 2}
+  playerUnits: {fileID: 11400000, guid: 9e65a0f6255a8064cb2bcb4bdc494358, type: 2}
+  npcUnits: {fileID: 11400000, guid: 01b2e964e50e63047b6ceb7ce0d7dc44, type: 2}
   timerSpawn: 5

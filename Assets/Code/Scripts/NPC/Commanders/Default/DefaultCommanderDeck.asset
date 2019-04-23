@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0786696645a2a4b8d1477baf025f8e, type: 3}
   m_Name: DefaultCommanderDeck
   m_EditorClassIdentifier: 
-  cardsNumber: 0
-  cards: []
+  cardsNumber: 1
+  cards:
+  - {fileID: 11400000, guid: 27c1f535128784d4ea03ac342ba5d071, type: 2}
