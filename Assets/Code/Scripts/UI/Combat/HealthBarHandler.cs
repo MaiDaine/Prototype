@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class HealthBarHandler : MonoBehaviour
 {
-    public GameObject healtbar;
+    public GameObject healthBar;
     public Image fillBar;
 
     private Vector3 direction;
@@ -13,7 +13,7 @@ public class HealthBarHandler : MonoBehaviour
         Unit unit = GetComponentInParent<Unit>();
         if (unit.gameObject.tag == "EnemyTeam")
             fillBar.color = new Color(1, 0, 0, 1);
-        healtbar.SetActive(true);
+        healthBar.SetActive(true);
     }
 
     public void SetFillAmount(float value)
@@ -23,6 +23,6 @@ public class HealthBarHandler : MonoBehaviour
 
     private void Update()
     {
-        healtbar.transform.LookAt(new Vector3(transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z));
+        healthBar.transform.LookAt(new Vector3(transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z));
     }
 }

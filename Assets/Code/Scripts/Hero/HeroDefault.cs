@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Brains/HeroDefault")]
+[CreateAssetMenu(menuName = "Brains/Hero/HeroDefault")]
 public class HeroDefault : UnitBrain
 {
     public UnitSet targets;

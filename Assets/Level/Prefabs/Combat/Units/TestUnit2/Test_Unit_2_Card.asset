@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70a5b7338fc598041a91f1511a56a156, type: 3}
-  m_Name: PlayerHero
+  m_Name: Test_Unit_2_Card
   m_EditorClassIdentifier: 
-  unitStats: {fileID: 11400000, guid: c37e9b90f44f36848a8277865476ab3f, type: 2}
-  unit: {fileID: 4182204752537216647, guid: 8fbbacad4c6dc13418ec0be0ec168ed2, type: 3}
+  unitStats: {fileID: 11400000, guid: bc00dd95bd6057d4a90ab8666b87d552, type: 2}
+  unit: {fileID: 7001214147227935315, guid: ae3959f34abbffe44b5b3bc712645ec9, type: 3}

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a5b7338fc598041a91f1511a56a156, type: 3}
   m_Name: NPCHero
   m_EditorClassIdentifier: 
-  unitStats: {fileID: 0}
-  unit: {fileID: 0}
+  unitStats: {fileID: 11400000, guid: c017bad9640a46c47b2df0e45955c737, type: 2}
+  unit: {fileID: 5922334344439403322, guid: 915c8c78cc5f93a4ab893418b5b5f107, type: 3}

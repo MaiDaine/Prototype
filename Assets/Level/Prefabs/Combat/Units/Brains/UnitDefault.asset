@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70a5b7338fc598041a91f1511a56a156, type: 3}
-  m_Name: PlayerHero
+  m_Script: {fileID: 11500000, guid: a25a93a17c552114eab1eebb36c44b32, type: 3}
+  m_Name: UnitDefault
   m_EditorClassIdentifier: 
-  unitStats: {fileID: 11400000, guid: c37e9b90f44f36848a8277865476ab3f, type: 2}
-  unit: {fileID: 4182204752537216647, guid: 8fbbacad4c6dc13418ec0be0ec168ed2, type: 3}

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Brains/Idle")]
+[CreateAssetMenu(menuName = "Brains/Units/Idle")]
 public class Idle : UnitBrain
 {
     public override void Initialize(Unit unit, Unit enemyHero)

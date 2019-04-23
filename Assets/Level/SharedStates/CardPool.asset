@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9abb29dc434e60347bb07a7db42694d4, type: 3}
   m_Name: CardPool
   m_EditorClassIdentifier: 
-  units: []
+  units:
+  - {fileID: 11400000, guid: 27c1f535128784d4ea03ac342ba5d071, type: 2}
+  - {fileID: 11400000, guid: bc536ef131fbbc141b30ec54a03be72a, type: 2}
   rollProbability: []
   playerLevel: {fileID: 11400000, guid: a85abb5d6d6a07d4b8411fa185b5f0d5, type: 2}
   rollSize: 5

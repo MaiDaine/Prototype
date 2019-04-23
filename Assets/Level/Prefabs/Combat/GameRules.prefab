@@ -47,16 +47,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnLayer:
-    useConstant: 1
+    useConstant: 0
     constantValue: 0
-    variable: {fileID: 0}
+    variable: {fileID: 11400000, guid: 5da6ea16b3405fa40bc4bc2e7bbaa707, type: 2}
   boardState:
-    useConstant: 1
+    useConstant: 0
     constantValue:
       playerSpawnPosition: {fileID: 0}
       npcSpawnPosition: {fileID: 0}
-    variable: {fileID: 0}
-  commander: {fileID: 11400000, guid: 566659f2d6d64dd448ae67c4e9e68bf5, type: 2}
+    variable: {fileID: 11400000, guid: f1906cfb86ea1094da8679821191a28e, type: 2}
+  commander: {fileID: 11400000, guid: 9884080774e7b024184e870f87984606, type: 2}
   playerHeroCard: {fileID: 11400000, guid: f033dc4b9f42b2b458df3574130703b7, type: 2}
   npcHeroCard: {fileID: 11400000, guid: 3886cefa883a9b04d98ed90f471cb6ba, type: 2}
   selectedCard: {fileID: 11400000, guid: 67bf02b2ac04b6d438d621f7c84b249c, type: 2}

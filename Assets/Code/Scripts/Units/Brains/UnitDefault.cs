@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Brains/UnitDefault")]
+[CreateAssetMenu(menuName = "Brains/Units/UnitDefault")]
 public class UnitDefault : UnitBrain
 {
     public override void Initialize(Unit unit, Unit enemyHero)
