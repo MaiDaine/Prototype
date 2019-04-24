@@ -15,6 +15,126 @@ MonoBehaviour:
   units:
   - {fileID: 11400000, guid: 27c1f535128784d4ea03ac342ba5d071, type: 2}
   - {fileID: 11400000, guid: bc536ef131fbbc141b30ec54a03be72a, type: 2}
-  rollProbability: []
+  rollProbability:
+  - level: 1
+    probability:
+    - cost: 1
+      probability: 100
+    - cost: 2
+      probability: 0
+    - cost: 3
+      probability: 0
+    - cost: 4
+      probability: 0
+    - cost: 5
+      probability: 0
+  - level: 2
+    probability:
+    - cost: 1
+      probability: 70
+    - cost: 2
+      probability: 30
+    - cost: 3
+      probability: 0
+    - cost: 4
+      probability: 0
+    - cost: 5
+      probability: 0
+  - level: 3
+    probability:
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+  - level: 4
+    probability:
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+  - level: 5
+    probability:
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+  - level: 6
+    probability:
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+  - level: 7
+    probability:
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+  - level: 8
+    probability:
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+  - level: 9
+    probability:
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+  - level: 10
+    probability:
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
+    - cost: 0
+      probability: 0
   playerLevel: {fileID: 11400000, guid: a85abb5d6d6a07d4b8411fa185b5f0d5, type: 2}
   rollSize: 5

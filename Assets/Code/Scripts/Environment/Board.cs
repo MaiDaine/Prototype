@@ -6,7 +6,7 @@ public class Board : MonoBehaviour
     public Transform playerSpawn;
     public Transform enemySpawn;
 
-    private void Start()
+    private void Awake()
     {
         state.currentState.playerSpawnPosition = playerSpawn;
         state.currentState.npcSpawnPosition = enemySpawn;
