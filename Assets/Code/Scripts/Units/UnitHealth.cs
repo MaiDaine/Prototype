@@ -13,8 +13,7 @@ public class UnitHealth : MonoBehaviour
 
     public void Initialize(Unit unit)
     {
-        HealthBarHandler hbHandler = healthBar.GetComponentsInParent(typeof(HealthBarHandler), true)[0] as HealthBarHandler;
-        hbHandler.Initialize();
+        healthBar.Initialize();
         alive = true;
         currentHealth = unit.currentStats.health;
         this.unit = unit;
