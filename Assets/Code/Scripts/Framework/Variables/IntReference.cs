@@ -1,27 +1,30 @@
 ﻿using System;
 
-[Serializable]
-public class IntReference
+namespace Prototype
 {
-    public bool useConstant = true;
-    public int constantValue;
-    public IntVariable variable;
-
-    public IntReference() { }
-
-    public IntReference(int value)
+    [Serializable]
+    public class IntReference
     {
-        useConstant = true;
-        constantValue = value;
-    }
+        public bool useConstant = true;
+        public int constantValue;
+        public IntVariable variable;
 
-    public int Value
-    {
-        get { return useConstant ? constantValue : variable.value; }
-    }
+        public IntReference() { }
 
-    public static implicit operator int(IntReference reference)
-    {
-        return reference.Value;
+        public IntReference(int value)
+        {
+            useConstant = true;
+            constantValue = value;
+        }
+
+        public int Value
+        {
+            get { return useConstant ? constantValue : variable.value; }
+        }
+
+        public static implicit operator int(IntReference reference)
+        {
+            return reference.Value;
+        }
     }
 }

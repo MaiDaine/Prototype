@@ -1,27 +1,30 @@
 ﻿using UnityEngine;
 
-public class Hand : MonoBehaviour
+namespace Prototype
 {
-    public CardDeck deck;
-    public CardData selectedCard;
-    public GameEvent onValidCardLeaveHand;
-
-    private CardSlot[] slots;
-
-    private void Start()
+    public class Hand : MonoBehaviour
     {
-        slots = GetComponentsInChildren<CardSlot>();
+        public CardDeck deck;
+        public CardData selectedCard;
+        public GameEvent onValidCardLeaveHand;
 
-        for (int i = 0; i < deck.cardsNumber; i++)
+        private CardSlot[] slots;
+
+        private void Start()
         {
-            slots[i].ActivateSlot(deck.cards[i], OnCardSelected);
-        }
-    }
+            slots = GetComponentsInChildren<CardSlot>();
 
-    public void OnCardSelected(CardData Card)
-    {
-        selectedCard.Assign(Card);
-        // FIXME: Validate move
-        onValidCardLeaveHand.Raise();
+            for (int i = 0; i < deck.cardsNumber; i++)
+            {
+                slots[i].ActivateSlot(deck.cards[i], OnCardSelected);
+            }
+        }
+
+        public void OnCardSelected(CardData Card)
+        {
+            selectedCard.Assign(Card);
+            // FIXME: Validate move
+            onValidCardLeaveHand.Raise();
+        }
     }
 }

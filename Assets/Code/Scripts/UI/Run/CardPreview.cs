@@ -1,35 +1,38 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class CardPreview : MonoBehaviour
+namespace Prototype
 {
-    public Text cardName;
-    public Text cardCost;
-
-    private CardData card;
-
-    public void ActivateSlot(CardData data)
+    public class CardPreview : MonoBehaviour
     {
-        card.Assign(data);
+        public Text cardName;
+        public Text cardCost;
 
-        cardName.text = card.unitStats.unitName;
-        cardName.enabled = true;
+        private CardData card;
 
-        cardCost.text = card.unitStats.cost.ToString();
-        cardCost.enabled = true;
-    }
+        public void ActivateSlot(CardData data)
+        {
+            card.Assign(data);
 
-    public void CleanSlot()
-    {
-        cardName.text = "";
-        cardName.enabled = false;
+            cardName.text = card.unitStats.unitName;
+            cardName.enabled = true;
 
-        cardCost.text = "";
-        cardCost.enabled = false;
-    }
+            cardCost.text = card.unitStats.cost.ToString();
+            cardCost.enabled = true;
+        }
 
-    private void Awake()
-    {
-        card = ScriptableObject.CreateInstance("CardData") as CardData;
+        public void CleanSlot()
+        {
+            cardName.text = "";
+            cardName.enabled = false;
+
+            cardCost.text = "";
+            cardCost.enabled = false;
+        }
+
+        private void Awake()
+        {
+            card = ScriptableObject.CreateInstance("CardData") as CardData;
+        }
     }
 }

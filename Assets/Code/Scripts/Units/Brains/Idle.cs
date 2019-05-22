@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Brains/Units/Idle")]
-public class Idle : UnitBrain
+namespace Prototype
 {
-    public override void Initialize(Unit unit, Unit enemyHero)
+    [CreateAssetMenu(menuName = "Brains/Units/Idle")]
+    public class Idle : UnitBrain
     {
-    }
+        public override void Initialize(Unit unit, Unit enemyHero)
+        {
+        }
 
-    public override void Think(Unit unit)
-    {
+        public override void Think(Unit unit)
+        {
+        }
     }
 }

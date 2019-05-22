@@ -1,28 +1,30 @@
 ﻿using System;
-using UnityEngine;
 
-[Serializable]
-public class BoolReference
+namespace Prototype
 {
-    public bool useConstant = true;
-    public bool constantValue;
-    public BoolVariable variable;
-
-    public BoolReference() { }
-
-    public BoolReference(bool value)
+    [Serializable]
+    public class BoolReference
     {
-        useConstant = true;
-        constantValue = value;
-    }
+        public bool useConstant = true;
+        public bool constantValue;
+        public BoolVariable variable;
 
-    public bool Value
-    {
-        get { return useConstant ? constantValue : variable.value; }
-    }
+        public BoolReference() { }
 
-    public static implicit operator bool(BoolReference reference)
-    {
-        return reference.Value;
+        public BoolReference(bool value)
+        {
+            useConstant = true;
+            constantValue = value;
+        }
+
+        public bool Value
+        {
+            get { return useConstant ? constantValue : variable.value; }
+        }
+
+        public static implicit operator bool(BoolReference reference)
+        {
+            return reference.Value;
+        }
     }
 }

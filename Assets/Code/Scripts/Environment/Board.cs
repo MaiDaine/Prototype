@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 
-public class Board : MonoBehaviour
+namespace Prototype
 {
-    public BoardStateVariable state;
-    public Transform playerSpawn;
-    public Transform enemySpawn;
-
-    private void Awake()
+    public class Board : MonoBehaviour
     {
-        state.currentState.playerSpawnPosition = playerSpawn;
-        state.currentState.npcSpawnPosition = enemySpawn;
+        public BoardStateVariable state;
+        public Transform playerSpawn;
+        public Transform enemySpawn;
+
+        private void Awake()
+        {
+            state.currentState.playerSpawnPosition = playerSpawn;
+            state.currentState.npcSpawnPosition = enemySpawn;
+        }
     }
 }

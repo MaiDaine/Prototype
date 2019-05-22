@@ -1,24 +1,27 @@
 ﻿using UnityEngine;
 
-public class UnitBoardSide : MonoBehaviour
+namespace Prototype
 {
-    public UnitSet playerSide;
-    public UnitSet NPCSide;
-
-    private void OnTriggerEnter(Collider other)
+    public class UnitBoardSide : MonoBehaviour
     {
-        Unit unit = other.gameObject.GetComponent<Unit>();
-        if (unit != null && unit.GetComponent<UnitHealth>().alive)
+        public UnitSet playerSide;
+        public UnitSet NPCSide;
+
+        private void OnTriggerEnter(Collider other)
         {
-            if (playerSide.items.Contains(unit))
+            Unit unit = other.gameObject.GetComponent<Unit>();
+            if (unit != null && unit.GetComponent<UnitHealth>().alive)
             {
-                playerSide.Remove(unit);
-                NPCSide.Add(unit);
-            }
-            else
-            {
-                NPCSide.Remove(unit);
-                playerSide.Add(unit);
+                if (playerSide.items.Contains(unit))
+                {
+                    playerSide.Remove(unit);
+                    NPCSide.Add(unit);
+                }
+                else
+                {
+                    NPCSide.Remove(unit);
+                    playerSide.Add(unit);
+                }
             }
         }
     }

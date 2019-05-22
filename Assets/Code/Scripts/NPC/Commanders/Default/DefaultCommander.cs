@@ -1,19 +1,22 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Commander/Default")]
-public class DefaultCommander : NPCCommander
+namespace Prototype
 {
-    public float timerSpawn = 5f;
-
-    private float timer = 0f;
-
-    public override void Think()
+    [CreateAssetMenu(menuName = "Commander/Default")]
+    public class DefaultCommander : NPCCommander
     {
-        timer += Time.deltaTime;
-        if (timer >= timerSpawn)
+        public float timerSpawn = 5f;
+
+        private float timer = 0f;
+
+        public override void Think()
         {
-            timer = 0f;
-            SpawnUnit(deck.cards[0], board.Value.npcSpawnPosition.transform.position);
+            timer += Time.deltaTime;
+            if (timer >= timerSpawn)
+            {
+                timer = 0f;
+                SpawnUnit(deck.cards[0], board.Value.npcSpawnPosition.transform.position);
+            }
         }
     }
 }

@@ -1,26 +1,29 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Reroll : MonoBehaviour
+namespace Prototype
 {
-    public int rerollCost;
-    public IntVariable playerGold;
-    public GameEvent onReroll;
-    public GameEvent onMoneyChanged;
-    public Button button;
-
-    private void Awake()
+    public class Reroll : MonoBehaviour
     {
-        button.onClick.AddListener(TriggerReroll);
-    }
+        public int rerollCost;
+        public IntVariable playerGold;
+        public GameEvent onReroll;
+        public GameEvent onMoneyChanged;
+        public Button button;
 
-    public void TriggerReroll()
-    {
-        if (playerGold.value >= rerollCost)
+        private void Awake()
         {
-            playerGold.value -= rerollCost;
-            onMoneyChanged.Raise();
-            onReroll.Raise();
+            button.onClick.AddListener(TriggerReroll);
+        }
+
+        public void TriggerReroll()
+        {
+            if (playerGold.value >= rerollCost)
+            {
+                playerGold.value -= rerollCost;
+                onMoneyChanged.Raise();
+                onReroll.Raise();
+            }
         }
     }
 }

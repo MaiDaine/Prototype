@@ -1,24 +1,27 @@
 ﻿using System;
 using UnityEngine;
 
-[CreateAssetMenu]
-public class NPCStateVariable : ScriptableObject
+namespace Prototype
 {
-    [Serializable]
-    public struct State
+    [CreateAssetMenu]
+    public class NPCStateVariable : ScriptableObject
     {
-        public int npcType;
-    }
+        [Serializable]
+        public struct State
+        {
+            public int npcType;
+        }
 
-    public State currentState;
+        public State currentState;
 
-    public void SetNPCType(int value)
-    {
-        currentState.npcType = value;
-    }
+        public void SetNPCType(int value)
+        {
+            currentState.npcType = value;
+        }
 
-    public void SetValue(NPCStateVariable value)
-    {
-        currentState = value.currentState;
+        public void SetValue(NPCStateVariable value)
+        {
+            currentState = value.currentState;
+        }
     }
 }

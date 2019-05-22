@@ -1,27 +1,30 @@
 ﻿using UnityEngine;
 
-public class UnitAttack : MonoBehaviour
+namespace Prototype
 {
-    [HideInInspector]
-    public float atkReload;
-
-    private Unit unit;
-
-    public void Initialize(Unit unit)
+    public class UnitAttack : MonoBehaviour
     {
-        this.unit = unit;
-        atkReload = unit.currentStats.atkReload;
-    }
+        [HideInInspector]
+        public float atkReload;
 
-    private void FixedUpdate()
-    {
-        atkReload -= Time.deltaTime;
-    }
+        private Unit unit;
 
-    public bool Attack(Unit target)
-    {
-        //Atk Animation
-        atkReload = unit.currentStats.atkReload;
-        return target.GetComponent<UnitHealth>().TakeDamage(unit.currentStats.atkDmg);
+        public void Initialize(Unit unit)
+        {
+            this.unit = unit;
+            atkReload = unit.currentStats.atkReload;
+        }
+
+        private void FixedUpdate()
+        {
+            atkReload -= Time.deltaTime;
+        }
+
+        public bool Attack(Unit target)
+        {
+            //Atk Animation
+            atkReload = unit.currentStats.atkReload;
+            return target.GetComponent<UnitHealth>().TakeDamage(unit.currentStats.atkDmg);
+        }
     }
 }

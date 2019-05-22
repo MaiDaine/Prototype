@@ -1,36 +1,39 @@
 ﻿using UnityEngine;
 
-public class RerollPanel : MonoBehaviour
+namespace Prototype
 {
-    public CardPool cardPool;
-    public CardDeck deck;
-    public GameEvent onCardAddedToDeck;
-
-    private RerollSlot[] slots;
-
-    private void Start()
+    public class RerollPanel : MonoBehaviour
     {
-        slots = GetComponentsInChildren<RerollSlot>();
-        TriggerReroll();
-    }
+        public CardPool cardPool;
+        public CardDeck deck;
+        public GameEvent onCardAddedToDeck;
 
-    public void TriggerReroll()
-    {
-        CardData[] roll = cardPool.GetCardRoll();
+        private RerollSlot[] slots;
 
-        for (int i = 0; i < roll.Length; i++)
+        private void Start()
         {
-            slots[i].CleanSlot();
-            slots[i].ActivateSlot(roll[i], OnCardPicked);
+            slots = GetComponentsInChildren<RerollSlot>();
+            TriggerReroll();
         }
-    }
 
-    public void OnCardPicked(CardData card)
-    {
-        deck.cards[deck.cardsNumber] = ScriptableObject.CreateInstance("CardData") as CardData;
-        deck.cards[deck.cardsNumber].Assign(card);
-        deck.cardsNumber++;
+        public void TriggerReroll()
+        {
+            CardData[] roll = cardPool.GetCardRoll();
 
-        onCardAddedToDeck.Raise();
+            for (int i = 0; i < roll.Length; i++)
+            {
+                slots[i].CleanSlot();
+                slots[i].ActivateSlot(roll[i], OnCardPicked);
+            }
+        }
+
+        public void OnCardPicked(CardData card)
+        {
+            deck.cards[deck.cardsNumber] = ScriptableObject.CreateInstance("CardData") as CardData;
+            deck.cards[deck.cardsNumber].Assign(card);
+            deck.cardsNumber++;
+
+            onCardAddedToDeck.Raise();
+        }
     }
 }

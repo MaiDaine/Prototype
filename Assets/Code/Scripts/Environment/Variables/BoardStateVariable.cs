@@ -1,20 +1,23 @@
 ﻿using System;
 using UnityEngine;
 
-[CreateAssetMenu]
-public class BoardStateVariable : ScriptableObject
+namespace Prototype
 {
-    [Serializable]
-    public struct State
+    [CreateAssetMenu]
+    public class BoardStateVariable : ScriptableObject
     {
-        public Transform playerSpawnPosition;
-        public Transform npcSpawnPosition;
-    }
+        [Serializable]
+        public struct State
+        {
+            public Transform playerSpawnPosition;
+            public Transform npcSpawnPosition;
+        }
 
-    public State currentState;
+        public State currentState;
 
-    public void SetValue(BoardStateVariable value)
-    {
-        currentState = value.currentState;
+        public void SetValue(BoardStateVariable value)
+        {
+            currentState = value.currentState;
+        }
     }
 }

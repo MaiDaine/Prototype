@@ -1,27 +1,30 @@
 ﻿using System;
 
-[Serializable]
-public class NPCStateReference
+namespace Prototype
 {
-    public bool useConstant = true;
-    public NPCStateVariable.State constantValue;
-    public NPCStateVariable variable;
-
-    public NPCStateReference() { }
-
-    public NPCStateReference(NPCStateVariable.State value)
+    [Serializable]
+    public class NPCStateReference
     {
-        useConstant = true;
-        constantValue = value;
-    }
+        public bool useConstant = true;
+        public NPCStateVariable.State constantValue;
+        public NPCStateVariable variable;
 
-    public NPCStateVariable.State Value
-    {
-        get { return useConstant ? constantValue : variable.currentState; }
-    }
+        public NPCStateReference() { }
 
-    public static implicit operator NPCStateVariable.State(NPCStateReference reference)
-    {
-        return reference.Value;
+        public NPCStateReference(NPCStateVariable.State value)
+        {
+            useConstant = true;
+            constantValue = value;
+        }
+
+        public NPCStateVariable.State Value
+        {
+            get { return useConstant ? constantValue : variable.currentState; }
+        }
+
+        public static implicit operator NPCStateVariable.State(NPCStateReference reference)
+        {
+            return reference.Value;
+        }
     }
 }

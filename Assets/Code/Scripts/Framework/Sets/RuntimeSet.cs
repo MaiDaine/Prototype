@@ -1,19 +1,22 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class RuntimeSet<T> : ScriptableObject
+namespace Prototype
 {
-    public List<T> items = new List<T>();
-
-    public void Add(T element)
+    public abstract class RuntimeSet<T> : ScriptableObject
     {
-        if (!items.Contains(element))
-            items.Add(element);
-    }
+        public List<T> items = new List<T>();
 
-    public void Remove(T element)
-    {
-        if (items.Contains(element))
-            items.Remove(element);
+        public void Add(T element)
+        {
+            if (!items.Contains(element))
+                items.Add(element);
+        }
+
+        public void Remove(T element)
+        {
+            if (items.Contains(element))
+                items.Remove(element);
+        }
     }
 }

@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Card/CardDeck")]
-public class CardDeck : ScriptableObject
+namespace Prototype
 {
-    public int cardsNumber;
-    public CardData[] cards;
+    [CreateAssetMenu(menuName = "Card/CardDeck")]
+    public class CardDeck : ScriptableObject
+    {
+        public int cardsNumber;
+        public CardData[] cards;
+    }
 }

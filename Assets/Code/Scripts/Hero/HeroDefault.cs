@@ -1,37 +1,40 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Brains/Hero/HeroDefault")]
-public class HeroDefault : UnitBrain
+namespace Prototype
 {
-    public UnitSet targets;
-
-    public override void Assign(UnitSet set) { targets = set; }
-
-    public override void Initialize(Unit unit, Unit enemyHero)
+    [CreateAssetMenu(menuName = "Brains/Hero/HeroDefault")]
+    public class HeroDefault : UnitBrain
     {
-        base.Initialize(unit, enemyHero);
-        unit.GetComponent<UnitHealth>().alive = true;
-    }
+        public UnitSet targets;
 
-    public override void Think(Unit unit)
-    {
-        if (currentTarget == null && !SelectTarget(unit))
-            return;
-        if (unitAttack.atkReload <= 0f && unitAttack.Attack(currentTarget))
-            currentTarget = null;
-    }
+        public override void Assign(UnitSet set) { targets = set; }
 
-    private bool SelectTarget(Unit unit)
-    {
-        if (targets.items.Count > 0)
+        public override void Initialize(Unit unit, Unit enemyHero)
         {
-            foreach (Unit element in targets.items)
-                if (element != null && element.isActiveAndEnabled && element.tag != unit.tag)
-                {
-                    currentTarget = element;
-                    return true;
-                }
+            base.Initialize(unit, enemyHero);
+            unit.GetComponent<UnitHealth>().alive = true;
         }
-        return false;
+
+        public override void Think(Unit unit)
+        {
+            if (currentTarget == null && !SelectTarget(unit))
+                return;
+            if (unitAttack.atkReload <= 0f && unitAttack.Attack(currentTarget))
+                currentTarget = null;
+        }
+
+        private bool SelectTarget(Unit unit)
+        {
+            if (targets.items.Count > 0)
+            {
+                foreach (Unit element in targets.items)
+                    if (element != null && element.isActiveAndEnabled && element.tag != unit.tag)
+                    {
+                        currentTarget = element;
+                        return true;
+                    }
+            }
+            return false;
+        }
     }
 }

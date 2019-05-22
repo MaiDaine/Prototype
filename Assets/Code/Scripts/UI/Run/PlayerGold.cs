@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerGold : MonoBehaviour
+namespace Prototype
 {
-    public IntVariable gold;
-    public Text goldText;
+    public class PlayerGold : MonoBehaviour
+    {
+        public IntVariable gold;
+        public Text goldText;
 
-    private void Awake() { SetGold(); }
+        private void Awake() { SetGold(); }
 
-    public void SetGold() { goldText.text = gold.value.ToString(); }
+        public void SetGold() { goldText.text = gold.value.ToString(); }
+    }
 }
