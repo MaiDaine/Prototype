@@ -1,9 +1,4 @@
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-Assets/AssetStoreTools*
+[Ll]ibrary/ [Tt]emp/ [Oo]bj/ [Bb]uild/ [Bb]uilds/ Assets/AssetStoreTools*
 
 # Visual Studio cache directory
 .vs/
@@ -34,3 +29,11 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Temporary Assets
+
+Assets/Stash/
+
+# Logs
+
+Logs/*
