@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: Bloom
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
+  m_AdvancedMode: 1
   intensity:
     m_OverrideState: 1
     m_Value: 0.2
