@@ -1,4 +1,17 @@
-[Ll]ibrary/ [Tt]emp/ [Oo]bj/ [Bb]uild/ [Bb]uilds/ Assets/AssetStoreTools*
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Mm]emoryCaptures/
+
+!/[Aa]ssets/**/*.meta
+
+# /[Aa]ssets/AssetStoreTools*
+
+# TextMesh Pro files
+[Aa]ssets/TextMesh*Pro/
 
 # Visual Studio cache directory
 .vs/
@@ -17,23 +30,27 @@ ExportedObj/
 *.booproj
 *.svd
 *.pdb
+*.mdb
 *.opendb
+*.VC.db
 
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
+*.mdb.meta
 
-# Unity3D Generated File On Crash Reports
+# Unity3D generated file on crash reports
 sysinfo.txt
 
 # Builds
 *.apk
 *.unitypackage
 
-# Temporary Assets
+# Crashlytics generated file
+crashlytics-build.properties
 
+# Temporary Assets
 Assets/Stash/
 
 # Logs
-
 Logs/*
