@@ -20,4 +20,4 @@ MonoBehaviour:
   atkDmg: 5
   atkReload: 1
   atkRange: 3
-  moveSpeed: 5
+  moveSpeed: 10
