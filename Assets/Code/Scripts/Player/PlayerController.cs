@@ -6,13 +6,13 @@ namespace Prototype
     public class PlayerController : MonoBehaviour
     {
         public ControllableUnit[] units;
+        public ControllableUnit currentUnit = null;
         public bool useJoyStick = false;
 
         private KeyboardController keyboardController;
         private JoystickController joystickController;
         private Vector3 joystickCursor;
         private SpellCasting spellCasting;
-        private ControllableUnit currentUnit = null;
         private RayCast rayCast;
         private NavMeshAgent agent;
 
@@ -32,6 +32,8 @@ namespace Prototype
             spellCasting = new SpellCasting(this);
             spellCasting.UpdateSpellBook(ref currentUnit.spellBook);
 
+            foreach (ControllableUnit unit in units)
+                unit.Initialize(this);
         }
 
         private void Update()

@@ -32,8 +32,10 @@ namespace Prototype
 
         public void SetAgentDestination(Vector3 destination)
         {
-            agent.SetDestination(destination);
-            agent.isStopped = false;
+            GetComponent<NavMeshAgent>().SetDestination(destination);
+            //agent.SetDestination(destination);TODO
+            
+            //agent.isStopped = false;
             //Move Animation
         }
     }

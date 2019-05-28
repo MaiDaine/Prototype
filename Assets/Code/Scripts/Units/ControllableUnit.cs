@@ -5,7 +5,9 @@ namespace Prototype
     public class ControllableUnit : MonoBehaviour
     {
         public enum OrderType { None, Def, Atk, Reg };
+        public OrderType currentOrder;
         public UnitStats unitStats;
+        public ControllableUnitBrain brain;
         public bool playerControl = false;
         public ASpell[] spellBook = new ASpell[4];
 
@@ -19,18 +21,25 @@ namespace Prototype
             GetComponent<UnitMovement>().Initialize(unitStats);
         }
 
+        public void Initialize(PlayerController playerController)
+        {
+            brain = ScriptableObject.CreateInstance(brain.name) as ControllableUnitBrain;
+            brain.Initialize(playerController, this);
+        }
+
         private void Update()
         {
             if (!playerControl)
             {
-                //Test
+                brain.Think(currentOrder);
                 this.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 1f, transform.eulerAngles.z);
             }
         }
 
         public void ChangeOrder(OrderType order)
         {
-            Debug.Log("Order Change to: " + order.ToString());
+            //Animation
+            currentOrder = order;
         }
     }
 }
