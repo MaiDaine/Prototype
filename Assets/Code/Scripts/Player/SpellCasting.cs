@@ -45,21 +45,26 @@ namespace Prototype
                 }
             }
             else
-            {
-                currentSpell.Launch();
-                currentSpell = null;
-                casting = false;
-            }
+                LaunchSpell();
         }
 
         public void SpellReleased(int index)
         {
             spellLocked[index] = false;
+            if (currentSpell.launchOnRelease)
+                LaunchSpell();
         }
 
         public void CastUpdate(Vector3 position)
         {
             currentSpell.Placement(position);
+        }
+
+        private void LaunchSpell()
+        {
+            currentSpell.Launch();
+            currentSpell = null;
+            casting = false;
         }
     }
 }

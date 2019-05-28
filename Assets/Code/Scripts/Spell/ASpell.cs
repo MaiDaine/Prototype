@@ -2,6 +2,8 @@
 
 public abstract class ASpell : MonoBehaviour
 {
+    public bool launchOnRelease = false;
+
     public virtual bool Init() { return false; }
 
     public virtual void Placement(Vector3 position) { }

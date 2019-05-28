@@ -706,7 +706,6 @@ MonoBehaviour:
   - {fileID: 1324239760}
   - {fileID: 590170023}
   useJoyStick: 1
-  joystickSensitivity: 30
 --- !u!114 &848922484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,6 +720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1936909392}
   offset: {x: 0, y: 25, z: -5}
+  positionLerpTime: 0.2
 --- !u!1001 &928664256
 PrefabInstance:
   m_ObjectHideFlags: 0

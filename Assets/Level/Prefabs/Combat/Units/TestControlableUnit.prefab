@@ -221,6 +221,6 @@ MonoBehaviour:
   playerControl: 0
   spellBook:
   - {fileID: 5700147567599365781, guid: 7014be4f10583404991a7cc6867fc10c, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5700147567599365781, guid: 7014be4f10583404991a7cc6867fc10c, type: 3}
+  - {fileID: 5700147567599365781, guid: 7014be4f10583404991a7cc6867fc10c, type: 3}
+  - {fileID: 5700147567599365781, guid: 7014be4f10583404991a7cc6867fc10c, type: 3}

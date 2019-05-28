@@ -1,5 +1,4 @@
-﻿using Prototype;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Prototype
 {
@@ -7,41 +6,47 @@ namespace Prototype
     {
         public ControllableUnit[] units;
         public bool useJoyStick = false;
-        public float joystickSensitivity = 30f;//TODO userPref
 
-        private RayCast rayCast;
+        private KeyboardController keyboardController;
+        private JoystickController joystickController;
+        private Vector3 joystickCursor;
         private SpellCasting spellCasting;
         private ControllableUnit currentUnit = null;
-        private Vector3 joystickCursor;
+        private RayCast rayCast;
 
         private void Start()
         {
+            rayCast = this.GetComponent<Prototype.RayCast>();
+
+            joystickController = new JoystickController();
+            keyboardController = new KeyboardController(rayCast);
+
             currentUnit = units[0];
             currentUnit.playerControl = true;
 
             spellCasting = new SpellCasting(this);
             spellCasting.UpdateSpellBook(ref currentUnit.spellBook);
-
-            rayCast = this.GetComponent<Prototype.RayCast>();
         }
 
         private void Update()
         {
             SwitchUnit();
-
             SpellUpdate();
-
             Move();
 
             if (useJoyStick)
             {
                 if (spellCasting.casting)
-                    RotateTowardCursor();
+                    joystickController.RotateTowardCursor(ref joystickCursor, ref currentUnit);
                 else
-                    StickRotate();
+                    joystickController.StickRotate(ref currentUnit);
+                joystickController.OrderUpdate(ref currentUnit);
             }
             else
-                MouseRotate();
+            {
+                keyboardController.MouseRotate(ref currentUnit);
+                keyboardController.OrderUpdate(ref currentUnit);
+            }
         }
 
         //Spells
@@ -52,34 +57,30 @@ namespace Prototype
 
         private void SpellUpdate()
         {
-            if (Input.GetButtonDown("Spell 1"))
-                spellCasting.SpellPressed(0);
-            if (Input.GetButtonUp("Spell 1"))
-                spellCasting.SpellReleased(0);
-
-            if (spellCasting.casting)
+            if (useJoyStick)
             {
-                if (useJoyStick)
+                joystickController.SpellUpdate(spellCasting);
+                if (spellCasting.casting)
                 {
-                    UpdateJoystickCursor();
+                    joystickController.UpdateJoystickCursor(ref joystickCursor);
                     spellCasting.CastUpdate(joystickCursor);
                 }
-                else
-                    spellCasting.CastUpdate(rayCast.BoardRayCast());
             }
+            else
+                keyboardController.SpellUpdate(ref spellCasting);
         }
 
         //Unit Handle
         private void SwitchUnit()
         {
             int index;
-            if (Input.GetButtonDown("Control 1"))
+            if (Input.GetKeyDown("Unit 1"))
                 index = 0;
-            else if (Input.GetButtonDown("Control 2"))
+            else if (Input.GetKeyDown("Unit 2"))
                 index = 1;
-            else if (Input.GetButtonDown("Control 3"))
+            else if (Input.GetKeyDown("Unit 3"))
                 index = 2;
-            else if (Input.GetButtonDown("Control 4"))
+            else if (Input.GetKeyDown("Unit 4"))
                 index = 3;
             else
                 return;
@@ -106,46 +107,12 @@ namespace Prototype
                 0f,
                 Input.GetAxis("Vertical") * modifier);
         }
-        
-        //Rotation
-        private void MouseRotate()
-        {
-            Vector3 tmp;
-
-            rayCast.PlaneRayCast(out tmp);
-            tmp.y = currentUnit.transform.position.y;
-            currentUnit.transform.LookAt(tmp);
-        }
-
-        private void StickRotate()
-        {
-            if (Input.GetAxis("Rotation X") != 0f || Input.GetAxis("Rotation Y") != 0f)
-                currentUnit.transform.eulerAngles = new Vector3(
-                    currentUnit.transform.eulerAngles.x,
-                    Mathf.Atan2(Input.GetAxis("Rotation X"), Input.GetAxis("Rotation Y")) * Mathf.Rad2Deg,
-                    currentUnit.transform.eulerAngles.z);
-        }
-
-        private void RotateTowardCursor()
-        {
-            float tmp = joystickCursor.y;
-
-            joystickCursor.y = currentUnit.transform.position.y;
-            currentUnit.transform.LookAt(joystickCursor);
-            joystickCursor.y = tmp;
-        }
 
         //JoystickHandle
         public void ResetJoystickCursor()
         {
             joystickCursor = currentUnit.transform.position;
             joystickCursor.y = 0f;
-        }
-
-        private void UpdateJoystickCursor()
-        {
-            joystickCursor.x += Input.GetAxis("Rotation X") * Time.deltaTime * joystickSensitivity;
-            joystickCursor.z += Input.GetAxis("Rotation Y") * Time.deltaTime * joystickSensitivity;
         }
     }
 }

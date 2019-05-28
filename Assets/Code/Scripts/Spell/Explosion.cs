@@ -12,6 +12,7 @@ namespace Prototype
 
         private void Awake()
         {
+            launchOnRelease = true;
             spellIndicator = Instantiate(spellIndicatorRef);
         }
 
