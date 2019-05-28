@@ -226,9 +226,10 @@ MonoBehaviour:
   playerControl: 0
   spellBook:
   - {fileID: 5700147567599365781, guid: 7014be4f10583404991a7cc6867fc10c, type: 3}
+  - {fileID: 5636017456635741902, guid: 3db06451de0c4b14cbb4b93e0db97bea, type: 3}
   - {fileID: 5700147567599365781, guid: 7014be4f10583404991a7cc6867fc10c, type: 3}
-  - {fileID: 5700147567599365781, guid: 7014be4f10583404991a7cc6867fc10c, type: 3}
-  - {fileID: 5700147567599365781, guid: 7014be4f10583404991a7cc6867fc10c, type: 3}
+  - {fileID: 5636017456635741902, guid: 3db06451de0c4b14cbb4b93e0db97bea, type: 3}
+  currentStats: {fileID: 0}
 --- !u!114 &4741766242837998555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,11 +300,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9028664326804103479}
     m_Modifications:
-    - target: {fileID: 4198922648751938186, guid: a83d012546f404e4899d37b52baa0047,
-        type: 3}
-      propertyPath: m_Name
-      value: HealthBar
-      objectReference: {fileID: 0}
     - target: {fileID: 5580943274639918301, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -423,6 +419,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4198922648751938186, guid: a83d012546f404e4899d37b52baa0047,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a83d012546f404e4899d37b52baa0047, type: 3}

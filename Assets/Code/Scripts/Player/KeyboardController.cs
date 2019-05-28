@@ -24,12 +24,23 @@ namespace Prototype
         {
             if (Input.GetButtonDown("Spell 1"))
                 spellCasting.SpellPressed(0);
+            else if (Input.GetButtonUp("Spell 1"))
+                spellCasting.SpellReleased(0);
+
             if (Input.GetButtonDown("Spell 2"))
                 spellCasting.SpellPressed(1);
+            else if (Input.GetButtonUp("Spell 2"))
+                spellCasting.SpellReleased(1);
+
             if (Input.GetButtonDown("Spell 3"))
                 spellCasting.SpellPressed(2);
-            if (Input.GetButtonDown("Spell 3"))
-                spellCasting.SpellPressed(4);
+            else if (Input.GetButtonUp("Spell 3"))
+                spellCasting.SpellReleased(2);
+
+            if (Input.GetButtonDown("Spell 4"))
+                spellCasting.SpellPressed(3);
+            else if (Input.GetButtonUp("Spell 4"))
+                spellCasting.SpellReleased(3);
 
             if (spellCasting.casting)
                 spellCasting.CastUpdate(rayCast.BoardRayCast());

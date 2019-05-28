@@ -58,7 +58,8 @@ namespace Prototype
         //Spells
         public ASpell InstantiateSpell(ref ASpell spell)
         {
-            return (Instantiate(spell));
+            ASpell tmp = Instantiate(spell);
+            return (tmp);
         }
 
         private void SpellUpdate()

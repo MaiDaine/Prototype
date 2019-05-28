@@ -60,9 +60,13 @@ namespace Prototype
 
             if (Input.GetButtonDown("Spell 3"))
                 spellCasting.SpellPressed(2);
+            else if (Input.GetButtonUp("Spell 3"))
+                spellCasting.SpellReleased(2);
 
             if (Input.GetButtonDown("Spell 4"))
                 spellCasting.SpellPressed(3);
+            else if (Input.GetButtonUp("Spell 4"))
+                spellCasting.SpellReleased(3);
         }
 
         public void OrderUpdate(ref ControllableUnit currentUnit)

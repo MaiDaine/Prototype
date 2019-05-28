@@ -10,20 +10,11 @@ namespace Prototype
 
         private PlayerController player;
         private ASpell currentSpell = null;
+        private int currentSpellIndex = -1;
         private ASpell[] currentSpellBook;
         private bool[] spellLocked = new bool[4];
 
         public SpellCasting(PlayerController player) { this.player = player; }
-
-        public void CancelCast()
-        {
-            if (currentSpell != null)
-                currentSpell.Cancel();
-            currentSpell = null;
-            casting = false;
-            for (int i = 0; i < 4; i++)
-                spellLocked[i] = false;
-        }
 
         public void UpdateSpellBook(ref ASpell[] spellBook)
         {
@@ -36,23 +27,39 @@ namespace Prototype
             if (!casting)
             {
                 if (!spellLocked[index])
-                {
-                    currentSpell = player.InstantiateSpell(ref currentSpellBook[index]);
-                    casting = true;
-                    spellLocked[index] = true;
-                    if (player.useJoyStick)
-                        player.ResetJoystickCursor();
-                }
+                    StartCasting(index);
             }
             else
-                LaunchSpell();
+            {
+                if (currentSpellIndex != index)
+                {
+                    CancelCast();
+                    StartCasting(index);
+                }
+                else
+                    LaunchSpell();
+            }
         }
 
         public void SpellReleased(int index)
         {
+            if (currentSpell == null)
+                return;
             spellLocked[index] = false;
             if (currentSpell.launchOnRelease)
                 LaunchSpell();
+        }
+
+        public void CancelCast()
+        {
+            if (currentSpell != null)
+            {
+                currentSpell.Cancel();
+                spellLocked[currentSpellIndex] = false;
+                currentSpellIndex = -1;
+            }
+            currentSpell = null;
+            casting = false;
         }
 
         public void CastUpdate(Vector3 position)
@@ -60,11 +67,23 @@ namespace Prototype
             currentSpell.Placement(position);
         }
 
+        private void StartCasting(int index)
+        {
+            currentSpell = player.InstantiateSpell(ref currentSpellBook[index]);
+            casting = true;
+            spellLocked[index] = true;
+            if (player.useJoyStick)
+                player.ResetJoystickCursor();
+            currentSpellIndex = index;
+        }
+
         private void LaunchSpell()
         {
             currentSpell.Launch();
             currentSpell = null;
             casting = false;
+            spellLocked[currentSpellIndex] = false;
+            currentSpellIndex = -1;
         }
     }
 }
