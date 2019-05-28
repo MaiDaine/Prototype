@@ -9,6 +9,16 @@ namespace Prototype
         public bool playerControl = false;
         public ASpell[] spellBook = new ASpell[4];
 
+        [HideInInspector]
+        public UnitStats currentStats;
+
+        private void Awake()
+        {
+            currentStats = ScriptableObject.CreateInstance("UnitStats") as UnitStats;
+            currentStats.Assign(unitStats);
+            GetComponent<UnitMovement>().Initialize(unitStats);
+        }
+
         private void Update()
         {
             if (!playerControl)

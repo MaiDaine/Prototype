@@ -24,7 +24,7 @@ namespace Prototype
             currentStats.Assign(stats);
             this.tag = tag;
             GetComponent<UnitHealth>().Initialize(this);
-            GetComponent<UnitMovement>().Initialize(this);
+            GetComponent<UnitMovement>().Initialize(currentStats);
             GetComponent<UnitAttack>().Initialize(this);
             GetComponent<CapsuleCollider>().radius = stats.atkRange;
             GetComponent<CapsuleCollider>().enabled = true;

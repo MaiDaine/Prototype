@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 namespace Prototype
 {
@@ -13,6 +14,7 @@ namespace Prototype
         private SpellCasting spellCasting;
         private ControllableUnit currentUnit = null;
         private RayCast rayCast;
+        private NavMeshAgent agent;
 
         private void Start()
         {
@@ -23,9 +25,13 @@ namespace Prototype
 
             currentUnit = units[0];
             currentUnit.playerControl = true;
+            GetComponent<CameraController>().UpdateTarget(currentUnit.gameObject);
+            currentUnit.GetComponent<UnitMovement>().StopMovement();
+            agent = currentUnit.GetComponent<NavMeshAgent>();
 
             spellCasting = new SpellCasting(this);
             spellCasting.UpdateSpellBook(ref currentUnit.spellBook);
+
         }
 
         private void Update()
@@ -73,38 +79,44 @@ namespace Prototype
         //Unit Handle
         private void SwitchUnit()
         {
-            int index;
-            if (Input.GetKeyDown("Unit 1"))
+            int index = -1;
+            if (Input.GetButtonDown("Unit 1"))
                 index = 0;
-            else if (Input.GetKeyDown("Unit 2"))
+            else if (Input.GetButtonDown("Unit 2"))
                 index = 1;
-            else if (Input.GetKeyDown("Unit 3"))
+            else if (Input.GetButtonDown("Unit 3"))
                 index = 2;
-            else if (Input.GetKeyDown("Unit 4"))
+            else if (Input.GetButtonDown("Unit 4"))
                 index = 3;
             else
                 return;
+
 
             //Todo transition
             if (currentUnit != units[index])
             {
                 if (currentUnit != null)
+                {
+                    currentUnit.GetComponent<UnitMovement>().ResumeMovement();
                     currentUnit.playerControl = false;
+                }
                 currentUnit = units[index];
                 GetComponent<CameraController>().UpdateTarget(currentUnit.gameObject);
                 currentUnit.playerControl = true;
+                currentUnit.GetComponent<UnitMovement>().StopMovement();
                 spellCasting.CancelCast();
                 spellCasting.UpdateSpellBook(ref currentUnit.spellBook);
+                agent = currentUnit.GetComponent<NavMeshAgent>();
             }
         }
 
         //Movement
         private void Move()
         {
-            float modifier = currentUnit.unitStats.moveSpeed * Time.deltaTime;
+            float modifier = currentUnit.currentStats.moveSpeed * Time.deltaTime;
             currentUnit.transform.position += new Vector3(
-                Input.GetAxis("Horizontal") * modifier,
-                0f,
+                Input.GetAxis("Horizontal") * modifier, 
+                0f, 
                 Input.GetAxis("Vertical") * modifier);
         }
 
