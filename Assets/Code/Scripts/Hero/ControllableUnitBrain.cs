@@ -7,13 +7,20 @@ namespace Prototype
         protected PlayerController playerController;
         protected ControllableUnit unit;
 
+        private ControllableUnit.OrderType currentOrder;
+
         public virtual void Initialize(PlayerController playerController, ControllableUnit unit)
         {
             this.playerController = playerController;
             this.unit = unit;
         }
+        
+        public virtual void ChangeOrder(ControllableUnit.OrderType currentOrder)
+        {
+            this.currentOrder = currentOrder;
+        }
 
-        public virtual void Think(ControllableUnit.OrderType currentOrder)
+        public virtual void Think()
         {
             switch (currentOrder)
             {
@@ -31,10 +38,11 @@ namespace Prototype
             }
         }
 
-        public virtual void Defense() { }
-        public virtual void Attack() { }
+        protected virtual void Defense() { }
 
-        public virtual void Regroup()
+        protected virtual void Attack() { }
+
+        protected virtual void Regroup()
         {
             unit.GetComponent<UnitMovement>().SetAgentDestination(playerController.currentUnit.transform.position);
         }

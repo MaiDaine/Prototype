@@ -5,7 +5,6 @@ namespace Prototype
     public class ControllableUnit : MonoBehaviour
     {
         public enum OrderType { None, Def, Atk, Reg };
-        public OrderType currentOrder;
         public UnitStats unitStats;
         public ControllableUnitBrain brain;
         public bool playerControl = false;
@@ -31,7 +30,7 @@ namespace Prototype
         {
             if (!playerControl)
             {
-                brain.Think(currentOrder);
+                brain.Think();
                 this.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 1f, transform.eulerAngles.z);
             }
         }
@@ -39,7 +38,7 @@ namespace Prototype
         public void ChangeOrder(OrderType order)
         {
             //Animation
-            currentOrder = order;
+            brain.ChangeOrder(order);
         }
     }
 }

@@ -6,7 +6,6 @@ namespace Prototype
     [RequireComponent(typeof(NavMeshAgent))]
     public class Unit : MonoBehaviour
     {
-
         public UnitBrain brain;
         [HideInInspector]
         public UnitStats currentStats;

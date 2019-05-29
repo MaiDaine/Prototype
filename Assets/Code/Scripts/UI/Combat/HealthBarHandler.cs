@@ -17,7 +17,7 @@ namespace Prototype
 
         public void Initialize()
         {
-            if (healthBar.GetComponentInParent<GameObject>().tag == "EnemyTeam")
+            if (healthBar.tag == "EnemyTeam")
                 fillBar.color = new Color(1, 0, 0, 1);
             healthBar.SetActive(true);
         }
