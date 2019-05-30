@@ -2,16 +2,13 @@
 
 namespace Prototype
 {
-    public class ControllableUnit : MonoBehaviour
+    public class ControllableUnit : Unit
     {
         public enum OrderType { None, Def, Atk, Reg };
         public UnitStats unitStats;
         public ControllableUnitBrain brain;
         public bool playerControl = false;
         public ASpell[] spellBook = new ASpell[4];
-
-        [HideInInspector]
-        public UnitStats currentStats;
 
         private void Awake()
         {
@@ -22,6 +19,7 @@ namespace Prototype
 
         public void Initialize(PlayerController playerController)
         {
+            base.Initialize(currentStats, "PlayerTeam");
             brain = ScriptableObject.CreateInstance(brain.name) as ControllableUnitBrain;
             brain.Initialize(playerController, this);
         }

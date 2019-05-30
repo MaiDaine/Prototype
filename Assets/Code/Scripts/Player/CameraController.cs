@@ -25,6 +25,7 @@ namespace Prototype
             interpolatingCameraState.LerpTowards(targetCameraState, positionLerpPct);
             interpolatingCameraState.UpdateTransform(transform);
         }
+
         private void OnEnable()
         {
             targetCameraState.SetFromTransform(transform);

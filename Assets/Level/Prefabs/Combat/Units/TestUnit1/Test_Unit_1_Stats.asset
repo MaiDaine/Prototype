@@ -17,7 +17,7 @@ MonoBehaviour:
   cooldown: 1
   health: 30
   mana: 0
-  atkDmg: 5
+  atkDmg: 0
   atkReload: 1
   atkRange: 3
   moveSpeed: 10

@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70a5b7338fc598041a91f1511a56a156, type: 3}
-  m_Name: Test_Unit_1_Card
+  m_Script: {fileID: 11500000, guid: 13bc4236d69059c4d85132494e24f9f6, type: 3}
+  m_Name: DefaultEvent
   m_EditorClassIdentifier: 
-  unitStats: {fileID: 11400000, guid: a0068a95248d74d46923ab0f06951c80, type: 2}
-  unit: {fileID: 3275222551669464349, guid: b9669d82431ed2e40a993c98c9fc9c65, type: 3}
+  units: {fileID: 11400000, guid: f39db14844c1ffa4a889d7e6382c6374, type: 2}

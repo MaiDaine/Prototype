@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Prototype
 {
@@ -9,10 +7,10 @@ namespace Prototype
         public bool casting = false;
 
         private PlayerController player;
-        private ASpell currentSpell = null;
-        private int currentSpellIndex = -1;
         private ASpell[] currentSpellBook;
         private bool[] spellLocked = new bool[4];
+        private int currentSpellIndex = -1;
+        private ASpell currentSpell = null;
 
         public SpellCasting(PlayerController player) { this.player = player; }
 

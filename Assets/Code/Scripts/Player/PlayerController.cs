@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.AI;
 
 namespace Prototype
 {
@@ -8,32 +7,33 @@ namespace Prototype
         public ControllableUnit[] units;
         public ControllableUnit currentUnit = null;
         public bool useJoyStick = false;
+        public UnitSet playerUnits;//Tmp
 
         private KeyboardController keyboardController;
         private JoystickController joystickController;
         private Vector3 joystickCursor;
         private SpellCasting spellCasting;
         private RayCast rayCast;
-        private NavMeshAgent agent;
 
-        private void Start()
+        private void Awake()
         {
             rayCast = this.GetComponent<Prototype.RayCast>();
-
             joystickController = new JoystickController();
             keyboardController = new KeyboardController(rayCast);
 
+            playerUnits.items.Clear();
+            foreach (ControllableUnit unit in units)
+            {
+                unit.Initialize(this);
+                playerUnits.Add(unit);
+            }
             currentUnit = units[0];
             currentUnit.playerControl = true;
-            GetComponent<CameraController>().UpdateTarget(currentUnit.gameObject);
             currentUnit.GetComponent<UnitMovement>().StopMovement();
-            agent = currentUnit.GetComponent<NavMeshAgent>();
 
+            GetComponent<CameraController>().UpdateTarget(currentUnit.gameObject);
             spellCasting = new SpellCasting(this);
             spellCasting.UpdateSpellBook(ref currentUnit.spellBook);
-
-            foreach (ControllableUnit unit in units)
-                unit.Initialize(this);
         }
 
         private void Update()
@@ -109,7 +109,6 @@ namespace Prototype
                 currentUnit.GetComponent<UnitMovement>().StopMovement();
                 spellCasting.CancelCast();
                 spellCasting.UpdateSpellBook(ref currentUnit.spellBook);
-                agent = currentUnit.GetComponent<NavMeshAgent>();
             }
         }
 

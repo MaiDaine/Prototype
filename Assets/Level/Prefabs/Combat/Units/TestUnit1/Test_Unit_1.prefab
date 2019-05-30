@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 8070333151286185754}
   - component: {fileID: 8070333151286185749}
   - component: {fileID: 8070333151286185748}
-  - component: {fileID: 8070333151286185751}
   - component: {fileID: 8070333151286185750}
   - component: {fileID: 8070333151286185745}
   - component: {fileID: 4428271969388586694}
   - component: {fileID: 1412308527310096818}
+  - component: {fileID: 3275222551669464349}
   m_Layer: 0
   m_Name: Test_Unit_1
   m_TagString: Untagged
@@ -73,6 +73,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -121,20 +122,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8070333151286185751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8070333151286185744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43e3fe83c3d7914aa3857780a0be76f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  brain: {fileID: 11400000, guid: 34b8f355bead27e4d9db0245015eef94, type: 2}
-  currentStats: {fileID: 0}
 --- !u!114 &8070333151286185750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +178,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3275222551669464349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8070333151286185744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd99eabc07031d4f925b767388ca484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentStats: {fileID: 0}
+  brain: {fileID: 11400000, guid: 34b8f355bead27e4d9db0245015eef94, type: 2}
 --- !u!1001 &8070333151855475845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -198,16 +199,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8070333151286185752}
     m_Modifications:
-    - target: {fileID: 4198922648751938186, guid: a83d012546f404e4899d37b52baa0047,
-        type: 3}
-      propertyPath: m_Name
-      value: HealthBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 4198922648751938186, guid: a83d012546f404e4899d37b52baa0047,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5580943274639918301, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -313,6 +304,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4198922648751938186, guid: a83d012546f404e4899d37b52baa0047,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4198922648751938186, guid: a83d012546f404e4899d37b52baa0047,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442856465222180421, guid: a83d012546f404e4899d37b52baa0047,
+        type: 3}
+      propertyPath: unit
+      value: 
+      objectReference: {fileID: 3275222551669464349}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a83d012546f404e4899d37b52baa0047, type: 3}
 --- !u!224 &2489623529895753816 stripped

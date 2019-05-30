@@ -22,8 +22,8 @@ namespace Prototype
 
         protected virtual void SpawnUnit(CardData unitData, Vector3 position)
         {
-            Unit unit = Instantiate<Unit>(
-                unitData.unit,
+            NonControllableUnit unit = Instantiate<NonControllableUnit>(
+                (NonControllableUnit)unitData.unit,
                 spawnPosition,
                 board.Value.npcSpawnPosition.rotation
             );

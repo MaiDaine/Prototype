@@ -73,6 +73,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -133,7 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43e3fe83c3d7914aa3857780a0be76f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brain: {fileID: 11400000, guid: 34b8f355bead27e4d9db0245015eef94, type: 2}
   currentStats: {fileID: 0}
 --- !u!114 &7001214147227935314
 MonoBehaviour:
@@ -198,16 +198,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7001214147227935324}
     m_Modifications:
-    - target: {fileID: 4198922648751938186, guid: a83d012546f404e4899d37b52baa0047,
-        type: 3}
-      propertyPath: m_Name
-      value: HealthBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 4198922648751938186, guid: a83d012546f404e4899d37b52baa0047,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5580943274639918301, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -313,6 +303,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4198922648751938186, guid: a83d012546f404e4899d37b52baa0047,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4198922648751938186, guid: a83d012546f404e4899d37b52baa0047,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442856465222180421, guid: a83d012546f404e4899d37b52baa0047,
+        type: 3}
+      propertyPath: unit
+      value: 
+      objectReference: {fileID: 7001214147227935315}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a83d012546f404e4899d37b52baa0047, type: 3}
 --- !u!224 &3195921288706053404 stripped

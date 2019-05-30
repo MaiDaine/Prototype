@@ -35,11 +35,11 @@ namespace Prototype
                 boardState.Value.npcSpawnPosition.position,
                 boardState.Value.npcSpawnPosition.rotation);
 
-            npcHero.Initialize(playerHero, npcHeroCard.unitStats, "EnemyTeam");
-            npcHero.brain.Assign(npcSide);
-
-            playerHero.Initialize(npcHero, playerHeroCard.unitStats, "PlayerTeam");
-            playerHero.brain.Assign(playerSide);
+            ((NonControllableUnit)npcHero).Initialize(playerHero, npcHeroCard.unitStats, "EnemyTeam");
+            ((NonControllableUnit)npcHero).brain.Assign(npcSide);
+            
+            ((NonControllableUnit)playerHero).Initialize(npcHero, playerHeroCard.unitStats, "PlayerTeam");
+            ((NonControllableUnit)playerHero).brain.Assign(playerSide);
 
             commander.Initialize(playerHero);
         }
@@ -56,7 +56,7 @@ namespace Prototype
 
                 if (validRayCastHit && Input.GetMouseButtonDown(0))
                 {
-                    unit.Initialize(npcHero, selectedCard.unitStats, "PlayerTeam");
+                    ((NonControllableUnit)unit).Initialize(npcHero, selectedCard.unitStats, "PlayerTeam");
                     playerSide.Add(unit);
                     unit = null;
                     isSpawning = false;

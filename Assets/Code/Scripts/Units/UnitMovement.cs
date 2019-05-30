@@ -26,6 +26,7 @@ namespace Prototype
 
         public void ResumeMovement()
         {
+            agent.Warp(gameObject.transform.position);
             agent.isStopped = false;
             agent.updatePosition = true;
         }
@@ -33,8 +34,10 @@ namespace Prototype
         public void SetAgentDestination(Vector3 destination)
         {
             agent.SetDestination(destination);
-            
-            //agent.isStopped = false;
+            //TMP
+            agent.isStopped = false;
+            agent.updatePosition = true;
+
             //Move Animation
         }
     }
