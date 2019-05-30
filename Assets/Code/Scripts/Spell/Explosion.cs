@@ -7,6 +7,7 @@ namespace Prototype
     {
         public GameObject spellIndicatorRef;
         public GameObject visualEffectRef;
+        public int spellDamage = 30;
 
         private GameObject spellIndicator = null;
         private GameObject spellVisual = null;
@@ -36,9 +37,10 @@ namespace Prototype
             base.Effect();
             Ray ray = new Ray(spellVisual.transform.position, spellVisual.transform.position + new Vector3(0, 0.1f, 0));
             RaycastHit[] hits = Physics.SphereCastAll(ray, 5.0f);
+            Unit tmp;
             foreach (RaycastHit hit in hits)
-                if (!hit.collider.isTrigger && hit.collider.GetComponent<Unit>() && hit.collider.tag != this.tag)
-                    Debug.Log(hit.collider.GetComponent<Unit>().name);
+                if (!hit.collider.isTrigger && (tmp = hit.collider.GetComponent<Unit>()) != null && hit.collider.tag != this.tag)
+                    tmp.GetComponent<UnitHealth>().TakeDamage(spellDamage);
         }
 
         public override void AfterEffect()

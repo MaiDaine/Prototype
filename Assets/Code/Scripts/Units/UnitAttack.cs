@@ -13,6 +13,11 @@ namespace Prototype
         {
             this.unit = unit;
             atkReload = unit.currentStats.atkReload;
+
+            CapsuleCollider atkRange = unit.gameObject.AddComponent<CapsuleCollider>();
+            atkRange.isTrigger = true;
+            atkRange.radius = unit.currentStats.atkRange;
+            atkRange.enabled = true;
         }
 
         private void FixedUpdate()

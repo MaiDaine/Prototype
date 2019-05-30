@@ -19,5 +19,5 @@ MonoBehaviour:
   mana: 0
   atkDmg: 0
   atkReload: 1
-  atkRange: 0.5
+  atkRange: 3
   moveSpeed: 10

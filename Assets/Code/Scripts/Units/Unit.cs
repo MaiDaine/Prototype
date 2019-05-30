@@ -5,9 +5,9 @@ namespace Prototype
     [RequireComponent(typeof(UnitHealth))]
     [RequireComponent(typeof(UnitMovement))]
     [RequireComponent(typeof(UnitAttack))]
-    [RequireComponent(typeof(CapsuleCollider))]
     public class Unit : MonoBehaviour
     {
+
         [HideInInspector]
         public UnitStats currentStats;
 
@@ -22,8 +22,6 @@ namespace Prototype
             GetComponent<UnitHealth>().Initialize(this);
             GetComponent<UnitMovement>().Initialize(currentStats);
             GetComponent<UnitAttack>().Initialize(this);
-            GetComponent<CapsuleCollider>().radius = stats.atkRange;
-            GetComponent<CapsuleCollider>().enabled = true;
         }
 
         public int SortByDistance(Unit a, Unit b)

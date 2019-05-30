@@ -23,7 +23,7 @@ namespace Prototype
             keyboardController = new KeyboardController(rayCast);
 
             playerUnits.items.Clear();
-            for (int i = 0; i < units.Length; i++)
+            for (int i = 0; i < units.Length && units[i] != null; i++)
             {
                 units[i] = Instantiate(units[i]);
                 units[i].Initialize(this);
@@ -104,7 +104,7 @@ namespace Prototype
 
 
             //Todo transition
-            if (currentUnit != units[index])
+            if (units[index] != null && currentUnit != units[index])
             {
                 if (currentUnit != null)
                 {
@@ -125,8 +125,8 @@ namespace Prototype
         {
             float modifier = currentUnit.currentStats.moveSpeed * Time.deltaTime;
             currentUnit.transform.position += new Vector3(
-                Input.GetAxis("Horizontal") * modifier, 
-                0f, 
+                Input.GetAxis("Horizontal") * modifier,
+                0f,
                 Input.GetAxis("Vertical") * modifier);
         }
 

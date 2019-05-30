@@ -17,5 +17,7 @@ namespace Prototype
         public virtual float FirstSpawn() { return 0f; }
 
         public virtual float Update() { return 0f; }
+
+        public virtual void Cleared() { }
     }
 }

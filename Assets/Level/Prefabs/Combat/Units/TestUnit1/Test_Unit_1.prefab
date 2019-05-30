@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8070333151286185752}
   - component: {fileID: 8070333151286185755}
   - component: {fileID: 8070333151286185754}
-  - component: {fileID: 8070333151286185749}
   - component: {fileID: 8070333151286185748}
   - component: {fileID: 8070333151286185750}
   - component: {fileID: 8070333151286185745}
@@ -87,20 +86,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &8070333151286185749
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8070333151286185744}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  m_Radius: 0.7
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &8070333151286185748
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -331,12 +316,17 @@ PrefabInstance:
     - target: {fileID: 4198922648751938186, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4198922648751938186, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1179846270104821625, guid: a83d012546f404e4899d37b52baa0047,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5238650693985851491, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
