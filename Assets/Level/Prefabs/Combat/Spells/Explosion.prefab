@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5700147567599365782}
   - component: {fileID: 5700147567599365781}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,6 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660775358460c3d47b62ac0f0e519778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  launchOnRelease: 0
+  delayToEffect: 1.5
+  delayToAfterEffect: 0.5
   spellIndicatorRef: {fileID: 2110963215477219469, guid: b16ef5e3afa144543afdc1080c62f901,
     type: 3}
   visualEffectRef: {fileID: 5016736576995739016, guid: 4804624a4589ee74493c45d7b21d474c,

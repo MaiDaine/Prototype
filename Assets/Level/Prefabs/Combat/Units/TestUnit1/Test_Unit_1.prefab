@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4428271969388586694}
   - component: {fileID: 1412308527310096818}
   - component: {fileID: 3275222551669464349}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Test_Unit_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onDeath: {fileID: 11400000, guid: 82503867049242044937d7f3b0b3a9b2, type: 2}
-  alive: 0
   healthBar: {fileID: 627622932435100352}
+  alive: 0
 --- !u!114 &8070333151286185745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +217,7 @@ PrefabInstance:
     - target: {fileID: 5580943274639918301, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5580943274639918301, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
@@ -232,7 +232,7 @@ PrefabInstance:
     - target: {fileID: 5580943274639918301, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.8660254
       objectReference: {fileID: 0}
     - target: {fileID: 5580943274639918301, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
@@ -242,7 +242,7 @@ PrefabInstance:
     - target: {fileID: 5580943274639918301, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5580943274639918301, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
@@ -262,7 +262,7 @@ PrefabInstance:
     - target: {fileID: 5580943274639918301, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5580943274639918301, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
@@ -314,11 +314,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4198922648751938186, guid: a83d012546f404e4899d37b52baa0047,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7442856465222180421, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
       propertyPath: unit
       value: 
       objectReference: {fileID: 3275222551669464349}
+    - target: {fileID: 5198348063646371301, guid: a83d012546f404e4899d37b52baa0047,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238650693985851491, guid: a83d012546f404e4899d37b52baa0047,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a83d012546f404e4899d37b52baa0047, type: 3}
 --- !u!224 &2489623529895753816 stripped

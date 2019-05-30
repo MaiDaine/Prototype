@@ -13,15 +13,11 @@ namespace Prototype
 
         protected UnitHealth unitHealth;
 
-        private void Awake()
-        {
-            currentStats = ScriptableObject.CreateInstance("UnitStats") as UnitStats;
-            unitHealth = GetComponent<UnitHealth>();
-        }
-
         public virtual void Initialize(UnitStats stats, string tag)
         {
+            currentStats = ScriptableObject.CreateInstance("UnitStats") as UnitStats;
             currentStats.Assign(stats);
+            unitHealth = GetComponent<UnitHealth>();
             this.tag = tag;
             GetComponent<UnitHealth>().Initialize(this);
             GetComponent<UnitMovement>().Initialize(currentStats);

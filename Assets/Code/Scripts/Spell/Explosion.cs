@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Prototype
 {
@@ -28,12 +29,22 @@ namespace Prototype
             spellVisual = Instantiate(visualEffectRef);
             spellVisual.transform.position = spellIndicator.transform.position;
             Destroy(spellIndicator);
-            Invoke("Effect", 2.5f);
         }
 
         public override void Effect()
         {
             base.Effect();
+
+            Ray ray = new Ray(spellVisual.transform.position, spellVisual.transform.position + new Vector3(0, 1f, 0));
+            RaycastHit[] hits = Physics.SphereCastAll(ray, 30f);
+            foreach (RaycastHit hit in hits)
+                if (hit.collider.GetComponent<Unit>() && hit.collider.tag != this.tag)
+                    Debug.Log(hit.collider.GetComponent<Unit>().name);
+        }
+
+        public override void AfterEffect()
+        {
+            base.AfterEffect();
             Destroy(spellVisual);
             Destroy(gameObject);
         }

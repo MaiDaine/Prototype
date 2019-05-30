@@ -5,6 +5,7 @@ namespace Prototype
     public class PlayerController : MonoBehaviour
     {
         public ControllableUnit[] units;
+        public Vector3[] spawnPoints;
         public ControllableUnit currentUnit = null;
         public bool useJoyStick = false;
         public UnitSet playerUnits;//Tmp
@@ -22,18 +23,24 @@ namespace Prototype
             keyboardController = new KeyboardController(rayCast);
 
             playerUnits.items.Clear();
-            foreach (ControllableUnit unit in units)
+            for (int i = 0; i < units.Length; i++)
             {
-                unit.Initialize(this);
-                playerUnits.Add(unit);
+                units[i] = Instantiate(units[i]);
+                units[i].Initialize(this);
+                units[i].transform.position = spawnPoints[i];
+                playerUnits.Add(units[i]);
             }
             currentUnit = units[0];
-            currentUnit.playerControl = true;
-            currentUnit.GetComponent<UnitMovement>().StopMovement();
 
             GetComponent<CameraController>().UpdateTarget(currentUnit.gameObject);
             spellCasting = new SpellCasting(this);
             spellCasting.UpdateSpellBook(ref currentUnit.spellBook);
+        }
+
+        private void Start()
+        {
+            currentUnit.playerControl = true;
+            currentUnit.GetComponent<UnitMovement>().StopMovement();
         }
 
         private void Update()
@@ -61,6 +68,7 @@ namespace Prototype
         public ASpell InstantiateSpell(ref ASpell spell)
         {
             ASpell tmp = Instantiate(spell);
+            tmp.Init("PlayerTeam");
             return (tmp);
         }
 
