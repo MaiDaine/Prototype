@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4428271969388586694}
   - component: {fileID: 1412308527310096818}
   - component: {fileID: 3275222551669464349}
+  - component: {fileID: 6020842644446398848}
   m_Layer: 10
   m_Name: Test_Unit_1
   m_TagString: Untagged
@@ -96,8 +97,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 0
-  m_Radius: 1
-  m_Height: 1
+  m_Radius: 0.7
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &8070333151286185748
@@ -192,6 +193,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentStats: {fileID: 0}
   brain: {fileID: 11400000, guid: 34b8f355bead27e4d9db0245015eef94, type: 2}
+--- !u!65 &6020842644446398848
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8070333151286185744}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &8070333151855475845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -199,6 +213,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8070333151286185752}
     m_Modifications:
+    - target: {fileID: 7442856465222180421, guid: a83d012546f404e4899d37b52baa0047,
+        type: 3}
+      propertyPath: unit
+      value: 
+      objectReference: {fileID: 3275222551669464349}
     - target: {fileID: 5580943274639918301, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -319,17 +338,12 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 7442856465222180421, guid: a83d012546f404e4899d37b52baa0047,
-        type: 3}
-      propertyPath: unit
-      value: 
-      objectReference: {fileID: 3275222551669464349}
-    - target: {fileID: 5198348063646371301, guid: a83d012546f404e4899d37b52baa0047,
+    - target: {fileID: 5238650693985851491, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 5238650693985851491, guid: a83d012546f404e4899d37b52baa0047,
+    - target: {fileID: 5198348063646371301, guid: a83d012546f404e4899d37b52baa0047,
         type: 3}
       propertyPath: m_Layer
       value: 10

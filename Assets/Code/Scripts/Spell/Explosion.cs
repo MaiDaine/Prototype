@@ -34,11 +34,10 @@ namespace Prototype
         public override void Effect()
         {
             base.Effect();
-
-            Ray ray = new Ray(spellVisual.transform.position, spellVisual.transform.position + new Vector3(0, 1f, 0));
-            RaycastHit[] hits = Physics.SphereCastAll(ray, 30f);
+            Ray ray = new Ray(spellVisual.transform.position, spellVisual.transform.position + new Vector3(0, 0.1f, 0));
+            RaycastHit[] hits = Physics.SphereCastAll(ray, 5.0f);
             foreach (RaycastHit hit in hits)
-                if (hit.collider.GetComponent<Unit>() && hit.collider.tag != this.tag)
+                if (!hit.collider.isTrigger && hit.collider.GetComponent<Unit>() && hit.collider.tag != this.tag)
                     Debug.Log(hit.collider.GetComponent<Unit>().name);
         }
 
