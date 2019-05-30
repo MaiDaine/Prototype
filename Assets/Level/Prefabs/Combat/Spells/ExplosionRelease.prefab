@@ -46,7 +46,9 @@ MonoBehaviour:
   launchOnRelease: 1
   delayToEffect: 1.5
   delayToAfterEffect: 0.5
+  cooldown: 5
   spellIndicatorRef: {fileID: 2110963215477219469, guid: b16ef5e3afa144543afdc1080c62f901,
     type: 3}
   visualEffectRef: {fileID: 5016736576995739016, guid: 4804624a4589ee74493c45d7b21d474c,
     type: 3}
+  spellDamage: 30

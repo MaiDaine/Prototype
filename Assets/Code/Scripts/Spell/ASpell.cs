@@ -5,6 +5,7 @@ public abstract class ASpell : MonoBehaviour
     public bool launchOnRelease = false;
     public float delayToEffect = 0f;
     public float delayToAfterEffect = 0f;
+    public float cooldown = 0f;
 
     public virtual bool Init(string tag)
     {

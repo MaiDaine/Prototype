@@ -8,13 +8,15 @@ namespace Prototype
         public UnitStats unitStats;
         public ControllableUnitBrain brain;
         public bool playerControl = false;
-        public ASpell[] spellBook = new ASpell[4];
+        public SpellSlot[] spellBook;
 
         private void Awake()
         {
             currentStats = ScriptableObject.CreateInstance("UnitStats") as UnitStats;
             currentStats.Assign(unitStats);
             GetComponent<UnitMovement>().Initialize(unitStats);
+            for (int i = 0; i < spellBook.Length; i++)
+                    spellBook[i].spellCooldown = 0f;
         }
 
         public void Initialize(PlayerController playerController)
@@ -31,12 +33,19 @@ namespace Prototype
                 brain.Think();
                 this.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 1f, transform.eulerAngles.z);
             }
+            UpdateSpellCooldowns();
         }
 
         public void ChangeOrder(OrderType order)
         {
             //Animation
             brain.ChangeOrder(order);
+        }
+
+        private void UpdateSpellCooldowns()
+        {
+            for (int i = 0; i < spellBook.Length; i++)
+                spellBook[i].spellCooldown -= Time.deltaTime;
         }
     }
 }

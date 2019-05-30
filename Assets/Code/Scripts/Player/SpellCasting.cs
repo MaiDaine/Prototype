@@ -7,14 +7,13 @@ namespace Prototype
         public bool casting = false;
 
         private PlayerController player;
-        private ASpell[] currentSpellBook;
-        private bool[] spellLocked = new bool[4];
+        private SpellSlot[] currentSpellBook;
         private int currentSpellIndex = -1;
         private ASpell currentSpell = null;
 
         public SpellCasting(PlayerController player) { this.player = player; }
 
-        public void UpdateSpellBook(ref ASpell[] spellBook)
+        public void UpdateSpellBook(ref SpellSlot[] spellBook)
         {
             currentSpellBook = spellBook;
             CancelCast();
@@ -23,10 +22,7 @@ namespace Prototype
         public void SpellPressed(int index)
         {
             if (!casting)
-            {
-                if (!spellLocked[index])
-                    StartCasting(index);
-            }
+                StartCasting(index);
             else
             {
                 if (currentSpellIndex != index)
@@ -43,7 +39,6 @@ namespace Prototype
         {
             if (currentSpell == null)
                 return;
-            spellLocked[index] = false;
             if (currentSpell.launchOnRelease)
                 LaunchSpell();
         }
@@ -53,7 +48,6 @@ namespace Prototype
             if (currentSpell != null)
             {
                 currentSpell.Cancel();
-                spellLocked[currentSpellIndex] = false;
                 currentSpellIndex = -1;
             }
             currentSpell = null;
@@ -67,9 +61,10 @@ namespace Prototype
 
         private void StartCasting(int index)
         {
-            currentSpell = player.InstantiateSpell(ref currentSpellBook[index]);
+            if (currentSpellBook[index].spellCooldown > 0f)
+                return;
+            currentSpell = player.InstantiateSpell(ref currentSpellBook[index].spellRef);
             casting = true;
-            spellLocked[index] = true;
             if (player.useJoyStick)
                 player.ResetJoystickCursor();
             currentSpellIndex = index;
@@ -78,9 +73,9 @@ namespace Prototype
         private void LaunchSpell()
         {
             currentSpell.Launch();
+            currentSpellBook[currentSpellIndex].spellCooldown = currentSpell.cooldown;
             currentSpell = null;
             casting = false;
-            spellLocked[currentSpellIndex] = false;
             currentSpellIndex = -1;
         }
     }

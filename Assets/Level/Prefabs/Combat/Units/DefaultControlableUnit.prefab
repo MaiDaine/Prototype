@@ -212,10 +212,18 @@ MonoBehaviour:
   brain: {fileID: 11400000, guid: 063c8dec9c16cf54aa359686f3ee6b36, type: 2}
   playerControl: 0
   spellBook:
-  - {fileID: 5700147567599365781, guid: 7014be4f10583404991a7cc6867fc10c, type: 3}
-  - {fileID: 5636017456635741902, guid: 3db06451de0c4b14cbb4b93e0db97bea, type: 3}
-  - {fileID: 5700147567599365781, guid: 7014be4f10583404991a7cc6867fc10c, type: 3}
-  - {fileID: 5636017456635741902, guid: 3db06451de0c4b14cbb4b93e0db97bea, type: 3}
+  - spellRef: {fileID: 5700147567599365781, guid: 7014be4f10583404991a7cc6867fc10c,
+      type: 3}
+    spellCooldown: 0
+  - spellRef: {fileID: 5636017456635741902, guid: 3db06451de0c4b14cbb4b93e0db97bea,
+      type: 3}
+    spellCooldown: 0
+  - spellRef: {fileID: 5700147567599365781, guid: 7014be4f10583404991a7cc6867fc10c,
+      type: 3}
+    spellCooldown: 0
+  - spellRef: {fileID: 5636017456635741902, guid: 3db06451de0c4b14cbb4b93e0db97bea,
+      type: 3}
+    spellCooldown: 0
 --- !u!114 &4741766242837998555
 MonoBehaviour:
   m_ObjectHideFlags: 0
