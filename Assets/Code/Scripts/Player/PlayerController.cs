@@ -51,7 +51,7 @@ namespace Prototype
 
             if (useJoyStick)
             {
-                if (spellCasting.casting)
+                if (spellCasting.casting && spellCasting.useCursor)
                     joystickController.RotateTowardCursor(ref joystickCursor, ref currentUnit);
                 else
                     joystickController.StickRotate(ref currentUnit);
@@ -68,7 +68,9 @@ namespace Prototype
         public ASpell InstantiateSpell(ref ASpell spell)
         {
             ASpell tmp = Instantiate(spell);
-            tmp.Init("PlayerTeam");
+            Unit unit = (Unit)currentUnit;
+
+            tmp.Init("PlayerTeam", ref unit);
             return (tmp);
         }
 

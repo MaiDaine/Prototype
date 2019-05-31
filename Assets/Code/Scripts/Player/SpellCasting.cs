@@ -5,6 +5,7 @@ namespace Prototype
     public class SpellCasting
     {
         public bool casting = false;
+        public bool useCursor = false;
 
         private PlayerController player;
         private SpellSlot[] currentSpellBook;
@@ -65,6 +66,7 @@ namespace Prototype
                 return;
             currentSpell = player.InstantiateSpell(ref currentSpellBook[index].spellRef);
             casting = true;
+            useCursor = currentSpell.useCursor;
             if (player.useJoyStick)
                 player.ResetJoystickCursor();
             currentSpellIndex = index;

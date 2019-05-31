@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   launchOnRelease: 1
+  useCursor: 1
   delayToEffect: 1.5
   delayToAfterEffect: 0.5
   cooldown: 5

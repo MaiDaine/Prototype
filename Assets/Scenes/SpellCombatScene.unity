@@ -702,9 +702,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   units:
   - {fileID: 1135275971868968234, guid: 3562d815e0d00d34ebf3baefab999b82, type: 3}
-  - {fileID: 1135275971868968234, guid: 3562d815e0d00d34ebf3baefab999b82, type: 3}
-  - {fileID: 1135275971868968234, guid: 3562d815e0d00d34ebf3baefab999b82, type: 3}
-  - {fileID: 1135275971868968234, guid: 3562d815e0d00d34ebf3baefab999b82, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   spawnPoints:
   - {x: 0, y: 2, z: 5}
   - {x: -5, y: 2, z: 0}

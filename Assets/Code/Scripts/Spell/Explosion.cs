@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Prototype
 {
@@ -14,13 +13,12 @@ namespace Prototype
 
         private void Awake()
         {
-            //launchOnRelease = true;
             spellIndicator = Instantiate(spellIndicatorRef);
         }
 
         public override void Placement(Vector3 position)
         {
-            base.Placement(position);
+            //base.Placement(position);
             spellIndicator.transform.position = new Vector3(position.x, 0.5f, position.z);
         }
 
@@ -45,7 +43,7 @@ namespace Prototype
 
         public override void AfterEffect()
         {
-            base.AfterEffect();
+            //base.AfterEffect();
             Destroy(spellVisual);
             Destroy(gameObject);
         }
@@ -57,7 +55,7 @@ namespace Prototype
             if (spellVisual != null)
                 Destroy(spellVisual);
             Destroy(gameObject);
-            base.Cancel();
+            //base.Cancel();
         }
     }
 }
