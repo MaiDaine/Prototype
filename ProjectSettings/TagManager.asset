@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerTeam
   - EnemyTeam
+  - Arena
   layers:
   - Default
   - TransparentFX
