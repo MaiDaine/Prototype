@@ -18,13 +18,12 @@ namespace Prototype
         {
             this.unit = unit;
             this.enemyHero = enemyHero;
-            enemyUnits = new List<Unit>();
-            allyUnits = new List<Unit>();
             unitAttack = unit.GetComponent<UnitAttack>();
         }
 
         public virtual void UnitInRange(Unit other)
         {
+            //TODO should change targets
             if (other.tag == unit.tag)
                 allyUnits.Add(other);
             else

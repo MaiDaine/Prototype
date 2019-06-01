@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Test_Unit_1_Card
   m_EditorClassIdentifier: 
   unitStats: {fileID: 11400000, guid: a0068a95248d74d46923ab0f06951c80, type: 2}
-  unit: {fileID: 8070333151286185751, guid: b9669d82431ed2e40a993c98c9fc9c65, type: 3}
+  unit: {fileID: 3275222551669464349, guid: b9669d82431ed2e40a993c98c9fc9c65, type: 3}

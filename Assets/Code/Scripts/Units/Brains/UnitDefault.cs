@@ -15,7 +15,7 @@ namespace Prototype
         {
             if ((currentTarget == null || !currentTarget.isActiveAndEnabled) && !SelectTarget(unit))
                 return;
-            if (Vector3.Distance(unit.transform.position, currentTarget.transform.position) <= unit.currentStats.atkRange)
+            if (Vector3.Distance(unit.transform.position, currentTarget.transform.position) <= unit.currentStats.atkRange)//TODO CAPSULE
             {
                 if (unitAttack.atkReload <= 0f && unitAttack.Attack(currentTarget))
                 {
@@ -26,7 +26,6 @@ namespace Prototype
             }
             else
                 unit.GetComponent<UnitMovement>().SetAgentDestination(currentTarget.transform.position);
-
         }
 
         private bool SelectTarget(Unit unit)
@@ -36,8 +35,16 @@ namespace Prototype
                     enemyUnits.RemoveAt(i);
             if (enemyUnits.Count == 0)
             {
-                currentTarget = null;
-                return false;
+                Unit tmp = EncounterController.instance.activeHero;
+
+                if (tmp == null || !tmp.isActiveAndEnabled)
+                {
+                    currentTarget = null;
+                    return false;
+                }
+                enemyUnits.Add(tmp);
+                currentTarget = enemyUnits[0];
+                return true;
             }
             enemyUnits.Sort(unit.SortByDistance);
             currentTarget = enemyUnits[0];

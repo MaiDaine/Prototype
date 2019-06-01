@@ -1,21 +1,20 @@
-﻿using UnityEngine.UI;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Prototype
 {
     public class UnitHealth : MonoBehaviour
     {
         public GameEvent onDeath;
+        public HealthBarHandler healthBar;
         [HideInInspector]
         public bool alive = false;
-        public HealthBarHandler healthBar;
 
         private Unit unit;
         private float currentHealth;
 
         public void Initialize(Unit unit)
         {
-            healthBar.Initialize();
+            healthBar.Initialize(unit);
             alive = true;
             currentHealth = unit.currentStats.health;
             this.unit = unit;

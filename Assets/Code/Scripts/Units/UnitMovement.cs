@@ -8,11 +8,11 @@ namespace Prototype
     {
         private NavMeshAgent agent;
 
-        public void Initialize(Unit unit)
+        public void Initialize(UnitStats unitStats)
         {
             agent = GetComponent<NavMeshAgent>();
-            agent.speed = unit.currentStats.moveSpeed;
-            agent.stoppingDistance = unit.currentStats.atkRange;
+            agent.speed = unitStats.moveSpeed;
+            agent.stoppingDistance = unitStats.atkRange;
             agent.enabled = true;
         }
 
@@ -20,13 +20,24 @@ namespace Prototype
         {
             agent.velocity = Vector3.zero;
             agent.isStopped = true;
+            agent.updatePosition = false;
             //Idle Animation
+        }
+
+        public void ResumeMovement()
+        {
+            agent.Warp(gameObject.transform.position);
+            agent.isStopped = false;
+            agent.updatePosition = true;
         }
 
         public void SetAgentDestination(Vector3 destination)
         {
             agent.SetDestination(destination);
+            //TMP
             agent.isStopped = false;
+            agent.updatePosition = true;
+
             //Move Animation
         }
     }
