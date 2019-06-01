@@ -5,13 +5,11 @@ namespace Prototype
     public class Bullet : ASpell
     {
         public GameObject spellIndicatorRef;
-        public Projectile visualEffectRef;
-        public int projectileNumber;
-        public float projectileDamage;
-        public float spellDistance;
+        public Projectile projectileRef;
+        public float spellRange;
 
         private GameObject spellIndicator = null;
-        private Projectile spellVisual = null;
+        private Projectile projectile = null;
         private Unit unit;
 
         private void Awake()
@@ -28,7 +26,7 @@ namespace Prototype
 
         public override void Placement(Vector3 position)
         {
-            Vector3 tmp = unit.transform.position + spellDistance * unit.transform.forward;
+            Vector3 tmp = unit.transform.position + spellRange * unit.transform.forward;
             tmp.y = 0.5f;
             spellIndicator.transform.position = tmp;
 
@@ -43,10 +41,10 @@ namespace Prototype
         public override void Launch()
         {
             base.Launch();
-            spellVisual = Instantiate(visualEffectRef);
-            spellVisual.transform.position = unit.transform.position;
-            spellVisual.transform.position = new Vector3(spellVisual.transform.position.x, 1f, spellVisual.transform.position.z);
-            spellVisual.Initialize(unit.transform.forward, unit.tag);
+            projectile = Instantiate(projectileRef);
+            projectile.transform.position = unit.transform.position;
+            projectile.transform.position = new Vector3(projectile.transform.position.x, 1f, projectile.transform.position.z);
+            projectile.Initialize(unit.transform.forward, unit.tag);
             Destroy(spellIndicator);
         }
 
@@ -56,7 +54,7 @@ namespace Prototype
             //base.Effect();
         }
 
-        public override void AfterEffect()
+        public override void Clean()
         {
             //base.AfterEffect();
         }
@@ -65,8 +63,8 @@ namespace Prototype
         {
             if (spellIndicator != null)
                 Destroy(spellIndicator);
-            if (spellVisual != null)
-                Destroy(spellVisual);
+            if (projectile != null)
+                Destroy(projectile);
             Destroy(gameObject);
             //base.Cancel();
         }

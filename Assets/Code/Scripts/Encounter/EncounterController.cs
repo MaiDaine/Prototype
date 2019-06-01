@@ -4,8 +4,11 @@ namespace Prototype
 {
     public class EncounterController : MonoBehaviour
     {
-        public Transform[] spawnPoints;
+        public static EncounterController instance;
+
         public EncounterEvent encounterEventRef;
+        public Transform[] spawnPoints;
+        public Unit activeHero;
         public UnitSet playerUnits;
         public UnitSet enemyUnits;
 
@@ -15,9 +18,15 @@ namespace Prototype
 
         private void Awake()
         {
-            spawnPointCount = spawnPoints.Length;
-            encounterEvent = ScriptableObject.CreateInstance(encounterEventRef.name) as EncounterEvent;
-            encounterEvent.Init(this, encounterEventRef.units);
+            if (instance == null)
+            {
+                instance = this;
+                spawnPointCount = spawnPoints.Length;
+                encounterEvent = ScriptableObject.CreateInstance(encounterEventRef.name) as EncounterEvent;
+                encounterEvent.Init(this, encounterEventRef.units);
+            }
+            else
+                Destroy(this);
         }
 
         private void Start()

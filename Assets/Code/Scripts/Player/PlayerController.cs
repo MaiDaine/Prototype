@@ -8,7 +8,7 @@ namespace Prototype
         public Vector3[] spawnPoints;
         public ControllableUnit currentUnit = null;
         public bool useJoyStick = false;
-        public UnitSet playerUnits;//Tmp
+        public UnitSet playerUnits;
 
         private KeyboardController keyboardController;
         private JoystickController joystickController;
@@ -26,21 +26,17 @@ namespace Prototype
             for (int i = 0; i < units.Length && units[i] != null; i++)
             {
                 units[i] = Instantiate(units[i]);
+                units[i].gameObject.SetActive(false);
                 units[i].Initialize(this);
-                units[i].transform.position = spawnPoints[i];
-                playerUnits.Add(units[i]);
             }
             currentUnit = units[0];
+            currentUnit.transform.position = spawnPoints[0];
+            currentUnit.gameObject.SetActive(true);
+            playerUnits.Add(currentUnit);
 
             GetComponent<CameraController>().UpdateTarget(currentUnit.gameObject);
             spellCasting = new SpellCasting(this);
             spellCasting.UpdateSpellBook(ref currentUnit.spellBook);
-        }
-
-        private void Start()
-        {
-            currentUnit.playerControl = true;
-            currentUnit.GetComponent<UnitMovement>().StopMovement();
         }
 
         private void Update()
@@ -104,19 +100,19 @@ namespace Prototype
             else
                 return;
 
-
-            //Todo transition
             if (units[index] != null && currentUnit != units[index])
             {
-                if (currentUnit != null)
-                {
-                    currentUnit.GetComponent<UnitMovement>().ResumeMovement();
-                    currentUnit.playerControl = false;
-                }
+                units[index].gameObject.SetActive(true);
+                units[index].transform.position = currentUnit.transform.position;
+                units[index].transform.rotation = currentUnit.transform.rotation;
+                playerUnits.items[0] = units[index];
+                currentUnit.gameObject.SetActive(false);
                 currentUnit = units[index];
+                //Animation
+
+                EncounterController.instance.activeHero = currentUnit;
                 GetComponent<CameraController>().UpdateTarget(currentUnit.gameObject);
-                currentUnit.playerControl = true;
-                currentUnit.GetComponent<UnitMovement>().StopMovement();
+                
                 spellCasting.CancelCast();
                 spellCasting.UpdateSpellBook(ref currentUnit.spellBook);
             }

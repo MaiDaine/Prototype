@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: bd2d742ee2ce7a740ae0cf992a38be74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4741766242837998555}
   - component: {fileID: 2089460213374600795}
   m_Layer: 10
-  m_Name: DefaultControlableUnit
+  m_Name: DefaultControlableUnit 1
   m_TagString: PlayerTeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +142,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6cfe423139c361a459da7ed9831d4b1c, type: 2}
+  - {fileID: 2100000, guid: bd2d742ee2ce7a740ae0cf992a38be74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -212,10 +212,10 @@ MonoBehaviour:
   spellBook:
   - spellRef: {fileID: 5045854893108240420, guid: ef84cd97f4237604dbdf5b853ec71880,
       type: 3}
-    spellCooldown: 0
+    spellCooldown: 5
   - spellRef: {fileID: 5045854893108240420, guid: 4c70bcb2f31c18e43bc02ed45eea17d7,
       type: 3}
-    spellCooldown: 0
+    spellCooldown: 5
   - spellRef: {fileID: 5700147567599365781, guid: 7014be4f10583404991a7cc6867fc10c,
       type: 3}
     spellCooldown: 0

@@ -32,6 +32,8 @@ namespace Prototype
 
         protected virtual void Effect()
         {
+            if (!alive)
+                return;
             Ray ray = new Ray(this.transform.position, this.transform.up);
             RaycastHit[] hits = Physics.SphereCastAll(ray, explosionRadius);
             foreach (RaycastHit hit in hits)

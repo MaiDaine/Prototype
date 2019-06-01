@@ -41,7 +41,7 @@ namespace Prototype
                     tmp.GetComponent<UnitHealth>().TakeDamage(spellDamage);
         }
 
-        public override void AfterEffect()
+        public override void Clean()
         {
             //base.AfterEffect();
             Destroy(spellVisual);

@@ -46,12 +46,10 @@ MonoBehaviour:
   launchOnRelease: 0
   useCursor: 0
   delayToEffect: 0
-  delayToAfterEffect: 0
+  delayToClean: 0
   cooldown: 0
   spellIndicatorRef: {fileID: 2110963215477219469, guid: 366aaa4c38cea4542baa8391b606482a,
     type: 3}
-  visualEffectRef: {fileID: -1754287202760949812, guid: 07205186ea74f504a9bd7be48903ad7e,
+  projectileRef: {fileID: -1754287202760949812, guid: 07205186ea74f504a9bd7be48903ad7e,
     type: 3}
-  projectileNumber: 1
-  projectileDamage: 15
-  spellDistance: 13
+  spellRange: 12

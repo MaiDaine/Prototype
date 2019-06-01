@@ -7,7 +7,7 @@ namespace Prototype
         public bool launchOnRelease = false;
         public bool useCursor = false;
         public float delayToEffect = 0f;
-        public float delayToAfterEffect = 0f;
+        public float delayToClean = 0f;
         public float cooldown = 0f;
 
         public virtual bool Init(string tag, ref Unit unit)
@@ -27,11 +27,11 @@ namespace Prototype
 
         public virtual void Effect()
         {
-            if (delayToAfterEffect >= 0f)
-                Invoke("AfterEffect", delayToAfterEffect);
+            if (delayToClean >= 0f)
+                Invoke("Clean", delayToClean);
         }
 
-        public virtual void AfterEffect() { }
+        public virtual void Clean() { }
 
         public virtual void Cancel() { }
     }

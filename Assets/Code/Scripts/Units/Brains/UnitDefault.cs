@@ -35,8 +35,16 @@ namespace Prototype
                     enemyUnits.RemoveAt(i);
             if (enemyUnits.Count == 0)
             {
-                currentTarget = null;
-                return false;
+                Unit tmp = EncounterController.instance.activeHero;
+
+                if (tmp == null || !tmp.isActiveAndEnabled)
+                {
+                    currentTarget = null;
+                    return false;
+                }
+                enemyUnits.Add(tmp);
+                currentTarget = enemyUnits[0];
+                return true;
             }
             enemyUnits.Sort(unit.SortByDistance);
             currentTarget = enemyUnits[0];

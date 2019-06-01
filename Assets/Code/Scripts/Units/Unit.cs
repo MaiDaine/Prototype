@@ -3,7 +3,6 @@
 namespace Prototype
 {
     [RequireComponent(typeof(UnitHealth))]
-    [RequireComponent(typeof(UnitMovement))]
     [RequireComponent(typeof(UnitAttack))]
     public class Unit : MonoBehaviour
     {
@@ -20,7 +19,6 @@ namespace Prototype
             unitHealth = GetComponent<UnitHealth>();
             this.tag = tag;
             GetComponent<UnitHealth>().Initialize(this);
-            GetComponent<UnitMovement>().Initialize(currentStats);
             GetComponent<UnitAttack>().Initialize(this);
         }
 
