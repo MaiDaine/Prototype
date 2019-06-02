@@ -12,12 +12,12 @@ namespace Prototype
         private Projectile projectile = null;
         private GameObject unit;
 
-        public override bool Init(string tag, GameObject unit)
+        public override void Init(string tag, GameObject unit)
         {
             this.unit = unit;
             spellIndicator = Instantiate(spellIndicatorRef);
             spellIndicator.transform.position = new Vector3(spellIndicator.transform.position.x, 0.5f, spellIndicator.transform.position.z);
-            return base.Init(tag, unit);
+            base.Init(tag, unit);
         }
 
         public override void Placement(Vector3 position)
