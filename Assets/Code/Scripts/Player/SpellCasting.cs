@@ -22,6 +22,8 @@ namespace Prototype
 
         public void SpellPressed(int index)
         {
+            if (currentSpellBook[index].spellRef == null)
+                return;
             if (!casting)
                 StartCasting(index);
             else
@@ -40,7 +42,7 @@ namespace Prototype
         {
             if (currentSpell == null)
                 return;
-            if (currentSpell.smartCast)
+            if (currentSpell.castType == ASpell.CastType.SmartCast)
                 LaunchSpell();
         }
 
@@ -70,7 +72,7 @@ namespace Prototype
             if (player.useJoyStick)
                 player.ResetJoystickCursor();
             currentSpellIndex = index;
-            if (currentSpell.quickCast)
+            if (currentSpell.castType == ASpell.CastType.QuickCast)
                 LaunchSpell();
         }
 

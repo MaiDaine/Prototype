@@ -4,8 +4,8 @@ namespace Prototype
 {
     public abstract class ASpell : MonoBehaviour
     {
-        public bool quickCast = false;
-        public bool smartCast = false;
+        public enum CastType { Default, Channel, SmartCast, QuickCast};
+        public CastType castType = CastType.Default;
         public bool useCursor = false;
         public float delayToEffect = 0f;
         public float delayToClean = 0f;
