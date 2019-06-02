@@ -26,7 +26,8 @@ namespace Prototype
                 if (timer <= 0f)
                 {
                     Bullet tmp = (Bullet)Instantiate(spell);
-                    tmp.FromLauncher(tag, transform.position, transform.right);
+                    tmp.CreateProjectile(tag, transform.position, transform.right);
+                    tmp.Effect();
                     timer = tick;
                 }
             }

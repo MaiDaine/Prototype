@@ -14,7 +14,7 @@ namespace Prototype
             this.unit = unit;
         }
 
-        public override void Launch()
+        public override void Launch(float _)
         {
             Effect();
         }

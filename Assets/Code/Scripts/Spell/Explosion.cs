@@ -22,9 +22,9 @@ namespace Prototype
             spellIndicator.transform.position = new Vector3(position.x, 0.5f, position.z);
         }
 
-        public override void Launch()
+        public override void Launch(float castTime)
         {
-            base.Launch();
+            base.Launch(castTime);
             spellVisual = Instantiate(visualEffectRef);
             spellVisual.transform.position = spellIndicator.transform.position;
             Destroy(spellIndicator);

@@ -19,7 +19,7 @@ namespace Prototype
 
         public virtual void Placement(Vector3 position) { }
 
-        public virtual void Launch()
+        public virtual void Launch(float castTime)
         {
             Cursor.visible = true;
             Invoke("Effect", delayToEffect);
