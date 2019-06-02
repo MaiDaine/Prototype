@@ -7,6 +7,7 @@ namespace Prototype
         public enum OrderType { None, Def, Atk, Reg };//Items will replace order later
         public UnitStats unitStats;
         public SpellSlot[] spellBook;
+        public bool canMove = true;
 
         private void Awake()
         {

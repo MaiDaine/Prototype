@@ -210,13 +210,12 @@ MonoBehaviour:
   - spellRef: {fileID: 5045854893108240420, guid: ef84cd97f4237604dbdf5b853ec71880,
       type: 3}
     spellCooldown: 0
-  - spellRef: {fileID: 5045854893108240420, guid: 4c70bcb2f31c18e43bc02ed45eea17d7,
+  - spellRef: {fileID: 0}
+    spellCooldown: 0
+  - spellRef: {fileID: 7401326454909203102, guid: 1221a737c64683940ad1a9703153f5ec,
       type: 3}
     spellCooldown: 0
   - spellRef: {fileID: 5700147567599365781, guid: 7014be4f10583404991a7cc6867fc10c,
-      type: 3}
-    spellCooldown: 0
-  - spellRef: {fileID: 5636017456635741902, guid: 3db06451de0c4b14cbb4b93e0db97bea,
       type: 3}
     spellCooldown: 0
 --- !u!114 &4741766242837998555

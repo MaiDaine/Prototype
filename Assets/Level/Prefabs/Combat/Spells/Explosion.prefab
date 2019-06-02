@@ -43,10 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660775358460c3d47b62ac0f0e519778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchOnRelease: 0
+  castType: 2
+  quickCast: 0
+  smartCast: 1
+  channel: 0
   useCursor: 1
   delayToEffect: 1.5
-  delayToAfterEffect: 0.5
+  delayToClean: 0
   cooldown: 5
   spellIndicatorRef: {fileID: 2110963215477219469, guid: b16ef5e3afa144543afdc1080c62f901,
     type: 3}

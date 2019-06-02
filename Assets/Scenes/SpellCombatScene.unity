@@ -183,22 +183,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
-    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: gameEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
-        type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -253,6 +237,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
+        type: 2}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
       objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
@@ -338,22 +338,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1346668643}
     m_Modifications:
-    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: gameEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 3174c0ffbd77dd447a94fcdf8b5da3c7,
-        type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -408,6 +392,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 3174c0ffbd77dd447a94fcdf8b5da3c7,
+        type: 2}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
       objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
@@ -621,6 +621,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.z
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143869347917398317, guid: fae3b21abe8326a43ab7f0a84b0022f1,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143869347917398317, guid: fae3b21abe8326a43ab7f0a84b0022f1,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fae3b21abe8326a43ab7f0a84b0022f1, type: 3}
@@ -1153,6 +1163,16 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 5143869347917398317, guid: fae3b21abe8326a43ab7f0a84b0022f1,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143869347917398317, guid: fae3b21abe8326a43ab7f0a84b0022f1,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fae3b21abe8326a43ab7f0a84b0022f1, type: 3}
 --- !u!4 &889909506 stripped
@@ -1168,22 +1188,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1346668643}
     m_Modifications:
-    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: gameEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 3174c0ffbd77dd447a94fcdf8b5da3c7,
-        type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1239,6 +1243,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 3174c0ffbd77dd447a94fcdf8b5da3c7,
+        type: 2}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
+      objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: triggerEvent
@@ -1259,11 +1279,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1555064069}
     m_Modifications:
-    - target: {fileID: 3443670147997261678, guid: 8e25298f7030c70408a5a39db05f278b,
-        type: 3}
-      propertyPath: m_Name
-      value: Pillar
-      objectReference: {fileID: 0}
     - target: {fileID: 3443670147997261677, guid: 8e25298f7030c70408a5a39db05f278b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1318,6 +1333,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443670147997261678, guid: 8e25298f7030c70408a5a39db05f278b,
+        type: 3}
+      propertyPath: m_Name
+      value: Pillar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e25298f7030c70408a5a39db05f278b, type: 3}
@@ -1467,26 +1487,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
-    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: gameEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
-        type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 47
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
@@ -1538,6 +1542,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
+        type: 2}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
+      objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: triggerEvent
@@ -1558,22 +1578,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1346668643}
     m_Modifications:
-    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: gameEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 3174c0ffbd77dd447a94fcdf8b5da3c7,
-        type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1628,6 +1632,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 3174c0ffbd77dd447a94fcdf8b5da3c7,
+        type: 2}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
       objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
@@ -1749,22 +1769,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
-    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: gameEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
-        type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1820,6 +1824,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
+        type: 2}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
+      objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: triggerEvent
@@ -1840,22 +1860,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
-    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: gameEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
-        type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1911,6 +1915,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
+        type: 2}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
+      objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: triggerEvent
@@ -1931,22 +1951,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1346668643}
     m_Modifications:
-    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: gameEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 3174c0ffbd77dd447a94fcdf8b5da3c7,
-        type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2002,6 +2006,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 3174c0ffbd77dd447a94fcdf8b5da3c7,
+        type: 2}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
+      objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: triggerEvent
@@ -2022,22 +2042,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
-    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: gameEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
-        type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2092,6 +2096,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
+        type: 2}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
       objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
@@ -2184,6 +2204,16 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 5143869347917398317, guid: fae3b21abe8326a43ab7f0a84b0022f1,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143869347917398317, guid: fae3b21abe8326a43ab7f0a84b0022f1,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fae3b21abe8326a43ab7f0a84b0022f1, type: 3}
 --- !u!4 &1926784572 stripped
@@ -2241,11 +2271,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1555064069}
     m_Modifications:
-    - target: {fileID: 3443670147997261678, guid: 8e25298f7030c70408a5a39db05f278b,
-        type: 3}
-      propertyPath: m_Name
-      value: Pillar
-      objectReference: {fileID: 0}
     - target: {fileID: 3443670147997261677, guid: 8e25298f7030c70408a5a39db05f278b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2300,6 +2325,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443670147997261678, guid: 8e25298f7030c70408a5a39db05f278b,
+        type: 3}
+      propertyPath: m_Name
+      value: Pillar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e25298f7030c70408a5a39db05f278b, type: 3}
@@ -2375,6 +2405,16 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 5143869347917398317, guid: fae3b21abe8326a43ab7f0a84b0022f1,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143869347917398317, guid: fae3b21abe8326a43ab7f0a84b0022f1,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fae3b21abe8326a43ab7f0a84b0022f1, type: 3}
 --- !u!1001 &6010421221778564966
@@ -2384,22 +2424,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
-    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: gameEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
-        type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2454,6 +2478,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4078372481303213250, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
+        type: 2}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
       objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}

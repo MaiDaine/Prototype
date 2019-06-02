@@ -120,6 +120,8 @@ namespace Prototype
         //Movement
         private void Move()
         {
+            if (!currentUnit.canMove)
+                return;
             float modifier = currentUnit.currentStats.moveSpeed * Time.deltaTime;
             currentUnit.transform.position += new Vector3(
                 Input.GetAxis("Horizontal") * modifier,

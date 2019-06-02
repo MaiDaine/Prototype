@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5045854893108240423}
-  - component: {fileID: 5045854893108240420}
+  - component: {fileID: 7401326454909203102}
   m_Layer: 11
-  m_Name: BulletRelease
+  m_Name: Blink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5045854893108240420
+--- !u!114 &7401326454909203102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,16 +40,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5045854893108240421}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d13cae41b4b101f48b5bb9af0fccf9f0, type: 3}
+  m_Script: {fileID: 11500000, guid: b7b142d78f2ed454d8028c45c0cd3f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchOnRelease: 1
+  castType: 3
+  quickCast: 1
+  smartCast: 0
+  channel: 0
   useCursor: 0
   delayToEffect: 0
   delayToClean: 0
-  cooldown: 0
-  spellIndicatorRef: {fileID: 2110963215477219469, guid: 366aaa4c38cea4542baa8391b606482a,
-    type: 3}
-  projectileRef: {fileID: -1754287202760949812, guid: 07205186ea74f504a9bd7be48903ad7e,
-    type: 3}
-  spellRange: 12
+  cooldown: 5
+  distance: 10

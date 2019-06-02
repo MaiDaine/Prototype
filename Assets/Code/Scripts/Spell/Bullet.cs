@@ -12,12 +12,15 @@ namespace Prototype
         private Projectile projectile = null;
         private GameObject unit;
 
-        public override bool Init(string tag, GameObject unit)
+        public override void Init(string tag, GameObject unit)
         {
             this.unit = unit;
             spellIndicator = Instantiate(spellIndicatorRef);
             spellIndicator.transform.position = new Vector3(spellIndicator.transform.position.x, 0.5f, spellIndicator.transform.position.z);
-            return base.Init(tag, unit);
+            ControllableUnit tmp = unit.GetComponent<ControllableUnit>();
+            if (tmp != null)
+                tmp.canMove = false;
+            base.Init(tag, unit);
         }
 
         public override void Placement(Vector3 position)
@@ -34,29 +37,48 @@ namespace Prototype
             //base.Placement(position);
         }
 
-        public override void Launch()
+        public override void Launch(float castTime)
         {
-            base.Launch();
-            projectile = Instantiate(projectileRef);
-            projectile.transform.position = unit.transform.position;
-            projectile.transform.position = new Vector3(projectile.transform.position.x, 1f, projectile.transform.position.z);
-            projectile.Initialize(unit.transform.forward, unit.tag);
-            Destroy(spellIndicator);
+            if (castTime > 0.5)
+            {
+                ChanneledLaunch();
+                return;
+            }
+            base.Launch(castTime);
+            CreateProjectile(this.tag, unit.transform.position, unit.transform.forward);
         }
 
-        //TMP
-        public void FromLauncher(string tag, Vector3 position, Vector3 direction)
+        private void ChanneledLaunch()
+        {
+            SpawnProjectile();
+            Invoke("SpawnProjectile", 0.1f);
+            Invoke("SpawnProjectile", 0.2f);
+            Invoke("Effect", 0.2f);
+        }
+
+        private void SpawnProjectile()
+        {
+            CreateProjectile(this.tag, unit.transform.position, unit.transform.forward);
+        }
+
+        public void CreateProjectile(string tag, Vector3 position, Vector3 direction)
         {
             projectile = Instantiate(projectileRef);
             projectile.tag = tag;
             projectile.transform.position = position;
             projectile.transform.position = new Vector3(projectile.transform.position.x, 1f, projectile.transform.position.z);
             projectile.Initialize(direction, tag);
-            Effect();
         }
 
         public override void Effect()
         {
+            if (unit != null)//tmp
+            {
+                ControllableUnit tmp = unit.GetComponent<ControllableUnit>();
+                if (tmp != null)
+                    tmp.canMove = true;
+            }
+            Destroy(spellIndicator);
             Destroy(gameObject);
             //base.Effect();
         }
@@ -68,6 +90,9 @@ namespace Prototype
 
         public override void Cancel()
         {
+            ControllableUnit tmp = unit.GetComponent<ControllableUnit>();
+            if (tmp != null)
+                tmp.canMove = true;
             if (spellIndicator != null)
                 Destroy(spellIndicator);
             if (projectile != null)

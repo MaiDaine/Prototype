@@ -11,6 +11,7 @@ namespace Prototype
         private SpellSlot[] currentSpellBook;
         private int currentSpellIndex = -1;
         private ASpell currentSpell = null;
+        private float castTime;
 
         public SpellCasting(PlayerController player) { this.player = player; }
 
@@ -22,6 +23,8 @@ namespace Prototype
 
         public void SpellPressed(int index)
         {
+            if (currentSpellBook[index].spellRef == null)
+                return;
             if (!casting)
                 StartCasting(index);
             else
@@ -40,7 +43,7 @@ namespace Prototype
         {
             if (currentSpell == null)
                 return;
-            if (currentSpell.launchOnRelease)
+            if (currentSpell.castType == ASpell.CastType.Channel || currentSpell.castType == ASpell.CastType.SmartCast)
                 LaunchSpell();
         }
 
@@ -57,6 +60,7 @@ namespace Prototype
 
         public void CastUpdate(Vector3 position)
         {
+            castTime += Time.deltaTime;
             currentSpell.Placement(position);
         }
 
@@ -64,17 +68,20 @@ namespace Prototype
         {
             if (currentSpellBook[index].spellCooldown > 0f)
                 return;
+            castTime = 0f;
             currentSpell = player.InstantiateSpell(ref currentSpellBook[index].spellRef);
             casting = true;
             useCursor = currentSpell.useCursor;
             if (player.useJoyStick)
                 player.ResetJoystickCursor();
             currentSpellIndex = index;
+            if (currentSpell.castType == ASpell.CastType.QuickCast)
+                LaunchSpell();
         }
 
         private void LaunchSpell()
         {
-            currentSpell.Launch();
+            currentSpell.Launch(castTime);
             currentSpellBook[currentSpellIndex].spellCooldown = currentSpell.cooldown;
             currentSpell = null;
             casting = false;
