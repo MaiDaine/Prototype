@@ -64,9 +64,8 @@ namespace Prototype
         public ASpell InstantiateSpell(ref ASpell spell)
         {
             ASpell tmp = Instantiate(spell);
-            Unit unit = (Unit)currentUnit;
 
-            tmp.Init("PlayerTeam", ref unit);
+            tmp.Init("PlayerTeam", currentUnit.gameObject);
             return (tmp);
         }
 

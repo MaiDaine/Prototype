@@ -27,6 +27,8 @@ namespace Prototype
             for (int i = 0; i < currentPattern.groups.Length; i++)
                 AddToList(ref nextSpawn, currentPattern.groups[i] - 1, currentPhase.wavePoints / currentPattern.groups.Length, currentPattern.uniqueInGroup);
             phaseIndex++;
+            for (int i = 0; i < currentPhase.events.Length; i++)
+                currentPhase.events[i].Raise();
             return (phaseIndex == phases.Length);
         }
 

@@ -3,6 +3,7 @@
 namespace Prototype
 {
     [RequireComponent(typeof(UnitMovement))]
+    [RequireComponent(typeof(UnitAttack))]
     public class NonControllableUnit : Unit
     {
         public UnitBrain brain;
@@ -11,6 +12,7 @@ namespace Prototype
         {
             base.Initialize(stats, tag);
             GetComponent<UnitMovement>().Initialize(currentStats);
+            GetComponent<UnitAttack>().Initialize(this);
             brain = ScriptableObject.CreateInstance(brain.name) as UnitBrain;
             brain.Initialize(this, enemyHero);
         }

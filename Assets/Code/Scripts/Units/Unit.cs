@@ -3,7 +3,6 @@
 namespace Prototype
 {
     [RequireComponent(typeof(UnitHealth))]
-    [RequireComponent(typeof(UnitAttack))]
     public class Unit : MonoBehaviour
     {
 
@@ -19,7 +18,6 @@ namespace Prototype
             unitHealth = GetComponent<UnitHealth>();
             this.tag = tag;
             GetComponent<UnitHealth>().Initialize(this);
-            GetComponent<UnitAttack>().Initialize(this);
         }
 
         public int SortByDistance(Unit a, Unit b)

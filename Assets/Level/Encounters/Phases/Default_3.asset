@@ -15,4 +15,6 @@ MonoBehaviour:
   possibleWaves:
   - {fileID: 11400000, guid: 2ac4b5da72c990e418e562744f877fa8, type: 2}
   wavePoints: 20
-  events: []
+  events:
+  - {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569, type: 2}
+  - {fileID: 11400000, guid: 3174c0ffbd77dd447a94fcdf8b5da3c7, type: 2}
