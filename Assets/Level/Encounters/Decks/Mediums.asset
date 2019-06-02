@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee0786696645a2a4b8d1477baf025f8e, type: 3}
-  m_Name: DefaultEventDeck
+  m_Name: Mediums
   m_EditorClassIdentifier: 
   cardsNumber: 1
   cards:
-  - {fileID: 11400000, guid: 27c1f535128784d4ea03ac342ba5d071, type: 2}
+  - {fileID: 11400000, guid: e5c3459dd7198784da5d5a547720d687, type: 2}

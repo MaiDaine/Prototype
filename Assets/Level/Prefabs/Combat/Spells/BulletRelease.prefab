@@ -52,4 +52,4 @@ MonoBehaviour:
     type: 3}
   projectileRef: {fileID: -1754287202760949812, guid: 07205186ea74f504a9bd7be48903ad7e,
     type: 3}
-  spellRange: 0
+  spellRange: 12

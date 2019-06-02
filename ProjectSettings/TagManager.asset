@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerTeam
   - EnemyTeam
+  - Arena
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - PlayerSpawnArea
+  - Walls
   - Units
   - Spells
   - 

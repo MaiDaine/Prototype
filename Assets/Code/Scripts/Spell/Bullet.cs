@@ -10,18 +10,14 @@ namespace Prototype
 
         private GameObject spellIndicator = null;
         private Projectile projectile = null;
-        private Unit unit;
+        private GameObject unit;
 
-        private void Awake()
-        {
-            spellIndicator = Instantiate(spellIndicatorRef);
-            spellIndicator.transform.position = new Vector3(spellIndicator.transform.position.x, 0.5f, spellIndicator.transform.position.z);
-        }
-
-        public override bool Init(string tag, ref Unit unit)
+        public override bool Init(string tag, GameObject unit)
         {
             this.unit = unit;
-            return base.Init(tag, ref unit);
+            spellIndicator = Instantiate(spellIndicatorRef);
+            spellIndicator.transform.position = new Vector3(spellIndicator.transform.position.x, 0.5f, spellIndicator.transform.position.z);
+            return base.Init(tag, unit);
         }
 
         public override void Placement(Vector3 position)
@@ -46,6 +42,17 @@ namespace Prototype
             projectile.transform.position = new Vector3(projectile.transform.position.x, 1f, projectile.transform.position.z);
             projectile.Initialize(unit.transform.forward, unit.tag);
             Destroy(spellIndicator);
+        }
+
+        //TMP
+        public void FromLauncher(string tag, Vector3 position, Vector3 direction)
+        {
+            projectile = Instantiate(projectileRef);
+            projectile.tag = tag;
+            projectile.transform.position = position;
+            projectile.transform.position = new Vector3(projectile.transform.position.x, 1f, projectile.transform.position.z);
+            projectile.Initialize(direction, tag);
+            Effect();
         }
 
         public override void Effect()

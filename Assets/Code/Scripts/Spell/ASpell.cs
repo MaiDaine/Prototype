@@ -10,7 +10,7 @@ namespace Prototype
         public float delayToClean = 0f;
         public float cooldown = 0f;
 
-        public virtual bool Init(string tag, ref Unit unit)
+        public virtual bool Init(string tag, GameObject unit)
         {
             this.tag = tag;
             Cursor.visible = false;

@@ -2,7 +2,6 @@
 
 namespace Prototype
 {
-    [CreateAssetMenu(menuName = "Brains/Hero/HeroDefault")]
     public class HeroDefault : UnitBrain
     {
         public UnitSet targets;

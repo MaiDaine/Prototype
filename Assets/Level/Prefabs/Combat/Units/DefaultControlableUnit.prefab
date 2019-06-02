@@ -93,7 +93,6 @@ GameObject:
   - component: {fileID: 9028664326804103483}
   - component: {fileID: 1135275971868968234}
   - component: {fileID: 4741766242837998555}
-  - component: {fileID: 2089460213374600795}
   m_Layer: 10
   m_Name: DefaultControlableUnit
   m_TagString: PlayerTeam
@@ -207,8 +206,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentStats: {fileID: 0}
   unitStats: {fileID: 11400000, guid: b97fb74531312384099d4f1434453fbd, type: 2}
-  brain: {fileID: 11400000, guid: 063c8dec9c16cf54aa359686f3ee6b36, type: 2}
-  playerControl: 0
   spellBook:
   - spellRef: {fileID: 5045854893108240420, guid: ef84cd97f4237604dbdf5b853ec71880,
       type: 3}
@@ -237,19 +234,6 @@ MonoBehaviour:
   onDeath: {fileID: 11400000, guid: d8dafb6f04b7d1247bed8763b8c24373, type: 2}
   healthBar: {fileID: 2270673176591374868}
   alive: 0
---- !u!114 &2089460213374600795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9028664326804103481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdc2c937dacad94418d58fa5b6a2f943, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atkReload: 0
 --- !u!1001 &8703588619232019537
 PrefabInstance:
   m_ObjectHideFlags: 0

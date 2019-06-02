@@ -64,9 +64,8 @@ namespace Prototype
         public ASpell InstantiateSpell(ref ASpell spell)
         {
             ASpell tmp = Instantiate(spell);
-            Unit unit = (Unit)currentUnit;
 
-            tmp.Init("PlayerTeam", ref unit);
+            tmp.Init("PlayerTeam", currentUnit.gameObject);
             return (tmp);
         }
 
@@ -102,9 +101,9 @@ namespace Prototype
 
             if (units[index] != null && currentUnit != units[index])
             {
-                units[index].gameObject.SetActive(true);
                 units[index].transform.position = currentUnit.transform.position;
                 units[index].transform.rotation = currentUnit.transform.rotation;
+                units[index].gameObject.SetActive(true);
                 playerUnits.items[0] = units[index];
                 currentUnit.gameObject.SetActive(false);
                 currentUnit = units[index];

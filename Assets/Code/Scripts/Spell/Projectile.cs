@@ -23,11 +23,7 @@ namespace Prototype
             this.transform.position += direction;
             timer -= Time.deltaTime;
             if (timer < 0)
-            {
                 Effect();
-                if (alive)
-                    Destroy(this.gameObject);
-            }
         }
 
         protected virtual void Effect()
@@ -46,13 +42,14 @@ namespace Prototype
                     tmp.GetComponent<UnitHealth>().TakeDamage(explosionDamage);
                 }
             }
-            if (!alive)
-                Destroy(this.gameObject);
+            alive = false;
+            Destroy(this.gameObject);
         }
 
         protected virtual void OnTriggerEnter(Collider other)
         {
-            Effect();
+            if (other.tag != ownerTag)
+                Effect();
         }
     }
 }
