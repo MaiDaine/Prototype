@@ -43,8 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b142d78f2ed454d8028c45c0cd3f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchOnRelease: 0
+  quickCast: 1
+  smartCast: 0
   useCursor: 0
   delayToEffect: 0
   delayToClean: 0
   cooldown: 0
+  distance: 10

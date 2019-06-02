@@ -40,7 +40,7 @@ namespace Prototype
         {
             if (currentSpell == null)
                 return;
-            if (currentSpell.launchOnRelease)
+            if (currentSpell.smartCast)
                 LaunchSpell();
         }
 
@@ -70,6 +70,8 @@ namespace Prototype
             if (player.useJoyStick)
                 player.ResetJoystickCursor();
             currentSpellIndex = index;
+            if (currentSpell.quickCast)
+                LaunchSpell();
         }
 
         private void LaunchSpell()

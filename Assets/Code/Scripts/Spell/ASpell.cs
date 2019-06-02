@@ -4,7 +4,8 @@ namespace Prototype
 {
     public abstract class ASpell : MonoBehaviour
     {
-        public bool launchOnRelease = false;
+        public bool quickCast = false;
+        public bool smartCast = false;
         public bool useCursor = false;
         public float delayToEffect = 0f;
         public float delayToClean = 0f;
