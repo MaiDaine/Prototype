@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Prototype
 {
@@ -14,7 +15,9 @@ namespace Prototype
 
         private EncounterEvent encounterEvent;
         private int spawnPointCount;
-        private float timer;
+        private float timerEvent;
+        private float timerSpawn;
+        private List<CardData> nextSpawn;
 
         private void Awake()
         {
@@ -22,34 +25,50 @@ namespace Prototype
             {
                 instance = this;
                 spawnPointCount = spawnPoints.Length;
+                nextSpawn = new List<CardData>();
                 encounterEvent = ScriptableObject.CreateInstance(encounterEventRef.name) as EncounterEvent;
-                encounterEvent.Init(this, encounterEventRef.units);
+                encounterEvent.Init(this, encounterEventRef.decks, encounterEventRef.phases);
+                encounterEvent.NextPhase(ref nextSpawn);
+                timerSpawn = Time.deltaTime;
             }
             else
                 Destroy(this);
         }
 
-        private void Start()
-        {
-            timer = encounterEvent.FirstSpawn();
-        }
-
         private void Update()
         {
-            if (timer > 0f)
+            if (timerEvent > 0f)
             {
-                timer -= Time.deltaTime;
-                if (timer < 0f)
-                    timer = encounterEvent.Update();
+                timerEvent -= Time.deltaTime;
+                if (timerEvent <= 0f && !encounterEvent.NextPhase(ref nextSpawn))
+                    timerSpawn = Time.deltaTime;
+            }
+            if (timerSpawn > 0f)
+            {
+                timerSpawn -= Time.deltaTime;
+                if (timerSpawn <= 0f)
+                {
+                    timerSpawn = SpawnUnit(nextSpawn[0]);
+                    nextSpawn.RemoveAt(0);
+                    timerEvent -= timerSpawn;
+                    if (nextSpawn.Count == 0)
+                    {
+                        timerEvent *= -1f;
+                        timerSpawn = -1f;
+                    }
+                }
             }
         }
 
-        public Unit SpawnUnit(CardData unitData, Transform spawnPoint, Unit target = null)
+        private float SpawnUnit(CardData unitData)
         {
-            NonControllableUnit tmp = Instantiate((NonControllableUnit)unitData.unit, spawnPoint);
-            tmp.Initialize(target == null ? FindClosestTarget(spawnPoint.position) : target, unitData.unitStats, "EnemyTeam");
-            enemyUnits.Add(tmp);//TODO EVENT CLEAR
-            return tmp;
+            for (int i = 0; i < spawnPoints.Length; i++)
+            {
+                NonControllableUnit tmp = Instantiate((NonControllableUnit)unitData.unit, spawnPoints[i]);
+                tmp.Initialize(FindClosestTarget(spawnPoints[i].position), unitData.unitStats, "EnemyTeam");
+                enemyUnits.Add(tmp);//TODO EVENT CLEAR
+            }
+            return unitData.unitStats.cooldown;
         }
 
         private Unit FindClosestTarget(Vector3 position)

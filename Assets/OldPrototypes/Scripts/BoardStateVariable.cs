@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace Prototype
 {
-    [CreateAssetMenu]
     public class BoardStateVariable : ScriptableObject
     {
         [Serializable]

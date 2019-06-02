@@ -102,9 +102,9 @@ namespace Prototype
 
             if (units[index] != null && currentUnit != units[index])
             {
-                units[index].gameObject.SetActive(true);
                 units[index].transform.position = currentUnit.transform.position;
                 units[index].transform.rotation = currentUnit.transform.rotation;
+                units[index].gameObject.SetActive(true);
                 playerUnits.items[0] = units[index];
                 currentUnit.gameObject.SetActive(false);
                 currentUnit = units[index];

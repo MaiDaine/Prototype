@@ -2,7 +2,6 @@
 
 namespace Prototype
 {
-    [CreateAssetMenu(menuName = "Commander/Default")]
     public class DefaultCommander : NPCCommander
     {
         public float timerSpawn = 5f;
