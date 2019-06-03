@@ -39,6 +39,7 @@ namespace Prototype
 
         public override void Launch(float castTime)
         {
+            Destroy(spellIndicator);
             if (castTime > 0.5)
             {
                 ChanneledLaunch();
@@ -50,6 +51,7 @@ namespace Prototype
 
         private void ChanneledLaunch()
         {
+            Cursor.visible = true;
             SpawnProjectile();
             Invoke("SpawnProjectile", 0.1f);
             Invoke("SpawnProjectile", 0.2f);
@@ -78,7 +80,6 @@ namespace Prototype
                 if (tmp != null)
                     tmp.canMove = true;
             }
-            Destroy(spellIndicator);
             Destroy(gameObject);
             //base.Effect();
         }

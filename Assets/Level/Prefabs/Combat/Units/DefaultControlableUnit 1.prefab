@@ -207,18 +207,16 @@ MonoBehaviour:
   currentStats: {fileID: 0}
   unitStats: {fileID: 11400000, guid: b97fb74531312384099d4f1434453fbd, type: 2}
   spellBook:
-  - spellRef: {fileID: 5045854893108240420, guid: ef84cd97f4237604dbdf5b853ec71880,
-      type: 3}
-    spellCooldown: 5
-  - spellRef: {fileID: 5045854893108240420, guid: 4c70bcb2f31c18e43bc02ed45eea17d7,
-      type: 3}
-    spellCooldown: 5
-  - spellRef: {fileID: 5700147567599365781, guid: 7014be4f10583404991a7cc6867fc10c,
+  - spellRef: {fileID: 3653152680411241066, guid: 29a2f1b6a492bed4498a2da1becac1a4,
       type: 3}
     spellCooldown: 0
-  - spellRef: {fileID: 5636017456635741902, guid: 3db06451de0c4b14cbb4b93e0db97bea,
-      type: 3}
+  - spellRef: {fileID: 0}
     spellCooldown: 0
+  - spellRef: {fileID: 0}
+    spellCooldown: 0
+  - spellRef: {fileID: 0}
+    spellCooldown: 0
+  canMove: 1
 --- !u!114 &4741766242837998555
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ namespace Prototype
         public float delayToEffect = 0f;
         public float delayToClean = 0f;
         public float cooldown = 0f;
+        public int spellDamage;
 
         public virtual void Init(string tag, GameObject unit)
         {

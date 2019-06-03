@@ -6,7 +6,6 @@ namespace Prototype
     {
         public GameObject spellIndicatorRef;
         public GameObject visualEffectRef;
-        public int spellDamage = 30;
 
         private GameObject spellIndicator = null;
         private GameObject spellVisual = null;

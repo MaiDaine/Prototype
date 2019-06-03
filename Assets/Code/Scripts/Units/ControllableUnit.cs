@@ -25,7 +25,6 @@ namespace Prototype
 
         private void Update()
         {
-            UpdateSpellCooldowns();
         }
 
         public void ChangeOrder(OrderType order)
@@ -33,7 +32,7 @@ namespace Prototype
             //Animation
         }
 
-        private void UpdateSpellCooldowns()
+        public void UpdateSpellCooldowns()
         {
             for (int i = 0; i < spellBook.Length; i++)
                 spellBook[i].spellCooldown -= Time.deltaTime;
