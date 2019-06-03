@@ -117,6 +117,8 @@ namespace Prototype
 
                 spellCasting.CancelCast();
                 spellCasting.UpdateSpellBook(ref currentUnit.spellBook);
+                if (currentUnit.GetComponent<UnitHealthShield>() != null)
+                    currentUnit.GetComponent<UnitHealthShield>().AddShield(60, 4);
             }
         }
 

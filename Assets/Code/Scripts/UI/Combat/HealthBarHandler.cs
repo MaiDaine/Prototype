@@ -5,11 +5,11 @@ namespace Prototype
 {
     public class HealthBarHandler : MonoBehaviour
     {
-        public Image fillBar;
+        public Image healthFillBar;
 
         private Quaternion iniRot;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             iniRot = gameObject.transform.rotation;
         }
@@ -17,13 +17,13 @@ namespace Prototype
         public void Initialize(Unit unit)
         {
             if (unit.tag == "EnemyTeam")
-                fillBar.color = new Color(1, 0, 0, 1);
+                healthFillBar.color = new Color(1, 0, 0, 1);
             gameObject.SetActive(true);
         }
 
-        public void SetFillAmount(float value)
+        public void SetHealthFillAmount(float value)
         {
-            fillBar.fillAmount = value;
+            healthFillBar.fillAmount = value;
         }
 
         private void LateUpdate()

@@ -1078,7 +1078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  offset: {x: 0, y: 25, z: -5}
+  offset: {x: 0, y: 25, z: -10}
   positionLerpTime: 0.2
 --- !u!4 &867192895 stripped
 Transform:

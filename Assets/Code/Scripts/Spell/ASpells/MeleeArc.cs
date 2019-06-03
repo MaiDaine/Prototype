@@ -43,7 +43,7 @@ namespace Prototype
             weapon.transform.rotation = spellIndicator.transform.rotation;
             weapon.Init(spellDamage, this.tag, unit.GetComponent<Unit>(), animSpeed);
             Destroy(spellIndicator);
-            Invoke("Clean", animSpeed);
+            Invoke("Clean", animSpeed - 0.01f);
         }
 
         public override void Clean()
