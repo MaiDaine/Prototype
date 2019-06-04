@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5540465410521199493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 170.12167, y: -141.12273, z: 8.054074}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5995213611993998867}
@@ -51,11 +51,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1463965484134008271}
     m_Modifications:
-    - target: {fileID: 1954576419133774444, guid: b99d539ccd8a8c143b3202e7709db797,
-        type: 3}
-      propertyPath: m_Name
-      value: MeleeArc
-      objectReference: {fileID: 0}
     - target: {fileID: 2336907598852614350, guid: b99d539ccd8a8c143b3202e7709db797,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -110,6 +105,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954576419133774444, guid: b99d539ccd8a8c143b3202e7709db797,
+        type: 3}
+      propertyPath: m_Name
+      value: MeleeArc
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b99d539ccd8a8c143b3202e7709db797, type: 3}

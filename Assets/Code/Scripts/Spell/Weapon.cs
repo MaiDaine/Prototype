@@ -34,6 +34,7 @@ namespace Prototype
         private void OnDestroy()
         {
             GetComponentInChildren<WeaponTrigger>().gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }
