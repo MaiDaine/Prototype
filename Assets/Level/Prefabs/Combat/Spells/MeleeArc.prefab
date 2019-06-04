@@ -47,8 +47,8 @@ MonoBehaviour:
   useCursor: 0
   delayToEffect: 0
   delayToClean: 0
-  cooldown: 5
-  spellDamage: 30
+  cooldown: 0.5
+  spellPower: 10
   spellIndicatorRef: {fileID: 2110963215477219469, guid: 6df2c5407b6087f48b717696f29af164,
     type: 3}
   weaponRef: {fileID: -8166702002951511840, guid: 6402983e0140c9b42923939be0c198b7,

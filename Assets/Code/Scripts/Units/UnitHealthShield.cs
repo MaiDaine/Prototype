@@ -67,6 +67,7 @@ namespace Prototype
             foreach (Action callback in callbacksOnShieldEnd)
                 if (callback != null)
                     callback.Invoke();
+            callbacksOnShieldEnd.Clear();
         }
 
         private void SetShieldUI()

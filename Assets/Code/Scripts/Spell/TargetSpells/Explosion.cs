@@ -2,33 +2,8 @@
 
 namespace Prototype
 {
-    public class Explosion : ASpell
+    public class Explosion : TargetSpell
     {
-        public GameObject spellIndicatorRef;
-        public GameObject visualEffectRef;
-
-        private GameObject spellIndicator = null;
-        private GameObject spellVisual = null;
-
-        private void Awake()
-        {
-            spellIndicator = Instantiate(spellIndicatorRef);
-        }
-
-        public override void Placement(Vector3 position)
-        {
-            //base.Placement(position);
-            spellIndicator.transform.position = new Vector3(position.x, 0.5f, position.z);
-        }
-
-        public override void Launch(float castTime)
-        {
-            base.Launch(castTime);
-            spellVisual = Instantiate(visualEffectRef);
-            spellVisual.transform.position = spellIndicator.transform.position;
-            Destroy(spellIndicator);
-        }
-
         public override void Effect()
         {
             base.Effect();
@@ -42,7 +17,6 @@ namespace Prototype
 
         public override void Clean()
         {
-            //base.AfterEffect();
             Destroy(spellVisual);
             Destroy(gameObject);
         }
@@ -54,7 +28,6 @@ namespace Prototype
             if (spellVisual != null)
                 Destroy(spellVisual);
             Destroy(gameObject);
-            //base.Cancel();
         }
     }
 }

@@ -212,7 +212,8 @@ MonoBehaviour:
     spellCooldown: 0
   - spellRef: {fileID: 0}
     spellCooldown: 0
-  - spellRef: {fileID: 0}
+  - spellRef: {fileID: 5777985665694753280, guid: 4f4a7a7603c68f9469de0d7e0b022187,
+      type: 3}
     spellCooldown: 0
   - spellRef: {fileID: 0}
     spellCooldown: 0

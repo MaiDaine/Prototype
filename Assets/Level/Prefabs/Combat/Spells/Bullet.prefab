@@ -48,7 +48,7 @@ MonoBehaviour:
   delayToEffect: 0
   delayToClean: 0
   cooldown: 2
-  spellDamage: 15
+  spellPower: 5
   spellIndicatorRef: {fileID: 2110963215477219469, guid: 366aaa4c38cea4542baa8391b606482a,
     type: 3}
   projectileRef: {fileID: -1754287202760949812, guid: 07205186ea74f504a9bd7be48903ad7e,

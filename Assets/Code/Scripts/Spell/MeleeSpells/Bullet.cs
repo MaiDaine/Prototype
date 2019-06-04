@@ -1,26 +1,22 @@
-﻿using UnityEngine;
+﻿using UnityEngine.Experimental.Rendering.HDPipeline;
+using UnityEngine;
 
 namespace Prototype
 {
-    public class Bullet : ASpell
+    public class Bullet : MeleeSpell
     {
-        public GameObject spellIndicatorRef;
         public Projectile projectileRef;
         public float spellRange;
 
-        private GameObject spellIndicator = null;
         private Projectile projectile = null;
-        private GameObject unit;
 
         public override void Init(string tag, GameObject unit)
         {
-            this.unit = unit;
-            spellIndicator = Instantiate(spellIndicatorRef);
-            spellIndicator.transform.position = new Vector3(spellIndicator.transform.position.x, 0.5f, spellIndicator.transform.position.z);
+            base.Init(tag, unit);
+            spellIndicator.GetComponent<DecalProjectorComponent>().m_Size = new Vector3(spellRange * 2f, 2f, 1f);//TODO DECAL
             ControllableUnit tmp = unit.GetComponent<ControllableUnit>();
             if (tmp != null)
-                tmp.canMove = false;
-            base.Init(tag, unit);
+                tmp.canMove = false;//TODO STATUS
         }
 
         public override void Placement(Vector3 position)
@@ -32,12 +28,10 @@ namespace Prototype
             Transform transform = spellIndicator.transform;
             transform.LookAt(unit.transform);
             transform.eulerAngles = new Vector3(90f, transform.eulerAngles.y, (transform.eulerAngles.z + 90f) % 360);
-
             spellIndicator.transform.rotation = transform.rotation;
-            //base.Placement(position);
         }
 
-        public override void Launch(float castTime)
+        public override void Launch()
         {
             Destroy(spellIndicator);
             if (castTime > 0.5)
@@ -45,8 +39,9 @@ namespace Prototype
                 ChanneledLaunch();
                 return;
             }
-            base.Launch(castTime);
+            base.Launch();
             CreateProjectile(this.tag, unit.transform.position, unit.transform.forward);
+            Effect();
         }
 
         private void ChanneledLaunch()
@@ -72,21 +67,15 @@ namespace Prototype
             projectile.Initialize(direction, tag);
         }
 
-        public override void Effect()
+        public void Effect()//TMP LAUNCHER
         {
-            if (unit != null)//tmp
+            if (unit != null)
             {
                 ControllableUnit tmp = unit.GetComponent<ControllableUnit>();
                 if (tmp != null)
                     tmp.canMove = true;
             }
             Destroy(gameObject);
-            //base.Effect();
-        }
-
-        public override void Clean()
-        {
-            //base.AfterEffect();
         }
 
         public override void Cancel()
@@ -99,7 +88,6 @@ namespace Prototype
             if (projectile != null)
                 Destroy(projectile);
             Destroy(gameObject);
-            //base.Cancel();
         }
     }
 }

@@ -11,7 +11,6 @@ namespace Prototype
         private SpellSlot[] currentSpellBook;
         private int currentSpellIndex = -1;
         private ASpell currentSpell = null;
-        private float castTime;
 
         public SpellCasting(PlayerController player) { this.player = player; }
 
@@ -60,7 +59,6 @@ namespace Prototype
 
         public void CastUpdate(Vector3 position)
         {
-            castTime += Time.deltaTime;
             currentSpell.Placement(position);
         }
 
@@ -68,7 +66,6 @@ namespace Prototype
         {
             if (currentSpellBook[index].spellCooldown > 0f)
                 return;
-            castTime = 0f;
             currentSpell = player.InstantiateSpell(ref currentSpellBook[index].spellRef);
             casting = true;
             useCursor = currentSpell.useCursor;
@@ -81,7 +78,7 @@ namespace Prototype
 
         private void LaunchSpell()
         {
-            currentSpell.Launch(castTime);
+            currentSpell.Launch();
             currentSpellBook[currentSpellIndex].spellCooldown = currentSpell.cooldown;
             currentSpell = null;
             casting = false;
