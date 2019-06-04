@@ -37,7 +37,7 @@ namespace Prototype
             Unit tmp;
             foreach (RaycastHit hit in hits)
                 if (!hit.collider.isTrigger && (tmp = hit.collider.GetComponent<Unit>()) != null && hit.collider.tag != this.tag)
-                    tmp.GetComponent<UnitHealth>().TakeDamage(spellDamage);
+                    tmp.GetComponent<UnitHealth>().TakeDamage(spellPower);
         }
 
         public override void Clean()

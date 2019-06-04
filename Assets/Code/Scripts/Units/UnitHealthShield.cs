@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Prototype
 {
@@ -8,6 +10,7 @@ namespace Prototype
 
         private int currentShield;
         private float shieldTimer;
+        private List<Action> callbacksOnShieldEnd = new List<Action>();
 
         public override void Initialize(Unit unit)
         {
@@ -21,20 +24,19 @@ namespace Prototype
             {
                 shieldTimer -= Time.deltaTime;
                 if (shieldTimer <= 0f)
-                {
-                    currentShield = 0;
-                    SetShieldUI();
-                }
+                    OnShieldEnd();
             }
         }
 
-        public void AddShield(int amount, float timer)
+        public void AddShield(int amount, float timer, Action callback = null)
         {
             isShield = true;
             currentShield += amount;
             if (timer > shieldTimer)
                 shieldTimer = timer;
             SetShieldUI();
+            if (callback != null)
+                callbacksOnShieldEnd.Add(callback);
         }
 
         public override bool TakeDamage(int amount)
@@ -42,19 +44,29 @@ namespace Prototype
             if (isShield)
             {
                 currentShield -= amount;
-                SetShieldUI();
                 if (currentShield <= 0)
                 {
                     int damage = currentShield * -1;
-                    currentShield = 0;
-                    isShield = false;
+                    OnShieldEnd();
                     return base.TakeDamage(currentShield * -1);
                 }
+                else
+                    SetShieldUI();
             }
             else
                 return base.TakeDamage(amount);
 
             return false;
+        }
+
+        private void OnShieldEnd()
+        {
+            SetShieldUI();
+            currentShield = 0;
+            isShield = false;
+            foreach (Action callback in callbacksOnShieldEnd)
+                if (callback != null)
+                    callback.Invoke();
         }
 
         private void SetShieldUI()

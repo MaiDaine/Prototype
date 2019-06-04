@@ -41,7 +41,7 @@ namespace Prototype
             spellIndicator.transform.eulerAngles = new Vector3(0f, (spellIndicator.transform.eulerAngles.y - 90f) % 360f, spellIndicator.transform.eulerAngles.z);
             weapon = Instantiate(weaponRef, unit.transform.position, spellIndicator.transform.rotation);
             weapon.transform.rotation = spellIndicator.transform.rotation;
-            weapon.Init(spellDamage, this.tag, unit.GetComponent<Unit>(), animSpeed);
+            weapon.Init(spellPower, this.tag, unit.GetComponent<Unit>(), animSpeed);
             Destroy(spellIndicator);
             Invoke("Clean", animSpeed - 0.01f);
         }
