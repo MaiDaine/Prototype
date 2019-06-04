@@ -22,5 +22,18 @@ namespace Prototype
             if (unitHealth.alive && stuns == 0)
                 brain.Think(this);
         }
+
+        public override void OnStunStart()
+        {
+            base.OnStunStart();
+            GetComponent<UnitMovement>().StopMovement();
+        }
+
+        public override void OnStunEnd()
+        {
+            base.OnStunEnd();
+            if (stuns == 0)
+                GetComponent<UnitMovement>().ResumeMovement();
+        }
     }
 }

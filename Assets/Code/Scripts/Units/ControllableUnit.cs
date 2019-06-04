@@ -13,7 +13,6 @@ namespace Prototype
         {
             currentStats = ScriptableObject.CreateInstance("UnitStats") as UnitStats;
             currentStats.Assign(unitStats);
-            //GetComponent<UnitMovement>().Initialize(unitStats);
             for (int i = 0; i < spellBook.Length; i++)
                     spellBook[i].spellCooldown = 0f;
         }

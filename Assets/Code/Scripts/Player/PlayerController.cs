@@ -41,6 +41,13 @@ namespace Prototype
 
         private void Update()
         {
+            for (int i = 0; i < units.Length; i++)
+                if (units[i] != null)
+                    units[i].UpdateSpellCooldowns();
+
+            if (currentUnit.stuns != 0)
+                return;
+
             SwitchUnit();
             SpellUpdate();
             Move();
@@ -58,9 +65,6 @@ namespace Prototype
                 keyboardController.MouseRotate(ref currentUnit);
                 keyboardController.OrderUpdate(ref currentUnit);
             }
-            for (int i = 0; i < units.Length; i++)
-                if (units[i] != null)
-                    units[i].UpdateSpellCooldowns();
         }
 
         //Spells
@@ -87,7 +91,7 @@ namespace Prototype
                 keyboardController.SpellUpdate(ref spellCasting);
         }
 
-        //Unit Handle
+        //Units Handle
         private void SwitchUnit()
         {
             int index = -1;
