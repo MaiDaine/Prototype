@@ -35,12 +35,16 @@ namespace Prototype
 
         private void OnTriggerEnter(Collider other)
         {
-            unit.OnTriggerEnter(other);
+            Unit otherUnit = other.GetComponent<Unit>();
+            if (other.gameObject.activeSelf && other != null && unit.unitHealth.alive)
+                unit.brain.UnitInRange(otherUnit);
         }
 
         private void OnTriggerExit(Collider other)
         {
-            unit.OnTriggerExit(other);
+            Unit otherUnit = other.GetComponent<Unit>();
+            if (other.gameObject.activeSelf && other != null && unit.unitHealth.alive)
+                unit.brain.UnitExitRange(otherUnit);
         }
     }
 }

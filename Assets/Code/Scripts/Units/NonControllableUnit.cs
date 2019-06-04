@@ -22,19 +22,5 @@ namespace Prototype
             if (unitHealth.alive && stuns == 0)
                 brain.Think(this);
         }
-
-        public void OnTriggerEnter(Collider otherGameObject)
-        {
-            Unit other = otherGameObject.GetComponent<Unit>();
-            if (otherGameObject.gameObject.activeSelf && other != null && unitHealth.alive)
-                brain.UnitInRange(other);
-        }
-
-        public void OnTriggerExit(Collider otherGameObject)
-        {
-            Unit other = otherGameObject.GetComponent<Unit>();
-            if (otherGameObject.gameObject.activeSelf && other != null && unitHealth.alive)
-                brain.UnitExitRange(other);
-        }
     }
 }

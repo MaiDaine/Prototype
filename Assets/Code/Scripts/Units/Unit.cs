@@ -12,8 +12,8 @@ namespace Prototype
 
         [HideInInspector]
         public UnitStats currentStats;
-
-        protected UnitHealth unitHealth;
+        [HideInInspector]
+        public UnitHealth unitHealth;
 
         public virtual void Initialize(UnitStats stats, string tag)
         {
