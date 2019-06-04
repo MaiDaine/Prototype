@@ -23,6 +23,12 @@ namespace Prototype
                 brain.Think(this);
         }
 
+        public override void OnDeath()
+        {
+            EncounterController.instance.OnUnitDeath(this);
+            base.OnDeath();
+        }
+
         //Status
         public override void OnStunStart()
         {

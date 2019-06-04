@@ -9,6 +9,7 @@ namespace Prototype
         //Status
         [HideInInspector]
         public short stuns = 0;
+        [HideInInspector]
         public short roots = 0;
 
         [HideInInspector]
@@ -23,6 +24,12 @@ namespace Prototype
             unitHealth = GetComponent<UnitHealth>();
             this.tag = tag;
             GetComponent<UnitHealth>().Initialize(this);
+        }
+
+        public virtual void OnDeath()
+        {
+            //DeathAnimation
+            Destroy(gameObject);
         }
 
         public int SortByDistance(Unit a, Unit b)

@@ -4,7 +4,6 @@ namespace Prototype
 {
     public class UnitHealth : MonoBehaviour
     {
-        public GameEvent onDeath;
         public HealthBarHandler healthBar;
         [HideInInspector]
         public bool alive = false;
@@ -26,7 +25,8 @@ namespace Prototype
             currentHealth -= amount;
             if (currentHealth < 1 && alive)
             {
-                OnDeath();
+                alive = false;
+                unit.OnDeath();
                 return true;
             }
             SetHealthUI();
@@ -36,14 +36,6 @@ namespace Prototype
         private void SetHealthUI()
         {
             healthBar.SetHealthFillAmount((float)currentHealth / (float)unit.currentStats.health);
-        }
-
-        private void OnDeath()
-        {
-            alive = false;
-            //DeathAnimation
-            GetComponent<Unit>().gameObject.SetActive(false);
-            onDeath.Raise();
         }
     }
 }

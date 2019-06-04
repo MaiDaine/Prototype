@@ -48,7 +48,7 @@ namespace Prototype
             if (currentUnit.stuns != 0)
                 return;
 
-            SwitchUnit();
+            UnitUpdate();
             SpellUpdate();
             if (currentUnit.roots == 0)
                 Move();
@@ -93,9 +93,27 @@ namespace Prototype
         }
 
         //Units Handle
-        private void SwitchUnit()
+        public void OnUnitDeath()
         {
             int index = -1;
+            for (int i = 0; i < units.Length; i++)
+                if (units[i] != null && units[i].unitHealth.alive && units[i] != currentUnit)
+                {
+                    index = i;
+                    break;
+                }
+            if (index == -1)
+            {
+                this.enabled = false;
+                Application.Quit();//TODO GAMEOVER
+            }
+            else
+                SwitchUnit(index);
+        }
+
+        private void UnitUpdate()
+        {
+            int index;
             if (Input.GetButtonDown("Unit 1"))
                 index = 0;
             else if (Input.GetButtonDown("Unit 2"))
@@ -106,23 +124,25 @@ namespace Prototype
                 index = 3;
             else
                 return;
+            if (units[index] != null && units[index].unitHealth.alive && units[index] != currentUnit)
+                SwitchUnit(index);
+        }
 
-            if (units[index] != null && currentUnit != units[index])
-            {
-                units[index].transform.position = currentUnit.transform.position;
-                units[index].transform.rotation = currentUnit.transform.rotation;
-                units[index].gameObject.SetActive(true);
-                playerUnits.items[0] = units[index];
-                currentUnit.gameObject.SetActive(false);
-                currentUnit = units[index];
-                //Animation
+        private void SwitchUnit(int index)
+        {
+            units[index].transform.position = currentUnit.transform.position;
+            units[index].transform.rotation = currentUnit.transform.rotation;
+            units[index].gameObject.SetActive(true);
+            playerUnits.items[0] = units[index];
+            currentUnit.gameObject.SetActive(false);
+            currentUnit = units[index];
+            //Animation
 
-                EncounterController.instance.activeHero = currentUnit;
-                GetComponent<CameraController>().UpdateTarget(currentUnit.gameObject);
+            EncounterController.instance.activeHero = currentUnit;
+            GetComponent<CameraController>().UpdateTarget(currentUnit.gameObject);
 
-                spellCasting.CancelCast();
-                spellCasting.UpdateSpellBook(ref currentUnit.spellBook);
-            }
+            spellCasting.CancelCast();
+            spellCasting.UpdateSpellBook(ref currentUnit.spellBook);
         }
 
         //Movement

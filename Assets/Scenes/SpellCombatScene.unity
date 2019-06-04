@@ -283,6 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 434316696}
   - component: {fileID: 434316695}
+  - component: {fileID: 434316697}
   m_Layer: 0
   m_Name: Encounter
   m_TagString: Untagged
@@ -325,6 +326,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &434316697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434316694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a5b52827e11744687ddd3aef01dd5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 82503867049242044937d7f3b0b3a9b2, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &555833414 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,

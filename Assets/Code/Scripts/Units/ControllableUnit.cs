@@ -8,6 +8,8 @@ namespace Prototype
         public UnitStats unitStats;
         public SpellSlot[] spellBook;
 
+        PlayerController playerController;
+
         private void Awake()
         {
             currentStats = ScriptableObject.CreateInstance("UnitStats") as UnitStats;
@@ -18,11 +20,8 @@ namespace Prototype
 
         public void Initialize(PlayerController playerController)
         {
+            this.playerController = playerController;
             base.Initialize(currentStats, "PlayerTeam");
-        }
-
-        private void Update()
-        {
         }
 
         public void ChangeOrder(OrderType order)
@@ -34,6 +33,12 @@ namespace Prototype
         {
             for (int i = 0; i < spellBook.Length; i++)
                 spellBook[i].spellCooldown -= Time.deltaTime;
+        }
+
+        public override void OnDeath()
+        {
+            playerController.OnUnitDeath();
+            base.OnDeath();
         }
     }
 }

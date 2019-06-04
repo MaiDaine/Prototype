@@ -18,6 +18,7 @@ namespace Prototype
         private float timerEvent;
         private float timerSpawn;
         private List<CardData> nextSpawn;
+        private bool lastWave;
 
         private void Awake()
         {
@@ -30,6 +31,8 @@ namespace Prototype
                 encounterEvent.Init(this, encounterEventRef.decks, encounterEventRef.phases);
                 encounterEvent.NextPhase(ref nextSpawn);
                 timerSpawn = Time.deltaTime;
+                lastWave = false;
+                enemyUnits.items.Clear();
             }
             else
                 Destroy(this);
@@ -40,8 +43,13 @@ namespace Prototype
             if (timerEvent > 0f)
             {
                 timerEvent -= Time.deltaTime;
-                if (timerEvent <= 0f && !encounterEvent.NextPhase(ref nextSpawn))
-                    timerSpawn = Time.deltaTime;
+                if (timerEvent <= 0f)
+                {
+                    lastWave = encounterEvent.NextPhase(ref nextSpawn);
+                    if (!lastWave)
+                        timerSpawn = Time.deltaTime;
+                }
+
             }
             if (timerSpawn > 0f)
             {
@@ -58,6 +66,13 @@ namespace Prototype
                     }
                 }
             }
+        }
+
+        public void OnUnitDeath(NonControllableUnit unit)
+        {
+            enemyUnits.Remove(unit);
+            if (enemyUnits.items.Count == 0 && lastWave)
+                Application.Quit();//TODO GAMEOVER
         }
 
         private float SpawnUnit(CardData unitData)

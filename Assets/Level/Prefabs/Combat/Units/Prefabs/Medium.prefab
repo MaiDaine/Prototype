@@ -177,7 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b12920a55aa2f438b257a5dbb26ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onDeath: {fileID: 11400000, guid: 82503867049242044937d7f3b0b3a9b2, type: 2}
   healthBar: {fileID: 627622932435100352}
   alive: 0
 --- !u!114 &-3780593644645441727
@@ -204,6 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd99eabc07031d4f925b767388ca484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDeath: {fileID: 11400000, guid: 82503867049242044937d7f3b0b3a9b2, type: 2}
   stuns: 0
   roots: 0
   currentStats: {fileID: 0}
