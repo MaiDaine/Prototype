@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Prototype
+﻿namespace Prototype
 {
     public abstract class UnitStatus
     {

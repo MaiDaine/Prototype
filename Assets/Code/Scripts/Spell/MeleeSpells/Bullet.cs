@@ -9,12 +9,14 @@ namespace Prototype
         public float spellRange;
 
         private Projectile projectile = null;
+        private RootStatus rootStatus;
 
         public override void Init(string tag, GameObject unit)
         {
             base.Init(tag, unit);
             spellIndicator.GetComponent<DecalProjectorComponent>().m_Size = new Vector3(spellRange * 2f, 2f, 1f);//TODO DECAL
-            ControllableUnit tmp = unit.GetComponent<ControllableUnit>();
+            rootStatus = new RootStatus();
+            rootStatus.Init(unit.GetComponent<Unit>());
         }
 
         public override void Placement(Vector3 position)
@@ -32,6 +34,8 @@ namespace Prototype
         public override void Launch()
         {
             Destroy(spellIndicator);
+            unit.GetComponent<UnitStatusManager>().UnRegisterStatus(rootStatus);
+            rootStatus.OnDestroy(unit.GetComponent<Unit>());
             if (castTime > 0.5)
             {
                 ChanneledLaunch();
@@ -67,20 +71,13 @@ namespace Prototype
 
         public void Effect()//TMP LAUNCHER
         {
-            if (unit != null)
-            {
-                ControllableUnit tmp = unit.GetComponent<ControllableUnit>();
-                if (tmp != null)
-                    tmp.canMove = true;
-            }
             Destroy(gameObject);
         }
 
         public override void Cancel()
         {
-            ControllableUnit tmp = unit.GetComponent<ControllableUnit>();
-            if (tmp != null)
-                tmp.canMove = true;
+            unit.GetComponent<UnitStatusManager>().UnRegisterStatus(rootStatus);
+            rootStatus.OnDestroy(unit.GetComponent<Unit>());
             if (spellIndicator != null)
                 Destroy(spellIndicator);
             if (projectile != null)
