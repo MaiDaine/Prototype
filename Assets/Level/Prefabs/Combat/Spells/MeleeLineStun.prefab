@@ -51,3 +51,4 @@ MonoBehaviour:
   spellPower: 0
   useCursor: 0
   spellRange: 6
+  stunDuration: 1.5
