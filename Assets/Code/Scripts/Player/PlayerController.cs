@@ -50,7 +50,8 @@ namespace Prototype
 
             SwitchUnit();
             SpellUpdate();
-            Move();
+            if (currentUnit.roots == 0)
+                Move();
 
             if (useJoyStick)
             {

@@ -36,7 +36,7 @@ namespace Prototype
             foreach (RaycastHit hit in Physics.BoxCastAll(spellIndicator.transform.position, new Vector3(spellRange, 2f, 4f), Vector3.up))
                 if (hit.collider.tag != this.tag && (enemyUnit = hit.collider.GetComponent<Unit>()) != null)
                 {
-                    stun = enemyUnit.gameObject.AddComponent<StunStatus>();
+                    stun = new StunStatus();
                     stun.duration = stunDuration;
                     stun.Init(enemyUnit);
                 }

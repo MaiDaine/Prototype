@@ -15,8 +15,6 @@ namespace Prototype
             base.Init(tag, unit);
             spellIndicator.GetComponent<DecalProjectorComponent>().m_Size = new Vector3(spellRange * 2f, 2f, 1f);//TODO DECAL
             ControllableUnit tmp = unit.GetComponent<ControllableUnit>();
-            if (tmp != null)
-                tmp.canMove = false;//TODO STATUS
         }
 
         public override void Placement(Vector3 position)

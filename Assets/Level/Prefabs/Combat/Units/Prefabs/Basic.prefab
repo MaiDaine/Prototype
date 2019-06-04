@@ -56,10 +56,11 @@ GameObject:
   - component: {fileID: 8070333151286185755}
   - component: {fileID: 8070333151286185754}
   - component: {fileID: 8070333151286185748}
-  - component: {fileID: 8070333151286185750}
   - component: {fileID: 8070333151286185745}
-  - component: {fileID: 1412308527310096818}
+  - component: {fileID: 8070333151286185750}
+  - component: {fileID: -6764604686361292932}
   - component: {fileID: 3275222551669464349}
+  - component: {fileID: 1412308527310096818}
   - component: {fileID: 6020842644446398848}
   m_Layer: 10
   m_Name: Basic
@@ -152,6 +153,18 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8070333151286185745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8070333151286185744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46cf70a719be56a4788e3000a187f72f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8070333151286185750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +180,7 @@ MonoBehaviour:
   onDeath: {fileID: 11400000, guid: 82503867049242044937d7f3b0b3a9b2, type: 2}
   healthBar: {fileID: 627622932435100352}
   alive: 0
---- !u!114 &8070333151286185745
+--- !u!114 &-6764604686361292932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,9 +189,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 8070333151286185744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46cf70a719be56a4788e3000a187f72f, type: 3}
+  m_Script: {fileID: 11500000, guid: e210441ae0afd51409b846df6fa1b9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3275222551669464349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8070333151286185744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd99eabc07031d4f925b767388ca484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stuns: 0
+  roots: 0
+  currentStats: {fileID: 0}
+  unitHealth: {fileID: 0}
+  brain: {fileID: 11400000, guid: 34b8f355bead27e4d9db0245015eef94, type: 2}
+  unitAttack: {fileID: 1231520008226357556}
 --- !u!54 &1412308527310096818
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -195,22 +226,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3275222551669464349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8070333151286185744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dd99eabc07031d4f925b767388ca484, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stuns: 0
-  currentStats: {fileID: 0}
-  brain: {fileID: 11400000, guid: 34b8f355bead27e4d9db0245015eef94, type: 2}
-  unitAttack: {fileID: 1231520008226357556}
 --- !u!65 &6020842644446398848
 BoxCollider:
   m_ObjectHideFlags: 0

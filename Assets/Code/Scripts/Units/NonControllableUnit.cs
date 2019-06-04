@@ -23,10 +23,12 @@ namespace Prototype
                 brain.Think(this);
         }
 
+        //Status
         public override void OnStunStart()
         {
+            if (stuns == 0)
+                GetComponent<UnitMovement>().StopMovement();
             base.OnStunStart();
-            GetComponent<UnitMovement>().StopMovement();
         }
 
         public override void OnStunEnd()
@@ -34,6 +36,20 @@ namespace Prototype
             base.OnStunEnd();
             if (stuns == 0)
                 GetComponent<UnitMovement>().ResumeMovement();
+        }
+
+        public override void OnRootStart()
+        {
+            if (roots == 0)
+                GetComponent<UnitMovement>().StopMovement();
+            base.OnRootStart();
+        }
+
+        public override void OnRootEnd()
+        {
+            base.OnRootEnd();
+            if (roots == 0)
+                GetComponent<UnitMovement>().StopMovement();
         }
     }
 }

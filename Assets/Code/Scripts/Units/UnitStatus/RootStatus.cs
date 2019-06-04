@@ -1,17 +1,16 @@
 ﻿namespace Prototype
 {
-    public class StunStatus : UnitStatus
+    public class RootStatus : UnitStatus
     {
         public override void Init(Unit unit)
         {
             base.Init(unit);
-            unit.OnStunStart();
+            unit.OnRootStart();
         }
 
         public override void OnDestroy(Unit unit)
         {
-            base.OnDestroy(unit);
-            unit.OnStunEnd();
+            unit.OnRootEnd();
         }
     }
 }

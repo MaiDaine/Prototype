@@ -1,14 +1,15 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Prototype
 {
     [RequireComponent(typeof(UnitHealth))]
+    [RequireComponent(typeof(UnitStatusManager))]
     public class Unit : MonoBehaviour
     {
         //Status
         [HideInInspector]
         public short stuns = 0;
+        public short roots = 0;
 
         [HideInInspector]
         public UnitStats currentStats;
@@ -32,5 +33,7 @@ namespace Prototype
         //Status
         public virtual void OnStunStart() { stuns += 1; }
         public virtual void OnStunEnd() { stuns -= 1; }
+        public virtual void OnRootStart() { roots += 1; }
+        public virtual void OnRootEnd() { roots -= 1; }
     }
 }

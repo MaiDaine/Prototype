@@ -2,18 +2,20 @@
 
 namespace Prototype
 {
-    public abstract class UnitStatus : MonoBehaviour
+    public abstract class UnitStatus
     {
         public float duration;
-        public const bool canStack = false;
 
-        public virtual void Init(Unit unit) { }
-
-        protected virtual void Update()
+        public virtual void Init(Unit unit)
         {
-            duration -= Time.deltaTime;
-            if (duration <= 0f)
-                Destroy(this);
+            if (duration > 0f)
+                unit.GetComponent<UnitStatusManager>().RegisterTimedStatus(this);
+            else
+                unit.GetComponent<UnitStatusManager>().RegisterStatus(this);
         }
+
+        public virtual void Update() { }
+
+        public virtual void OnDestroy(Unit unit) { }
     }
 }
