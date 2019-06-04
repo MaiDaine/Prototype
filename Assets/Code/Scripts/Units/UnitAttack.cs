@@ -7,11 +7,12 @@ namespace Prototype
         [HideInInspector]
         public float atkReload;
 
-        private Unit unit;
+        private NonControllableUnit unit;
 
-        public void Initialize(Unit unit)
+        public void Initialize(Unit unit, string tag)
         {
-            this.unit = unit;
+            this.unit = (NonControllableUnit)unit;
+            this.tag = tag;
             atkReload = unit.currentStats.atkReload;
 
             CapsuleCollider atkRange = unit.gameObject.AddComponent<CapsuleCollider>();
@@ -30,6 +31,20 @@ namespace Prototype
             //Atk Animation
             atkReload = unit.currentStats.atkReload;
             return target.GetComponent<UnitHealth>().TakeDamage(unit.currentStats.atkDmg);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            Unit otherUnit = other.GetComponent<Unit>();
+            if (other.gameObject.activeSelf && other != null && unit.unitHealth.alive)
+                unit.brain.UnitInRange(otherUnit);
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            Unit otherUnit = other.GetComponent<Unit>();
+            if (other.gameObject.activeSelf && other != null && unit.unitHealth.alive)
+                unit.brain.UnitExitRange(otherUnit);
         }
     }
 }

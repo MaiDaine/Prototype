@@ -3,38 +3,53 @@
 namespace Prototype
 {
     [RequireComponent(typeof(UnitMovement))]
-    [RequireComponent(typeof(UnitAttack))]
     public class NonControllableUnit : Unit
     {
         public UnitBrain brain;
+        public UnitAttack unitAttack;
 
         public void Initialize(Unit enemyHero, UnitStats stats, string tag)
         {
             base.Initialize(stats, tag);
             GetComponent<UnitMovement>().Initialize(currentStats);
-            GetComponent<UnitAttack>().Initialize(this);
+            unitAttack.Initialize(this, tag);
             brain = ScriptableObject.CreateInstance(brain.name) as UnitBrain;
             brain.Initialize(this, enemyHero);
         }
 
         private void Update()
         {
-            if (unitHealth.alive)
+            if (unitHealth.alive && stuns == 0)
                 brain.Think(this);
         }
 
-        private void OnTriggerEnter(Collider otherGameObject)
+        //Status
+        public override void OnStunStart()
         {
-            Unit other = otherGameObject.GetComponent<Unit>();
-            if (otherGameObject.gameObject.activeSelf && other != null && unitHealth.alive)
-                brain.UnitInRange(other);
+            if (stuns == 0)
+                GetComponent<UnitMovement>().StopMovement();
+            base.OnStunStart();
         }
 
-        private void OnTriggerExit(Collider otherGameObject)
+        public override void OnStunEnd()
         {
-            Unit other = otherGameObject.GetComponent<Unit>();
-            if (otherGameObject.gameObject.activeSelf && other != null && unitHealth.alive)
-                brain.UnitExitRange(other);
+            base.OnStunEnd();
+            if (stuns == 0)
+                GetComponent<UnitMovement>().ResumeMovement();
+        }
+
+        public override void OnRootStart()
+        {
+            if (roots == 0)
+                GetComponent<UnitMovement>().StopMovement();
+            base.OnRootStart();
+        }
+
+        public override void OnRootEnd()
+        {
+            base.OnRootEnd();
+            if (roots == 0)
+                GetComponent<UnitMovement>().StopMovement();
         }
     }
 }

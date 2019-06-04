@@ -5,7 +5,7 @@ namespace Prototype
     [CreateAssetMenu(menuName = "Brains/Units/UnitDefault")]
     public class UnitDefault : UnitBrain
     {
-        public override void Initialize(Unit unit, Unit enemyHero)
+        public override void Initialize(NonControllableUnit unit, Unit enemyHero)
         {
             base.Initialize(unit, enemyHero);
             enemyUnits.Add(enemyHero);

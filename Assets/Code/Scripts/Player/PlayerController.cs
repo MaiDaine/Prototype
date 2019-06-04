@@ -41,9 +41,17 @@ namespace Prototype
 
         private void Update()
         {
+            for (int i = 0; i < units.Length; i++)
+                if (units[i] != null)
+                    units[i].UpdateSpellCooldowns();
+
+            if (currentUnit.stuns != 0)
+                return;
+
             SwitchUnit();
             SpellUpdate();
-            Move();
+            if (currentUnit.roots == 0)
+                Move();
 
             if (useJoyStick)
             {
@@ -58,9 +66,6 @@ namespace Prototype
                 keyboardController.MouseRotate(ref currentUnit);
                 keyboardController.OrderUpdate(ref currentUnit);
             }
-            for (int i = 0; i < units.Length; i++)
-                if (units[i] != null)
-                    units[i].UpdateSpellCooldowns();
         }
 
         //Spells
@@ -87,7 +92,7 @@ namespace Prototype
                 keyboardController.SpellUpdate(ref spellCasting);
         }
 
-        //Unit Handle
+        //Units Handle
         private void SwitchUnit()
         {
             int index = -1;
@@ -123,8 +128,6 @@ namespace Prototype
         //Movement
         private void Move()
         {
-            if (!currentUnit.canMove)
-                return;
             float modifier = currentUnit.currentStats.moveSpeed * Time.deltaTime;
             currentUnit.transform.position += new Vector3(
                 Input.GetAxis("Horizontal") * modifier,

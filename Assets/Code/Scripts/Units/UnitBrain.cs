@@ -5,7 +5,7 @@ namespace Prototype
 {
     public abstract class UnitBrain : ScriptableObject
     {
-        protected Unit unit;
+        protected NonControllableUnit unit;
         protected Unit enemyHero;
         protected List<Unit> enemyUnits = new List<Unit>();
         protected List<Unit> allyUnits = new List<Unit>();
@@ -14,11 +14,11 @@ namespace Prototype
 
         public virtual void Assign(UnitSet set) { }
 
-        public virtual void Initialize(Unit unit, Unit enemyHero)
+        public virtual void Initialize(NonControllableUnit unit, Unit enemyHero)
         {
             this.unit = unit;
             this.enemyHero = enemyHero;
-            unitAttack = unit.GetComponent<UnitAttack>();
+            unitAttack = unit.unitAttack;
         }
 
         public virtual void UnitInRange(Unit other)

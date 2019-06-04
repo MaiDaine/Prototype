@@ -7,13 +7,11 @@ namespace Prototype
         public enum OrderType { None, Def, Atk, Reg };//Items will replace order later
         public UnitStats unitStats;
         public SpellSlot[] spellBook;
-        public bool canMove = true;
 
         private void Awake()
         {
             currentStats = ScriptableObject.CreateInstance("UnitStats") as UnitStats;
             currentStats.Assign(unitStats);
-            //GetComponent<UnitMovement>().Initialize(unitStats);
             for (int i = 0; i < spellBook.Length; i++)
                     spellBook[i].spellCooldown = 0f;
         }
