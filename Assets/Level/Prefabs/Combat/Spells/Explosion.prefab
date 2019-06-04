@@ -44,15 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castType: 2
-  quickCast: 0
-  smartCast: 1
-  channel: 0
   useCursor: 1
   delayToEffect: 1.5
   delayToClean: 0
   cooldown: 5
+  spellPower: 30
   spellIndicatorRef: {fileID: 2110963215477219469, guid: b16ef5e3afa144543afdc1080c62f901,
     type: 3}
   visualEffectRef: {fileID: 5016736576995739016, guid: 4804624a4589ee74493c45d7b21d474c,
     type: 3}
-  spellDamage: 30

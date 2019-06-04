@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Prototype
 {
@@ -6,6 +7,7 @@ namespace Prototype
     public struct SpellSlot
     {
         public ASpell spellRef;
+        [HideInInspector]
         public float spellCooldown;
     }
 }

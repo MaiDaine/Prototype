@@ -14,12 +14,7 @@ namespace Prototype
             this.unit = unit;
         }
 
-        public override void Launch(float _)
-        {
-            Effect();
-        }
-
-        public override void Effect()
+        public override void Launch()
         {
             NavMeshHit hit;
             if (NavMesh.SamplePosition(unit.transform.position + distance * unit.transform.forward, out hit, 5f, NavMesh.AllAreas))
@@ -36,7 +31,6 @@ namespace Prototype
                         unit.transform.position = new Vector3(hit.position.x, unit.transform.position.y, hit.position.z);
                 }
             }
-            base.Effect();
         }
     }
 }

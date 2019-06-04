@@ -9,10 +9,10 @@ namespace Prototype
         [HideInInspector]
         public bool alive = false;
 
-        private Unit unit;
-        private float currentHealth;
+        protected Unit unit;
+        protected float currentHealth;
 
-        public void Initialize(Unit unit)
+        public virtual void Initialize(Unit unit)
         {
             healthBar.Initialize(unit);
             alive = true;
@@ -21,7 +21,7 @@ namespace Prototype
             SetHealthUI();
         }
 
-        public bool TakeDamage(int amount)
+        public virtual bool TakeDamage(int amount)
         {
             currentHealth -= amount;
             if (currentHealth < 1 && alive)
@@ -35,7 +35,7 @@ namespace Prototype
 
         private void SetHealthUI()
         {
-            healthBar.SetFillAmount((float)currentHealth / (float)unit.currentStats.health);
+            healthBar.SetHealthFillAmount((float)currentHealth / (float)unit.currentStats.health);
         }
 
         private void OnDeath()

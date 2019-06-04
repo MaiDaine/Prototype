@@ -58,6 +58,9 @@ namespace Prototype
                 keyboardController.MouseRotate(ref currentUnit);
                 keyboardController.OrderUpdate(ref currentUnit);
             }
+            for (int i = 0; i < units.Length; i++)
+                if (units[i] != null)
+                    units[i].UpdateSpellCooldowns();
         }
 
         //Spells
@@ -111,7 +114,7 @@ namespace Prototype
 
                 EncounterController.instance.activeHero = currentUnit;
                 GetComponent<CameraController>().UpdateTarget(currentUnit.gameObject);
-                
+
                 spellCasting.CancelCast();
                 spellCasting.UpdateSpellBook(ref currentUnit.spellBook);
             }
