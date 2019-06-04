@@ -1,16 +1,19 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Prototype
 {
     [RequireComponent(typeof(UnitHealth))]
     public class Unit : MonoBehaviour
     {
+        //Status
+        public short stuns = 0;
 
         [HideInInspector]
         public UnitStats currentStats;
 
         protected UnitHealth unitHealth;
-
+        
         public virtual void Initialize(UnitStats stats, string tag)
         {
             currentStats = ScriptableObject.CreateInstance("UnitStats") as UnitStats;
