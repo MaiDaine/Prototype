@@ -2,7 +2,7 @@
 
 namespace Prototype
 {
-    public class Projectile : MonoBehaviour
+    public class LauncherBullet : MonoBehaviour
     {
         public float timer;
         public float explosionRadius;
@@ -10,13 +10,12 @@ namespace Prototype
         public float speed = 1f;
 
         private Vector3 direction;
-        private string ownerTag;
-        private bool alive = true;
+        private bool alive;
 
-        public virtual void Initialize(Vector3 direction, string ownerTag)
+        public virtual void Initialize(Vector3 direction)
         {
             this.direction = direction;
-            this.ownerTag = ownerTag;
+            alive = true;
         }
 
         protected virtual void Update()
@@ -37,20 +36,22 @@ namespace Prototype
             {
                 Unit tmp;
 
-                if ((tmp = hit.collider.GetComponent<Unit>()) != null && hit.collider.tag != ownerTag)
+                if ((tmp = hit.collider.GetComponent<Unit>()) != null && hit.collider.tag == "PlayerTeam")
                 {
                     alive = false;
                     tmp.GetComponent<UnitHealth>().TakeDamage(explosionDamage);
                 }
             }
             alive = false;
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
         }
 
         protected virtual void OnTriggerEnter(Collider other)
         {
-            if (other.tag != ownerTag)
+            if (other.tag == "PlayerTeam")
                 Effect();
+            else if (other.tag == "Arena")
+                gameObject.SetActive(false);
         }
     }
 }

@@ -135,13 +135,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 259458513}
+  - component: {fileID: 259458514}
   m_Layer: 0
   m_Name: Launchers
   m_TagString: EnemyTeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &259458513
 Transform:
   m_ObjectHideFlags: 0
@@ -158,6 +159,22 @@ Transform:
   m_Father: {fileID: 1588240260}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &259458514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259458512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ca89f0958eb194b9258e9751dedd60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    objectToPool: {fileID: 867475569838417124, guid: 04ea34d2ddaf068439b8401689c02eb0,
+      type: 3}
+    amountToPool: 100
 --- !u!4 &343702891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
@@ -263,8 +280,18 @@ PrefabInstance:
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: tick
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!4 &431729668 stripped
@@ -341,7 +368,18 @@ MonoBehaviour:
   gameEvent: {fileID: 11400000, guid: 82503867049242044937d7f3b0b3a9b2, type: 2}
   response:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!4 &555833414 stripped
@@ -437,8 +475,18 @@ PrefabInstance:
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: tick
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!1 &685450369
@@ -1287,8 +1335,18 @@ PrefabInstance:
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: tick
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!1001 &1172904660
@@ -1586,8 +1644,18 @@ PrefabInstance:
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: tick
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!1001 &1528690915
@@ -1677,8 +1745,18 @@ PrefabInstance:
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: tick
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!1 &1555064068
@@ -1868,8 +1946,18 @@ PrefabInstance:
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: tick
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!1001 &1763340646
@@ -1959,8 +2047,18 @@ PrefabInstance:
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: tick
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!1001 &1827441544
@@ -2050,8 +2148,18 @@ PrefabInstance:
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: tick
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!1001 &1918896053
@@ -2141,8 +2249,18 @@ PrefabInstance:
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: tick
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!4 &1921037776 stripped
@@ -2523,8 +2641,18 @@ PrefabInstance:
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: tick
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!4 &6010421221778564967 stripped

@@ -28,6 +28,11 @@ namespace Prototype
 
         private void Update()
         {
+            if (unit == null)
+            {
+                OnDestroy();
+                return;
+            }
             this.transform.position = unit.transform.position;
         }
 
