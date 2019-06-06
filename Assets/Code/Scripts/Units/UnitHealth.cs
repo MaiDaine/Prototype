@@ -33,6 +33,16 @@ namespace Prototype
             return false;
         }
 
+        public virtual void Heal(int amount)
+        {
+            currentHealth += amount;
+            if (currentHealth > unit.currentStats.health)
+                currentHealth = unit.currentStats.health;
+            SetHealthUI();
+        }
+
+        public bool IsFullLife() { return currentHealth == unit.currentStats.health; }
+
         private void SetHealthUI()
         {
             healthBar.SetHealthFillAmount((float)currentHealth / (float)unit.currentStats.health);

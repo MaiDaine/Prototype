@@ -13,7 +13,7 @@ namespace Prototype
         public override void Init(string tag, GameObject unit)
         {
             base.Init(tag, unit);
-            spellIndicator.GetComponent<DecalProjectorComponent>().m_Size = new Vector3(spellRange * 2f, 4f, 1f);//TODO DECAL
+            spellIndicator.GetComponent<DecalProjectorComponent>().m_Size = new Vector3(spellRange * 2f, 4f, 1f);
             //TODO STATUS SLOW ON PLAYER
         }
 

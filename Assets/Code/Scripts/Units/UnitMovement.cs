@@ -12,6 +12,7 @@ namespace Prototype
         {
             agent = GetComponent<NavMeshAgent>();
             agent.speed = unitStats.moveSpeed;
+            agent.acceleration = unitStats.moveSpeed * 2f;
             agent.stoppingDistance = unitStats.atkRange;
             agent.enabled = true;
         }
