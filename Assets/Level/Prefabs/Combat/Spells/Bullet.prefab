@@ -44,13 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castType: 1
-  useCursor: 0
-  delayToEffect: 0
-  delayToClean: 0
+  spellIndicatorRef: {fileID: 7200746381447483686, guid: b9936a8bc9f933443babfd5c1f8149ce,
+    type: 3}
+  visualEffectRef: {fileID: 0}
   cooldown: 2
   spellPower: 5
-  spellIndicatorRef: {fileID: 2110963215477219469, guid: 366aaa4c38cea4542baa8391b606482a,
-    type: 3}
+  useCursor: 0
   projectileRef: {fileID: -1754287202760949812, guid: 07205186ea74f504a9bd7be48903ad7e,
     type: 3}
   spellRange: 12

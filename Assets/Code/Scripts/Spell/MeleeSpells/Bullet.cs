@@ -10,11 +10,13 @@ namespace Prototype
 
         private Projectile projectile = null;
         private RootStatus rootStatus;
+        private Material material;
 
         public override void Init(string tag, GameObject unit)
         {
             base.Init(tag, unit);
             spellIndicator.GetComponent<DecalProjectorComponent>().m_Size = new Vector3(spellRange * 2f, 2f, 1f);
+            material = spellIndicator.GetComponent<DecalProjectorComponent>().m_Material;
             rootStatus = new RootStatus();
             rootStatus.Init(unit.GetComponent<Unit>());
         }
@@ -27,16 +29,17 @@ namespace Prototype
 
             Transform transform = spellIndicator.transform;
             transform.LookAt(unit.transform);
-            transform.eulerAngles = new Vector3(90f, transform.eulerAngles.y, (transform.eulerAngles.z + 90f) % 360);
+            transform.eulerAngles = new Vector3(90f, transform.eulerAngles.y, -((transform.eulerAngles.z + 90f) % 360));
             spellIndicator.transform.rotation = transform.rotation;
         }
 
         public override void Launch()
         {
             Destroy(spellIndicator);
+            spellIndicator = null;
             unit.GetComponent<UnitStatusManager>().UnRegisterStatus(rootStatus);
             rootStatus.OnDestroy(unit.GetComponent<Unit>());
-            if (castTime > 0.5)
+            if (castTime > 0.5f)
             {
                 ChanneledLaunch();
                 return;
@@ -44,6 +47,13 @@ namespace Prototype
             base.Launch();
             CreateProjectile(this.tag, unit.transform.position, unit.transform.forward);
             Effect();
+        }
+
+        protected override void Update()
+        {
+            base.Update();
+            if (spellIndicator != null)
+                material.SetFloat("_ChargingPercent", Mathf.Clamp01(castTime / 0.5f));
         }
 
         private void ChanneledLaunch()

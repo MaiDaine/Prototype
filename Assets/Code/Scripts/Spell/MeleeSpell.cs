@@ -25,7 +25,7 @@ namespace Prototype
             castTime = 0f;
         }
 
-        protected void Update()
+        protected virtual void Update()
         {
             castTime += Time.deltaTime;
         }
