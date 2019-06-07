@@ -16,6 +16,8 @@ namespace Prototype
         public UnitStats currentStats;
         [HideInInspector]
         public UnitHealth unitHealth;
+        [HideInInspector]
+        public float moveSpeedModifier = 1f;
 
         public virtual void Initialize(UnitStats stats, string tag)
         {
@@ -42,5 +44,9 @@ namespace Prototype
         public virtual void OnStunEnd() { stuns -= 1; }
         public virtual void OnRootStart() { roots += 1; }
         public virtual void OnRootEnd() { roots -= 1; }
+        public virtual void OnMoveSpeedChange(float changeAmount)
+        {
+            moveSpeedModifier = Mathf.Clamp(moveSpeedModifier + changeAmount, 0.25f, 2f);
+        }
     }
 }

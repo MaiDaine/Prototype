@@ -52,8 +52,13 @@ namespace Prototype
         protected override void Update()
         {
             base.Update();
-            if (spellIndicator != null && castTime <= maxChargeTime)
-                material.SetFloat("_ChargingPercent", Mathf.Clamp01((castTime % chargeTime) / chargeTime));
+            if (spellIndicator != null)
+            {
+                if (castTime <= maxChargeTime)
+                    material.SetFloat("_ChargingPercent", Mathf.Clamp01((castTime % chargeTime) / chargeTime));
+                else
+                    material.SetFloat("_ChargingPercent", 1f);
+            }
         }
 
         private void SpawnProjectile()

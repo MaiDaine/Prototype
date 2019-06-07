@@ -44,10 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castType: 2
-  useCursor: 0
-  delayToEffect: 0
-  delayToClean: 0
+  spellIndicatorRef: {fileID: 0}
+  visualEffectRef: {fileID: 0}
   cooldown: 5
   spellPower: 50
-  visualEffectRef: {fileID: 0}
+  useCursor: 0
   shieldDuration: 5
+  speedModifier: 0.25

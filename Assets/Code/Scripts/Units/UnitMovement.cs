@@ -17,6 +17,12 @@ namespace Prototype
             agent.enabled = true;
         }
 
+        public void OnSpeedChange(float moveSpeed)
+        {
+            agent.speed = moveSpeed;
+            agent.acceleration = moveSpeed * 2f;
+        }
+
         public void StopMovement()
         {
             agent.velocity = Vector3.zero;

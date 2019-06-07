@@ -7,13 +7,15 @@ namespace Prototype
         public enum OrderType { None, Def, Atk, Reg };//Items will replace order later
         public UnitStats unitStats;
         public SpellSlot[] spellBook;
+        public float currentSpeed;
 
-        PlayerController playerController;
+        private PlayerController playerController;
 
         private void Awake()
         {
             currentStats = ScriptableObject.CreateInstance("UnitStats") as UnitStats;
             currentStats.Assign(unitStats);
+            currentSpeed = currentStats.moveSpeed;
             for (int i = 0; i < spellBook.Length; i++)
                     spellBook[i].spellCooldown = 0f;
         }
@@ -39,6 +41,12 @@ namespace Prototype
         {
             playerController.OnUnitDeath();
             base.OnDeath();
+        }
+
+        public override void OnMoveSpeedChange(float changeAmount)
+        {
+            base.OnMoveSpeedChange(changeAmount);
+            currentSpeed = currentStats.moveSpeed * moveSpeedModifier;
         }
     }
 }

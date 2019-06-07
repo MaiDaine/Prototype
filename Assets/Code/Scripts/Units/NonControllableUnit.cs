@@ -57,5 +57,11 @@ namespace Prototype
             if (roots == 0)
                 GetComponent<UnitMovement>().StopMovement();
         }
+
+        public override void OnMoveSpeedChange(float changeAmount)
+        {
+            base.OnMoveSpeedChange(changeAmount);
+            GetComponent<UnitMovement>().OnSpeedChange(currentStats.moveSpeed * moveSpeedModifier);
+        }
     }
 }

@@ -148,7 +148,7 @@ namespace Prototype
         //Movement
         private void Move()
         {
-            float modifier = currentUnit.currentStats.moveSpeed * Time.deltaTime;
+            float modifier = currentUnit.currentSpeed * Time.deltaTime;
             currentUnit.transform.position += new Vector3(
                 Input.GetAxis("Horizontal") * modifier,
                 0f,
