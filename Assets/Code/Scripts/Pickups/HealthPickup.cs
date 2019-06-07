@@ -17,9 +17,11 @@ namespace Prototype
         {
             UnitHealth health;
             if (other.tag == this.tag && (health = other.GetComponent<UnitHealth>()) != null && !health.IsFullLife())
+            {
                 health.Heal(healAmount);
-            GetComponent<BoxCollider>().enabled = false;
-            GetComponent<VisualEffect>().enabled = false;
+                GetComponent<BoxCollider>().enabled = false;
+                GetComponent<VisualEffect>().enabled = false;
+            }
         }
     }
 }

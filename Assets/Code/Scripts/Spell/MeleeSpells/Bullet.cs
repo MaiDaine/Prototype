@@ -11,6 +11,9 @@ namespace Prototype
         private Projectile projectile = null;
         private RootStatus rootStatus;
         private Material material;
+        private const int maxCharge = 3;
+        private const float chargeTime = 0.5f;
+        private const float maxChargeTime = (float)maxCharge * chargeTime;
 
         public override void Init(string tag, GameObject unit)
         {
@@ -39,30 +42,18 @@ namespace Prototype
             spellIndicator = null;
             unit.GetComponent<UnitStatusManager>().UnRegisterStatus(rootStatus);
             rootStatus.OnDestroy(unit.GetComponent<Unit>());
-            if (castTime > 0.5f)
-            {
-                ChanneledLaunch();
-                return;
-            }
             base.Launch();
-            CreateProjectile(this.tag, unit.transform.position, unit.transform.forward);
-            Effect();
+            int projectileCount = (int)Mathf.Clamp(castTime / chargeTime, 1f, maxCharge);
+            for (int i = 0; i < projectileCount; i++)
+                Invoke("SpawnProjectile", (float)i * 0.1f);
+            Invoke("Effect", (float)projectileCount * 0.1f);
         }
 
         protected override void Update()
         {
             base.Update();
-            if (spellIndicator != null)
-                material.SetFloat("_ChargingPercent", Mathf.Clamp01(castTime / 0.5f));
-        }
-
-        private void ChanneledLaunch()
-        {
-            Cursor.visible = true;
-            SpawnProjectile();
-            Invoke("SpawnProjectile", 0.1f);
-            Invoke("SpawnProjectile", 0.2f);
-            Invoke("Effect", 0.2f);
+            if (spellIndicator != null && castTime <= maxChargeTime)
+                material.SetFloat("_ChargingPercent", Mathf.Clamp01((castTime % chargeTime) / chargeTime));
         }
 
         private void SpawnProjectile()
