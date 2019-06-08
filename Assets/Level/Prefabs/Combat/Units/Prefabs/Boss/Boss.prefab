@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 3275222551669464349}
   - component: {fileID: 6020842644446398848}
   m_Layer: 10
-  m_Name: Elite
+  m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c05de7c865075334786e6a47a543af72, type: 2}
+  - {fileID: 2100000, guid: 801db2d997a562b4ea333aa4593ce0f0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -224,9 +224,9 @@ MonoBehaviour:
   currentStats: {fileID: 0}
   unitHealth: {fileID: 0}
   moveSpeedModifier: 1
-  brainRef: {fileID: 11400000, guid: 34b8f355bead27e4d9db0245015eef94, type: 2}
+  brainRef: {fileID: 11400000, guid: 48d601a0488f9104896256f34ec5c8b8, type: 2}
+  brain: {fileID: 0}
   unitAttack: {fileID: 276578714913533940}
-  brain: {fileID: 11400000, guid: 34b8f355bead27e4d9db0245015eef94, type: 2}
 --- !u!65 &6020842644446398848
 BoxCollider:
   m_ObjectHideFlags: 0

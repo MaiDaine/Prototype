@@ -61,8 +61,8 @@ namespace Prototype
 
         private void OnShieldEnd()
         {
-            SetShieldUI();
             currentShield = 0;
+            SetShieldUI();
             isShield = false;
             foreach (Action callback in callbacksOnShieldEnd)
                 if (callback != null)

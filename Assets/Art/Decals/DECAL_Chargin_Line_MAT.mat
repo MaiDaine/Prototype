@@ -117,7 +117,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_1A182B73: 0
+    - Vector1_1A182B73: 1
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
@@ -131,6 +131,7 @@ Material:
     - _AlphaSrcBlend: 1
     - _Anisotropy: 0
     - _BlendMode: 0
+    - _ChargingPercent: 0.5629227
     - _CoatMask: 0
     - _CullMode: 2
     - _CullModeForward: 2

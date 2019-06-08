@@ -2,23 +2,11 @@
 
 namespace Prototype
 {
-    public class SpellLauncher : MonoBehaviour
+    public class SpellLauncherDoubleCurve : SpellLauncher
     {
-        public LauncherBullet projectileRef;
-        public float projectileDistance;
-        public ObjectPool objectPool;
-        public float tick;
-        public bool active = false;
+        private Vector3 rotation = new Vector3(0, 5f, 0);
 
-        protected float timer = 0f;
-        protected LauncherBullet projectile;
-
-        protected void Awake()
-        {
-            projectileRef.timer = projectileDistance / projectileRef.speed;
-        }
-
-        protected virtual void Update()
+        protected override void Update()
         {
             if (active)
             {
@@ -28,18 +16,23 @@ namespace Prototype
                     Fire();
                     timer = tick;
                 }
+                transform.Rotate(rotation);
             }
         }
 
-        public virtual void Fire()
+        public override void Fire()
         {
             projectile = objectPool.GetPooledObject().GetComponent<LauncherBullet>();
             projectile.tag = tag;
             projectile.transform.position = new Vector3(transform.position.x, 1f, transform.position.z);
             projectile.Initialize(transform.right);
             projectile.gameObject.SetActive(true);
-        }
 
-        public void OnEventReceived() { active = !active; }
+            projectile = objectPool.GetPooledObject().GetComponent<LauncherBullet>();
+            projectile.tag = tag;
+            projectile.transform.position = new Vector3(transform.position.x, 1f, transform.position.z);
+            projectile.Initialize(-transform.right);
+            projectile.gameObject.SetActive(true);
+        }
     }
 }

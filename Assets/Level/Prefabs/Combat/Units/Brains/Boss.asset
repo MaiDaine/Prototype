@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a8da0b817570e4a90e0a6c48d980c2, type: 3}
+  m_Name: Boss
+  m_EditorClassIdentifier: 
+  phases:
+  - phaseStatus:
+    - type: 3
+      power: -0.8
+      duration: 0
+    launchers:
+    - {fileID: 6018998252611777393, guid: 08ac1356e579502488655641ab7a7a16, type: 3}
+    - {fileID: 3231069461219043197, guid: 7512c98d203ad81488710bb7ce913c4c, type: 3}
+    activeLaunchers: 1
+    mapEvents: []
+  - phaseStatus: []
+    launchers: []
+    activeLaunchers: 0
+    mapEvents: []
+  - phaseStatus:
+    - type: 3
+      power: -0.8
+      duration: 0
+    launchers:
+    - {fileID: 6018998252611777393, guid: 08ac1356e579502488655641ab7a7a16, type: 3}
+    - {fileID: 3231069461219043197, guid: 7512c98d203ad81488710bb7ce913c4c, type: 3}
+    activeLaunchers: 2
+    mapEvents: []
+  threshold: 420000002100000000000000

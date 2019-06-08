@@ -20,7 +20,7 @@ namespace Prototype
 
         protected virtual void Update()
         {
-            this.transform.position += direction * speed;
+            transform.position += direction.normalized * speed;
             timer -= Time.deltaTime;
             if (timer < 0)
                 Effect();

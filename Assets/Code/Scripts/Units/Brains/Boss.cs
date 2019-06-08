@@ -37,7 +37,7 @@ namespace Prototype
                 phase++;
                 PhaseChange();
             }
-            if (currentTarget == null)
+            if (currentTarget == null || !currentTarget.isActiveAndEnabled)
                 currentTarget = EncounterController.instance.activeHero;
             if (Vector3.Distance(unit.transform.position, currentTarget.transform.position) <= unit.currentStats.atkRange)
                 unitMovement.StopMovement();
