@@ -8,9 +8,9 @@ namespace Prototype
 
         public override void Assign(UnitSet set) { targets = set; }
 
-        public override void Initialize(NonControllableUnit unit, Unit enemyHero)
+        public override void Initialize(UnitBrain brain, NonControllableUnit unit, Unit enemyHero)
         {
-            base.Initialize(unit, enemyHero);
+            base.Initialize(brain, unit, enemyHero);
             unit.GetComponent<UnitHealth>().alive = true;
         }
 

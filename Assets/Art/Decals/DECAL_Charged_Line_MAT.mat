@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DECAL_Chargin_Line_MAT
+  m_Name: DECAL_Charged_Line_MAT
   m_Shader: {fileID: -6465566751694194690, guid: 96aa888f1f3d3744bb9b65201f2562c6,
     type: 3}
   m_ShaderKeywords: 
@@ -22,6 +22,14 @@ Material:
     m_TexEnvs:
     - Texture2D_9D3040E6:
         m_Texture: {fileID: 2800000, guid: 257c65acfd3ee7a40ac6c4ffadf6069a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_B4BA239A:
+        m_Texture: {fileID: 2800000, guid: 4ec8482fdec16c140be6f7b8947055c8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_E9A9C329:
+        m_Texture: {fileID: 2800000, guid: 3ac8c819ff0079145b7044507cb045e5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_FD744255:
@@ -118,6 +126,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_1A182B73: 1
+    - Vector1_38F306DB: 0
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
@@ -131,7 +140,7 @@ Material:
     - _AlphaSrcBlend: 1
     - _Anisotropy: 0
     - _BlendMode: 0
-    - _ChargingPercent: 0.5629227
+    - _ChargingPercent: 0.8836341
     - _CoatMask: 0
     - _CullMode: 2
     - _CullModeForward: 2
@@ -246,7 +255,9 @@ Material:
     - _ZTestModeDistortion: 8
     - _ZWrite: 1
     m_Colors:
+    - Color_3E478A29: {r: 0.5, g: 0, b: 0, a: 1}
     - Color_7C22D525: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - Color_AFCDAE95: {r: 1, g: 1, b: 1, a: 1}
     - Color_E6447199: {r: 0.78431374, g: 0.78431374, b: 1, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}

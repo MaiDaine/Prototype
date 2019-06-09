@@ -22,10 +22,15 @@ MonoBehaviour:
     - {fileID: 3231069461219043197, guid: 7512c98d203ad81488710bb7ce913c4c, type: 3}
     activeLaunchers: 1
     mapEvents: []
-  - phaseStatus: []
-    launchers: []
-    activeLaunchers: 0
-    mapEvents: []
+  - phaseStatus:
+    - type: 3
+      power: -0.99
+      duration: 0
+    launchers:
+    - {fileID: -9013143521304580619, guid: 944e2fe1a8a87674fa3bf2a5bc3f22e0, type: 3}
+    activeLaunchers: 1
+    mapEvents:
+    - {fileID: 11400000, guid: 9140c158f2e4bfc409183d00ae8484b7, type: 2}
   - phaseStatus:
     - type: 3
       power: -0.8

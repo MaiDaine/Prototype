@@ -9,9 +9,12 @@ namespace Prototype
 
         public EncounterEvent encounterEventRef;
         public Transform[] spawnPoints;
+        public Transform bossSpawnPoint;
+        public CardData boss;
         public Unit activeHero;
         public UnitSet playerUnits;
         public UnitSet enemyUnits;
+        public ObjectPool bulletPool;
 
         private EncounterEvent encounterEvent;
         private int spawnPointCount;
@@ -45,9 +48,16 @@ namespace Prototype
                 timerEvent -= Time.deltaTime;
                 if (timerEvent <= 0f)
                 {
-                    lastWave = encounterEvent.NextPhase(ref nextSpawn);
+                    //lastWave = encounterEvent.NextPhase(ref nextSpawn);
+                    lastWave = true;
                     if (!lastWave)
                         timerSpawn = Time.deltaTime;
+                    else
+                    {
+                        NonControllableUnit tmp = Instantiate((NonControllableUnit)boss.unit, bossSpawnPoint);
+                        tmp.Initialize(activeHero, boss.unitStats, "EnemyTeam");
+                        enemyUnits.Add(tmp);//TODO EVENT CLEAR
+                    }
                 }
 
             }

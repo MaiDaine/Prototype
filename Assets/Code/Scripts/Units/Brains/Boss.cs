@@ -62,11 +62,13 @@ namespace Prototype
             int end = currentPhase.launchers.Length - currentPhase.activeLaunchers;
             int start = Random.Range(0, end);
             SpellLauncher tmpLauncher;
+            BulletSpellLauncher bulletLauncher;
             for (int i = 0; i < currentPhase.activeLaunchers; i++)
             {
                 tmpLauncher = Instantiate(currentPhase.launchers[i], unit.transform);
                 activeLaunchers.Add(tmpLauncher);
-                tmpLauncher.objectPool = EncounterController.instance.bulletPool;
+                if ((bulletLauncher = tmpLauncher.gameObject.GetComponent<BulletSpellLauncher>()) != null)
+                    bulletLauncher.objectPool = EncounterController.instance.bulletPool;
                 tmpLauncher.active = true;
             }
 

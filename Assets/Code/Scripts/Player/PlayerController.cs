@@ -32,6 +32,7 @@ namespace Prototype
             currentUnit = units[0];
             currentUnit.transform.position = spawnPoints[0];
             currentUnit.gameObject.SetActive(true);
+            EncounterController.instance.activeHero = currentUnit;
             playerUnits.Add(currentUnit);
 
             GetComponent<CameraController>().UpdateTarget(currentUnit.gameObject);
