@@ -201,6 +201,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: triggerEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: tick
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: projectileDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: 0}
+      propertyPath: projectileRef
+      value: 
+      objectReference: {fileID: 867475569838417124, guid: 04ea34d2ddaf068439b8401689c02eb0,
+        type: 3}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -272,27 +304,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: EnemyTeam
       objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: triggerEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
-        type: 2}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: tick
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: projectileDistance
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: objectPool
-      value: 
-      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!4 &431729668 stripped
@@ -430,6 +441,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1346668643}
     m_Modifications:
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: triggerEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: tick
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: projectileDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: 0}
+      propertyPath: projectileRef
+      value: 
+      objectReference: {fileID: 867475569838417124, guid: 04ea34d2ddaf068439b8401689c02eb0,
+        type: 3}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -501,27 +544,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: EnemyTeam
       objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: triggerEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
-        type: 2}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: tick
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: projectileDistance
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: objectPool
-      value: 
-      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!1 &685450369
@@ -1290,6 +1312,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1346668643}
     m_Modifications:
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: triggerEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: tick
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: projectileDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: 0}
+      propertyPath: projectileRef
+      value: 
+      objectReference: {fileID: 867475569838417124, guid: 04ea34d2ddaf068439b8401689c02eb0,
+        type: 3}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1361,27 +1415,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: EnemyTeam
       objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: triggerEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
-        type: 2}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: tick
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: projectileDistance
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: objectPool
-      value: 
-      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!1 &1004833284 stripped
@@ -1652,6 +1685,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: triggerEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: tick
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: projectileDistance
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: 0}
+      propertyPath: projectileRef
+      value: 
+      objectReference: {fileID: 867475569838417124, guid: 04ea34d2ddaf068439b8401689c02eb0,
+        type: 3}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1723,27 +1788,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: EnemyTeam
       objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: triggerEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
-        type: 2}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: tick
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: projectileDistance
-      value: 46
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: objectPool
-      value: 
-      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!1001 &1528690915
@@ -1753,6 +1797,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1346668643}
     m_Modifications:
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: triggerEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: tick
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: projectileDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: 0}
+      propertyPath: projectileRef
+      value: 
+      objectReference: {fileID: 867475569838417124, guid: 04ea34d2ddaf068439b8401689c02eb0,
+        type: 3}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1824,27 +1900,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: EnemyTeam
       objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: triggerEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
-        type: 2}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: tick
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: projectileDistance
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: objectPool
-      value: 
-      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!1 &1555064068
@@ -1954,6 +2009,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: triggerEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: tick
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: projectileDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: 0}
+      propertyPath: projectileRef
+      value: 
+      objectReference: {fileID: 867475569838417124, guid: 04ea34d2ddaf068439b8401689c02eb0,
+        type: 3}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2025,27 +2112,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: EnemyTeam
       objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: triggerEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
-        type: 2}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: tick
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: projectileDistance
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: objectPool
-      value: 
-      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!1001 &1763340646
@@ -2055,6 +2121,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: triggerEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: tick
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: projectileDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: 0}
+      propertyPath: projectileRef
+      value: 
+      objectReference: {fileID: 867475569838417124, guid: 04ea34d2ddaf068439b8401689c02eb0,
+        type: 3}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2126,27 +2224,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: EnemyTeam
       objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: triggerEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
-        type: 2}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: tick
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: projectileDistance
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: objectPool
-      value: 
-      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!1001 &1827441544
@@ -2156,6 +2233,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1346668643}
     m_Modifications:
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: triggerEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: tick
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: projectileDistance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: 0}
+      propertyPath: projectileRef
+      value: 
+      objectReference: {fileID: 867475569838417124, guid: 04ea34d2ddaf068439b8401689c02eb0,
+        type: 3}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2227,27 +2336,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: EnemyTeam
       objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: triggerEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
-        type: 2}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: tick
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: projectileDistance
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: objectPool
-      value: 
-      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!1001 &1918896053
@@ -2257,6 +2345,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: triggerEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: tick
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: projectileDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: 0}
+      propertyPath: projectileRef
+      value: 
+      objectReference: {fileID: 867475569838417124, guid: 04ea34d2ddaf068439b8401689c02eb0,
+        type: 3}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2328,27 +2448,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: EnemyTeam
       objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: triggerEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
-        type: 2}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: tick
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: projectileDistance
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: objectPool
-      value: 
-      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!4 &1921037776 stripped
@@ -2829,6 +2928,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: -8340268301454044926, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: projectileDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: triggerEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: tick
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: projectileDistance
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 259458514}
+    - target: {fileID: 0}
+      propertyPath: projectileRef
+      value: 
+      objectReference: {fileID: 867475569838417124, guid: 04ea34d2ddaf068439b8401689c02eb0,
+        type: 3}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2900,27 +3031,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: EnemyTeam
       objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: triggerEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
-        type: 2}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: tick
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: projectileDistance
-      value: 46
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: objectPool
-      value: 
-      objectReference: {fileID: 259458514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329db5122994b34ab5061ce7479e1dc, type: 3}
 --- !u!4 &6010421221778564967 stripped
