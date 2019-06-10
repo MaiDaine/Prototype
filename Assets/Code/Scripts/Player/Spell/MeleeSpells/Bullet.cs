@@ -41,7 +41,8 @@ namespace Prototype
             Destroy(spellIndicator);
             spellIndicator = null;
             unit.GetComponent<UnitStatusManager>().UnRegisterStatus(rootStatus);
-            rootStatus.OnDestroy(unit.GetComponent<Unit>());
+            rootStatus.OnStatusEnd(unit.GetComponent<Unit>());
+            rootStatus = null;
             base.Launch();
             int projectileCount = (int)Mathf.Clamp(castTime / chargeTime, 1f, maxCharge);
             for (int i = 0; i < projectileCount; i++)
@@ -63,7 +64,8 @@ namespace Prototype
 
         private void SpawnProjectile()
         {
-            CreateProjectile(this.tag, unit.transform.position, unit.transform.forward);
+            if (isActiveAndEnabled)
+                CreateProjectile(this.tag, unit.transform.position, unit.transform.forward);
         }
 
         public void CreateProjectile(string tag, Vector3 position, Vector3 direction)
@@ -82,8 +84,9 @@ namespace Prototype
 
         public override void Cancel()
         {
+            gameObject.SetActive(false);
             unit.GetComponent<UnitStatusManager>().UnRegisterStatus(rootStatus);
-            rootStatus.OnDestroy(unit.GetComponent<Unit>());
+            rootStatus.OnStatusEnd(unit.GetComponent<Unit>());
             if (spellIndicator != null)
                 Destroy(spellIndicator);
             if (projectile != null)

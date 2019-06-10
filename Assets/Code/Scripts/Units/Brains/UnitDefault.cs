@@ -5,9 +5,9 @@ namespace Prototype
     [CreateAssetMenu(menuName = "Brains/Units/UnitDefault")]
     public class UnitDefault : UnitBrain
     {
-        public override void Initialize(NonControllableUnit unit, Unit enemyHero)
+        public override void Initialize(UnitBrain brainRef, NonControllableUnit unit, Unit enemyHero)
         {
-            base.Initialize(unit, enemyHero);
+            base.Initialize(brainRef, unit, enemyHero);
             enemyUnits.Add(enemyHero);
         }
 
@@ -22,10 +22,10 @@ namespace Prototype
                     //OnKill
                 }
                 else
-                    unit.GetComponent<UnitMovement>().StopMovement();
+                    unitMovement.StopMovement();
             }
             else
-                unit.GetComponent<UnitMovement>().SetAgentDestination(currentTarget.transform.position);
+                unitMovement.SetAgentDestination(currentTarget.transform.position);
         }
 
         private bool SelectTarget(Unit unit)

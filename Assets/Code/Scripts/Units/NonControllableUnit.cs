@@ -5,16 +5,19 @@ namespace Prototype
     [RequireComponent(typeof(UnitMovement))]
     public class NonControllableUnit : Unit
     {
-        public UnitBrain brain;
+        public UnitBrain brainRef;
         public UnitAttack unitAttack;
+
+        [HideInInspector]
+        public UnitBrain brain;
 
         public void Initialize(Unit enemyHero, UnitStats stats, string tag)
         {
             base.Initialize(stats, tag);
             GetComponent<UnitMovement>().Initialize(currentStats);
             unitAttack.Initialize(this, tag);
-            brain = ScriptableObject.CreateInstance(brain.name) as UnitBrain;
-            brain.Initialize(this, enemyHero);
+            brain = ScriptableObject.CreateInstance(brainRef.name) as UnitBrain;
+            brain.Initialize(brainRef, this, enemyHero);
         }
 
         private void Update()

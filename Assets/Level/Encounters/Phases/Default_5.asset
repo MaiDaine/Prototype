@@ -18,6 +18,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: aebefb28fce82424b8c4376df36896e0, type: 2}
   - {fileID: 11400000, guid: f10c3fef32ea04841a58346d8269a4fd, type: 2}
   wavePoints: 20
-  events:
-  - {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569, type: 2}
-  - {fileID: 11400000, guid: 3174c0ffbd77dd447a94fcdf8b5da3c7, type: 2}
+  events: []

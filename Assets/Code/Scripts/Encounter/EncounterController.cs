@@ -7,13 +7,16 @@ namespace Prototype
     {
         public static EncounterController instance;
 
-        public EncounterEvent encounterEventRef;
+        public Encounter encounterEventRef;
         public Transform[] spawnPoints;
+        public Transform bossSpawnPoint;
+        public CardData boss;
         public Unit activeHero;
         public UnitSet playerUnits;
         public UnitSet enemyUnits;
+        public ObjectPool bulletPool;
 
-        private EncounterEvent encounterEvent;
+        private Encounter encounterEvent;
         private int spawnPointCount;
         private float timerEvent;
         private float timerSpawn;
@@ -27,7 +30,7 @@ namespace Prototype
                 instance = this;
                 spawnPointCount = spawnPoints.Length;
                 nextSpawn = new List<CardData>();
-                encounterEvent = ScriptableObject.CreateInstance(encounterEventRef.name) as EncounterEvent;
+                encounterEvent = ScriptableObject.CreateInstance(encounterEventRef.name) as Encounter;
                 encounterEvent.Init(this, encounterEventRef.decks, encounterEventRef.phases);
                 encounterEvent.NextPhase(ref nextSpawn);
                 timerSpawn = Time.deltaTime;
@@ -48,6 +51,12 @@ namespace Prototype
                     lastWave = encounterEvent.NextPhase(ref nextSpawn);
                     if (!lastWave)
                         timerSpawn = Time.deltaTime;
+                    else
+                    {
+                        NonControllableUnit tmp = Instantiate((NonControllableUnit)boss.unit, bossSpawnPoint);
+                        tmp.Initialize(activeHero, boss.unitStats, "EnemyTeam");
+                        enemyUnits.Add(tmp);//TODO EVENT CLEAR
+                    }
                 }
 
             }

@@ -8,7 +8,7 @@
             unit.OnRootStart();
         }
 
-        public override void OnDestroy(Unit unit)
+        public override void OnStatusEnd(Unit unit)
         {
             unit.OnRootEnd();
         }

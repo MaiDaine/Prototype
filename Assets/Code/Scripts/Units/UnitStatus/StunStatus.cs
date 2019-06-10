@@ -8,9 +8,9 @@
             unit.OnStunStart();
         }
 
-        public override void OnDestroy(Unit unit)
+        public override void OnStatusEnd(Unit unit)
         {
-            base.OnDestroy(unit);
+            base.OnStatusEnd(unit);
             unit.OnStunEnd();
         }
     }

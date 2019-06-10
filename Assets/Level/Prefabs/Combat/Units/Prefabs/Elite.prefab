@@ -223,8 +223,10 @@ MonoBehaviour:
   roots: 0
   currentStats: {fileID: 0}
   unitHealth: {fileID: 0}
-  brain: {fileID: 11400000, guid: 34b8f355bead27e4d9db0245015eef94, type: 2}
+  moveSpeedModifier: 1
+  brainRef: {fileID: 11400000, guid: 34b8f355bead27e4d9db0245015eef94, type: 2}
   unitAttack: {fileID: 276578714913533940}
+  brain: {fileID: 11400000, guid: 34b8f355bead27e4d9db0245015eef94, type: 2}
 --- !u!65 &6020842644446398848
 BoxCollider:
   m_ObjectHideFlags: 0

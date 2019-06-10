@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4978185624507592566}
-  - component: {fileID: 5881422238508675373}
+  - component: {fileID: -8340268301454044926}
   - component: {fileID: -4078372481303213250}
   m_Layer: 0
   m_Name: DefaultLauncher
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5881422238508675373
+--- !u!114 &-8340268301454044926
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,14 +41,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4249304294713300764}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35141d6fcff68d34c9edd323c3f0570e, type: 3}
+  m_Script: {fileID: 11500000, guid: 077872b7fdc7c8d40ad8d90d30331d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileRef: {fileID: 3128561880474821597, guid: 04ea34d2ddaf068439b8401689c02eb0,
+  projectileRef: {fileID: 867475569838417124, guid: 04ea34d2ddaf068439b8401689c02eb0,
     type: 3}
+  tick: 0.5
+  active: 0
   projectileDistance: 0
   objectPool: {fileID: 0}
-  tick: 1
 --- !u!114 &-4078372481303213250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,7 +66,7 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5881422238508675373}
+      - m_Target: {fileID: -8340268301454044926}
         m_MethodName: OnEventReceived
         m_Mode: 1
         m_Arguments:

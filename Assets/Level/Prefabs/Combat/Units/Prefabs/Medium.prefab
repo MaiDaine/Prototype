@@ -207,8 +207,10 @@ MonoBehaviour:
   roots: 0
   currentStats: {fileID: 0}
   unitHealth: {fileID: 0}
-  brain: {fileID: 11400000, guid: 34b8f355bead27e4d9db0245015eef94, type: 2}
+  moveSpeedModifier: 1
+  brainRef: {fileID: 11400000, guid: 34b8f355bead27e4d9db0245015eef94, type: 2}
   unitAttack: {fileID: 8218381697451902382}
+  brain: {fileID: 11400000, guid: 34b8f355bead27e4d9db0245015eef94, type: 2}
 --- !u!54 &1412308527310096818
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Prototype
 {
-    public class EncounterEvent : ScriptableObject
+    public class Encounter : ScriptableObject
     {
         public CardDeck[] decks;
         public EncounterPhase[] phases;

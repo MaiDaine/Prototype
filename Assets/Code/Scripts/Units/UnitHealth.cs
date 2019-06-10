@@ -7,9 +7,10 @@ namespace Prototype
         public HealthBarHandler healthBar;
         [HideInInspector]
         public bool alive = false;
+        [HideInInspector]
+        public float currentHealth;
 
         protected Unit unit;
-        protected float currentHealth;
 
         public virtual void Initialize(Unit unit)
         {
