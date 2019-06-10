@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.Experimental.Rendering.HDPipeline;
+﻿using UnityEngine.Experimental.Rendering.HDPipeline;
 using UnityEngine;
 
 namespace Prototype
@@ -10,11 +8,15 @@ namespace Prototype
         public float spellRange;
         public float stunDuration;
 
+        private SpeedStatus slowStatus;
         public override void Init(string tag, GameObject unit)
         {
             base.Init(tag, unit);
             spellIndicator.GetComponent<DecalProjectorComponent>().m_Size = new Vector3(spellRange * 2f, 4f, 1f);
-            //TODO STATUS SLOW ON PLAYER
+            slowStatus = new SpeedStatus();
+            slowStatus.speedModifier = -0.5f;
+            slowStatus.duration = 0f;
+            slowStatus.Init(unit.GetComponent<Unit>());
         }
 
         public override void Placement(Vector3 position)
@@ -40,6 +42,8 @@ namespace Prototype
                     stun.duration = stunDuration;
                     stun.Init(enemyUnit);
                 }
+            slowStatus.OnStatusEnd(unit.GetComponent<Unit>());
+            slowStatus = null;
             base.Launch();
             Clean();
         }

@@ -14,7 +14,7 @@ namespace Prototype
     public struct BossPhase
     {
         public BossPhaseStatus[] phaseStatus;
-        public SpellLauncher[] launchers;
+        public Launcher[] launchers;
         public int activeLaunchers;
         public GameEvent[] mapEvents;
     }

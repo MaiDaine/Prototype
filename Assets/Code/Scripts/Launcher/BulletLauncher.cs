@@ -1,20 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Prototype
 {
-    public class BulletSpellLauncher : SpellLauncher
+    public class BulletLauncher : Launcher
     {
-        public new LauncherBullet projectileRef;
         public float projectileDistance;
         public ObjectPool objectPool;
 
         protected LauncherBullet projectile;
+        protected float projectileTimer;
 
         protected virtual void Awake()
         {
-            projectileRef.timer = projectileDistance / projectileRef.speed;
+
+            projectileTimer = projectileDistance / projectileRef.GetComponent<LauncherBullet>().speed;
         }
 
         public override void Fire()
@@ -22,6 +21,7 @@ namespace Prototype
             projectile = objectPool.GetPooledObject().GetComponent<LauncherBullet>();
             projectile.tag = tag;
             projectile.transform.position = new Vector3(transform.position.x, 1f, transform.position.z);
+            projectile.timer = projectileTimer;
             projectile.Initialize(transform.right);
             projectile.gameObject.SetActive(true);
         }

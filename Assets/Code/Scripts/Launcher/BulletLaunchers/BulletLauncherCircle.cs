@@ -2,7 +2,7 @@
 
 namespace Prototype
 {
-    public class SpellLauncherCircle : BulletSpellLauncher
+    public class BulletLauncherCircle : BulletLauncher
     {
         private Vector3 rotation = new Vector3(0, 10f, 0);
         private readonly float[] circleAnglesX = new float[8] { -1f, -0.5f, 0f, 0.5f, 1f, 0.5f, 0f, -0.5f };

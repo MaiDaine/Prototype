@@ -43,8 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3b5111b618c13d499b3f12a4b782a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileRef: {fileID: 3128561880474821597, guid: 04ea34d2ddaf068439b8401689c02eb0,
+  projectileRef: {fileID: 867475569838417124, guid: 04ea34d2ddaf068439b8401689c02eb0,
     type: 3}
+  tick: 0.1
+  active: 0
   projectileDistance: 50
   objectPool: {fileID: 0}
-  tick: 0.1

@@ -2,7 +2,7 @@
 
 namespace Prototype
 {
-    public class SpellLauncherCone : BulletSpellLauncher
+    public class BulletLauncherCone : BulletLauncher
     {
         private readonly float[] coneAnglesX = new float[9] { -0.4f, -0.3f, -0.2f, -0.1f, 0f, 0.1f, 0.2f, 0.3f, 0.4f };
         private readonly float[] coneAnglesY = new float[9] { 0.6f, 0.7f, 0.8f, 0.9f, 1f, 0.9f, 0.8f, 0.7f, 0.6f };

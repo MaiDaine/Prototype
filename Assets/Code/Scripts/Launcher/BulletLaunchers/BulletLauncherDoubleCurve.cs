@@ -2,7 +2,7 @@
 
 namespace Prototype
 {
-    public class SpellLauncherDoubleCurve : BulletSpellLauncher
+    public class BulletLauncherDoubleCurve : BulletLauncher
     {
         private Vector3 rotation = new Vector3(0, 5f, 0);
 

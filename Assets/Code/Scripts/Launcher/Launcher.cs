@@ -2,7 +2,7 @@
 
 namespace Prototype
 {
-    public class SpellLauncher : MonoBehaviour
+    public class Launcher : MonoBehaviour
     {
         public GameObject projectileRef;
         public float tick;

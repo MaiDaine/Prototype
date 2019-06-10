@@ -12,7 +12,7 @@ namespace Prototype
         private int phase = 0;
         private int thresholdIndex;
 
-        private List<SpellLauncher> activeLaunchers = new List<SpellLauncher>();
+        private List<Launcher> activeLaunchers = new List<Launcher>();
         private List<UnitStatus> activeStatus = new List<UnitStatus>();
         private Boss bossRef;
 
@@ -47,7 +47,7 @@ namespace Prototype
 
         private void PhaseChange()
         {
-            foreach (SpellLauncher launcher in activeLaunchers)
+            foreach (Launcher launcher in activeLaunchers)
             {
                 launcher.active = false;
                 Destroy(launcher);
@@ -55,19 +55,19 @@ namespace Prototype
             activeLaunchers.Clear();
 
             foreach (UnitStatus status in activeStatus)
-                status.OnDestroy(unit);
+                status.OnStatusEnd(unit);
             activeStatus.Clear();
 
             BossPhase currentPhase = bossRef.phases[phase];
             int end = currentPhase.launchers.Length - currentPhase.activeLaunchers;
             int start = Random.Range(0, end);
-            SpellLauncher tmpLauncher;
-            BulletSpellLauncher bulletLauncher;
+            Launcher tmpLauncher;
+            BulletLauncher bulletLauncher;
             for (int i = 0; i < currentPhase.activeLaunchers; i++)
             {
                 tmpLauncher = Instantiate(currentPhase.launchers[i], unit.transform);
                 activeLaunchers.Add(tmpLauncher);
-                if ((bulletLauncher = tmpLauncher.gameObject.GetComponent<BulletSpellLauncher>()) != null)
+                if ((bulletLauncher = tmpLauncher.gameObject.GetComponent<BulletLauncher>()) != null)
                     bulletLauncher.objectPool = EncounterController.instance.bulletPool;
                 tmpLauncher.active = true;
             }

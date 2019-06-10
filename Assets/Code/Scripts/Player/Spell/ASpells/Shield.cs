@@ -29,7 +29,7 @@ namespace Prototype
         public override void Clean()
         {
             //Destroy(spellVisual);
-            speedStatus.OnDestroy(unit.gameObject.GetComponent<Unit>());
+            speedStatus.OnStatusEnd(unit.gameObject.GetComponent<Unit>());
             Destroy(gameObject);
         }
     }

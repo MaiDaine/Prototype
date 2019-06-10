@@ -44,7 +44,7 @@ namespace Prototype
                 timedStatus[i].duration -= deltaTime;
                 if (timedStatus[i].duration <= 0f)
                 {
-                    timedStatus[i].OnDestroy(unit);
+                    timedStatus[i].OnStatusEnd(unit);
                     timedStatus.RemoveAt(i);
                 }
                 else

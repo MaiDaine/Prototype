@@ -15,7 +15,7 @@
 
         public virtual void Update() { }
 
-        public virtual void OnDestroy(Unit unit) { }
+        public virtual void OnStatusEnd(Unit unit) { }
 
         public static UnitStatus CreateFromType(statusTypes type, float duration, float power)
         {

@@ -2,7 +2,7 @@
 
 namespace Prototype
 {
-    public class SpellLauncherRandomAOE : SpellLauncher
+    public class SpellLauncherRandomAOE : Launcher
     {
         public Vector2 boundingStart;
         public Vector2 boundingEnd;
