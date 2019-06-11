@@ -205,14 +205,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d50905efbe1d04590818ec611cd4d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onDeath: {fileID: 11400000, guid: d8dafb6f04b7d1247bed8763b8c24373, type: 2}
   stuns: 0
   roots: 0
   currentStats: {fileID: 0}
   unitHealth: {fileID: 0}
+  moveSpeedModifier: 1
   unitStats: {fileID: 11400000, guid: b97fb74531312384099d4f1434453fbd, type: 2}
   spellBook:
-  - spellRef: {fileID: 3653152680411241066, guid: 29a2f1b6a492bed4498a2da1becac1a4,
+  - spellRef: {fileID: 5338281651036008373, guid: bf825855c2dce614e90c6cec05440689,
       type: 3}
     spellCooldown: 0
   - spellRef: {fileID: 0}
@@ -223,6 +223,7 @@ MonoBehaviour:
   - spellRef: {fileID: 6023788252501739357, guid: 48003e8943baca34da860f879e5eec6a,
       type: 3}
     spellCooldown: 0
+  currentSpeed: 0
 --- !u!114 &-3635701923564813663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 8297013872682225276}
   alive: 0
+  currentHealth: 0
   isShield: 0
 --- !u!114 &-523802343028595801
 MonoBehaviour:
