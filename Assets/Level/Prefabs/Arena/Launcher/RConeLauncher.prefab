@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3620728026862961850
+--- !u!1 &6018998252611777394
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2657598997252372713}
-  - component: {fileID: 6023788252501739357}
+  - component: {fileID: 6018998252611777392}
+  - component: {fileID: -9013143521304580619}
   m_Layer: 0
-  m_Name: MeleeLineStun
+  m_Name: RConeLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2657598997252372713
+--- !u!4 &6018998252611777392
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3620728026862961850}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 6018998252611777394}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6023788252501739357
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &-9013143521304580619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3620728026862961850}
+  m_GameObject: {fileID: 6018998252611777394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea04182a7fdb2c549adbc0604df7a8b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 2242c82e6bec2a741811be6b257a7524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castType: 2
-  spellIndicatorRef: {fileID: 2110963215477219469, guid: e4385f37d7491c9479b5b043f497a818,
+  projectileRef: {fileID: 867475569838417124, guid: 04ea34d2ddaf068439b8401689c02eb0,
     type: 3}
-  visualEffectRef: {fileID: 0}
-  cooldown: 10
-  spellPower: 10
-  useCursor: 0
-  spellRange: 6
-  stunDuration: 1.5
+  tick: 2
+  active: 0
+  projectileDistance: 50
+  objectPool: {fileID: 0}

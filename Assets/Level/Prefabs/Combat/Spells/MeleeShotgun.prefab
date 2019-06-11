@@ -48,6 +48,6 @@ MonoBehaviour:
     type: 3}
   visualEffectRef: {fileID: 0}
   cooldown: 0.5
-  spellPower: 10
+  spellPower: 5
   useCursor: 0
   radius: 5

@@ -34,7 +34,8 @@ namespace Prototype
                     if (GetDelta(unitPos, right, tmpPos) < 0f && GetDelta(unitPos, left, tmpPos) > 0f)
                         tmpUnit.TakeDamage(spellPower);
                 }
-            Destroy(spellIndicator);
+            base.Launch();
+            Clean();
         }
 
         private float GetDelta(Vector2 a, Vector2 b, Vector2 p)
@@ -44,6 +45,7 @@ namespace Prototype
 
         public override void Clean()
         {
+            Destroy(gameObject);
         }
 
         public override void Cancel()
