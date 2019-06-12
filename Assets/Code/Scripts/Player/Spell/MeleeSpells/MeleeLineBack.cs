@@ -9,6 +9,7 @@ namespace Prototype
         public float jumpLenght;
 
         private RootStatus rootStatus;
+        private PhaseStatus phaseStatus;
         private float jumpTimer = -1f;
 
         public override void Init(string tag, GameObject unit)
@@ -39,6 +40,8 @@ namespace Prototype
             unit.GetComponent<Rigidbody>().AddForce(-unit.transform.forward * 50f, ForceMode.VelocityChange);
             rootStatus = new RootStatus();
             rootStatus.Init(unit.GetComponent<Unit>());
+            phaseStatus = new PhaseStatus();
+            phaseStatus.Init(unit.GetComponent<Unit>());
             jumpTimer = jumpLenght;
         }
 
@@ -51,6 +54,8 @@ namespace Prototype
                 {
                     rootStatus.OnStatusEnd(unit.GetComponent<Unit>());
                     rootStatus = null;
+                    phaseStatus.OnStatusEnd(unit.GetComponent<Unit>());
+                    phaseStatus = null;
                     unit.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
                     Clean();
                 }
