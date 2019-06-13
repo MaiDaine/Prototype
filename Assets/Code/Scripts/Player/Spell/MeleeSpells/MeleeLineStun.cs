@@ -8,7 +8,8 @@ namespace Prototype
         public float spellRange;
         public float stunDuration;
 
-        private SpeedStatus slowStatus;
+        private SpeedStatus slowStatus = null;
+
         public override void Init(string tag, GameObject unit)
         {
             base.Init(tag, unit);
@@ -16,7 +17,8 @@ namespace Prototype
             slowStatus = new SpeedStatus();
             slowStatus.speedModifier = -0.5f;
             slowStatus.duration = 0f;
-            slowStatus.Init(unit.GetComponent<Unit>());
+            if (slowStatus.Init(unit.GetComponent<Unit>()))
+                slowStatus = null;
         }
 
         public override void Placement(Vector3 position)
@@ -42,8 +44,11 @@ namespace Prototype
                     stun.duration = stunDuration;
                     stun.Init(enemyUnit);
                 }
-            slowStatus.OnStatusEnd(unit.GetComponent<Unit>());
-            slowStatus = null;
+            if (slowStatus != null)
+            {
+                slowStatus.OnStatusEnd(unit.GetComponent<Unit>());
+                slowStatus = null;
+            }
             base.Launch();
             Clean();
         }

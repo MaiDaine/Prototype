@@ -8,8 +8,8 @@ namespace Prototype
         public float speedModifier = 0.25f;
 
         private GameObject unit;
-        private SpeedStatus speedStatus;
-        private PhaseStatus phaseStatus;
+        private SpeedStatus speedStatus = null;
+        private PhaseStatus phaseStatus = null;
 
         public override void Init(string tag, GameObject unit)
         {
@@ -22,12 +22,14 @@ namespace Prototype
 
             phaseStatus = new PhaseStatus();
             phaseStatus.duration = shieldDuration;
-            phaseStatus.Init(unit.GetComponent<Unit>());
+            if (phaseStatus.Init(unit.GetComponent<Unit>()))
+                phaseStatus = null;
 
             speedStatus = new SpeedStatus();
             speedStatus.duration = 0f;
             speedStatus.speedModifier = speedModifier;
-            speedStatus.Init(unit.GetComponent<Unit>());
+            if (speedStatus.Init(unit.GetComponent<Unit>()))
+                speedStatus = null;
             //Instantiate(visualEffectRef, unit.transform);
             Debug.Log(spellVisual);//TMP
         }
@@ -35,8 +37,10 @@ namespace Prototype
         public override void Clean()
         {
             //Destroy(spellVisual);
-            speedStatus.OnStatusEnd(unit.GetComponent<Unit>());
-            phaseStatus.OnStatusEnd(unit.GetComponent<Unit>());
+            if (speedStatus != null)
+                speedStatus.OnStatusEnd(unit.GetComponent<Unit>());
+            if (phaseStatus != null)
+                phaseStatus.OnStatusEnd(unit.GetComponent<Unit>());
             Destroy(gameObject);
         }
     }

@@ -8,8 +8,8 @@ namespace Prototype
         public float spellRange;
         public float jumpLenght;
 
-        private RootStatus rootStatus;
-        private PhaseStatus phaseStatus;
+        private RootStatus rootStatus = null;
+        private PhaseStatus phaseStatus = null;
         private float jumpTimer = -1f;
 
         public override void Init(string tag, GameObject unit)
@@ -39,9 +39,11 @@ namespace Prototype
             Destroy(spellIndicator);
             unit.GetComponent<Rigidbody>().AddForce(-unit.transform.forward * 50f, ForceMode.VelocityChange);
             rootStatus = new RootStatus();
-            rootStatus.Init(unit.GetComponent<Unit>());
+            if (rootStatus.Init(unit.GetComponent<Unit>()))
+                rootStatus = null;
             phaseStatus = new PhaseStatus();
-            phaseStatus.Init(unit.GetComponent<Unit>());
+            if (phaseStatus.Init(unit.GetComponent<Unit>()))
+                phaseStatus = null;
             jumpTimer = jumpLenght;
         }
 
@@ -52,10 +54,16 @@ namespace Prototype
                 jumpTimer -= Time.deltaTime;
                 if (jumpTimer < 0f)
                 {
-                    rootStatus.OnStatusEnd(unit.GetComponent<Unit>());
-                    rootStatus = null;
-                    phaseStatus.OnStatusEnd(unit.GetComponent<Unit>());
-                    phaseStatus = null;
+                    if (rootStatus != null)
+                    {
+                        rootStatus.OnStatusEnd(unit.GetComponent<Unit>());
+                        rootStatus = null;
+                    }
+                    if (phaseStatus != null)
+                    {
+                        phaseStatus.OnStatusEnd(unit.GetComponent<Unit>());
+                        phaseStatus = null;
+                    }
                     unit.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
                     Clean();
                 }

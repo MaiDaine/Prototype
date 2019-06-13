@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Prototype
 {
@@ -11,6 +12,8 @@ namespace Prototype
         public float currentHealth;
 
         protected Unit unit;
+        public Func<int, int> flatCallback = null;
+        public Func<int, int> percentCallback = null;
 
         public virtual void Initialize(Unit unit)
         {
@@ -23,6 +26,10 @@ namespace Prototype
 
         public virtual bool TakeDamage(int amount)
         {
+            if (flatCallback != null)
+                amount = flatCallback(amount);
+            if (percentCallback != null)
+                amount = percentCallback(amount);
             currentHealth -= amount;
             if (currentHealth < 1 && alive)
             {
