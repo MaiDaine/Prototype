@@ -21,7 +21,7 @@ namespace Prototype
             spellIndicator.GetComponent<DecalProjectorComponent>().m_Size = new Vector3(spellRange * 2f, 2f, 1f);
             material = spellIndicator.GetComponent<DecalProjectorComponent>().m_Material;
             rootStatus = new RootStatus();
-            if (rootStatus.Init(unit.GetComponent<Unit>()))
+            if (!rootStatus.Init(unit.GetComponent<Unit>()))
                 rootStatus = null;
         }
 

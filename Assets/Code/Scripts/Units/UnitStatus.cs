@@ -7,7 +7,7 @@ namespace Prototype
         public enum statusTypes { None, Stun, Root, Speed };
         public float duration;
 
-        public virtual bool Init(Unit unit)
+        public virtual bool Init(Unit unit)//Return false if status can't apply
         {
             if (duration > 0f)
                 unit.GetComponent<UnitStatusManager>().RegisterTimedStatus(this);

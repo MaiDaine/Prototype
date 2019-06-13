@@ -22,25 +22,30 @@ namespace Prototype
 
             phaseStatus = new PhaseStatus();
             phaseStatus.duration = shieldDuration;
-            if (phaseStatus.Init(unit.GetComponent<Unit>()))
+            if (!phaseStatus.Init(unit.GetComponent<Unit>()))
                 phaseStatus = null;
 
             speedStatus = new SpeedStatus();
             speedStatus.duration = 0f;
             speedStatus.speedModifier = speedModifier;
-            if (speedStatus.Init(unit.GetComponent<Unit>()))
+            if (!speedStatus.Init(unit.GetComponent<Unit>()))
                 speedStatus = null;
             //Instantiate(visualEffectRef, unit.transform);
             Debug.Log(spellVisual);//TMP
         }
 
+        public void OnShieldBreak() { }
+
         public override void Clean()
         {
             //Destroy(spellVisual);
-            if (speedStatus != null)
+            if (speedStatus != null) { }
                 speedStatus.OnStatusEnd(unit.GetComponent<Unit>());
             if (phaseStatus != null)
+            {
                 phaseStatus.OnStatusEnd(unit.GetComponent<Unit>());
+                unit.GetComponent<UnitStatusManager>().UnRegisterTimedStatus(phaseStatus);
+            }
             Destroy(gameObject);
         }
     }

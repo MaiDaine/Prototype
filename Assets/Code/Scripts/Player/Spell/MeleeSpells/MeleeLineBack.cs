@@ -39,10 +39,10 @@ namespace Prototype
             Destroy(spellIndicator);
             unit.GetComponent<Rigidbody>().AddForce(-unit.transform.forward * 50f, ForceMode.VelocityChange);
             rootStatus = new RootStatus();
-            if (rootStatus.Init(unit.GetComponent<Unit>()))
+            if (!rootStatus.Init(unit.GetComponent<Unit>()))
                 rootStatus = null;
             phaseStatus = new PhaseStatus();
-            if (phaseStatus.Init(unit.GetComponent<Unit>()))
+            if (!phaseStatus.Init(unit.GetComponent<Unit>()))
                 phaseStatus = null;
             jumpTimer = jumpLenght;
         }

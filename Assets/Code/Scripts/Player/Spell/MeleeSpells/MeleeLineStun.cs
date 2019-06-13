@@ -17,7 +17,7 @@ namespace Prototype
             slowStatus = new SpeedStatus();
             slowStatus.speedModifier = -0.5f;
             slowStatus.duration = 0f;
-            if (slowStatus.Init(unit.GetComponent<Unit>()))
+            if (!slowStatus.Init(unit.GetComponent<Unit>()))
                 slowStatus = null;
         }
 
