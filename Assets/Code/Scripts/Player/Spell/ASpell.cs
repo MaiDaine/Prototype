@@ -28,6 +28,13 @@ namespace Prototype
 
         public virtual void Clean() { }
 
-        public virtual void Cancel() { }
+        public virtual void Cancel()
+        {
+            if (spellIndicator != null)
+                Destroy(spellIndicator);
+            if (spellVisual != null)
+                Destroy(spellVisual);
+            Destroy(gameObject);
+        }
     }
 }

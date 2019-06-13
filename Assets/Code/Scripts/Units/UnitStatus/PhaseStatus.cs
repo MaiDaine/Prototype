@@ -8,6 +8,7 @@ namespace Prototype
         List<Collider> colliders = new List<Collider>();
         public override void Init(Unit unit)
         {
+            base.Init(unit);
             foreach(Collider collider in unit.GetComponents<Collider>())
                 if (!collider.isTrigger)
                 {
