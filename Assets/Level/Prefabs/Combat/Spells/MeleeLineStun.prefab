@@ -48,7 +48,7 @@ MonoBehaviour:
     type: 3}
   visualEffectRef: {fileID: 0}
   cooldown: 10
-  spellPower: 0
+  spellPower: 10
   useCursor: 0
   spellRange: 6
   stunDuration: 1.5

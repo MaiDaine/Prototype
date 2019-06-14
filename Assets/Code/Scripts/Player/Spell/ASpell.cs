@@ -17,10 +17,7 @@ namespace Prototype
         protected GameObject spellIndicator = null;
         protected GameObject spellVisual = null;
 
-        public virtual void Init(string tag, GameObject unit)
-        {
-            this.tag = tag;
-        }
+        public virtual void Init(string tag, GameObject unit) { this.tag = tag; }
 
         public virtual void Placement(Vector3 position) { }
 
@@ -28,6 +25,13 @@ namespace Prototype
 
         public virtual void Clean() { }
 
-        public virtual void Cancel() { }
+        public virtual void Cancel()
+        {
+            if (spellIndicator != null)
+                Destroy(spellIndicator);
+            if (spellVisual != null)
+                Destroy(spellVisual);
+            Destroy(gameObject);
+        }
     }
 }

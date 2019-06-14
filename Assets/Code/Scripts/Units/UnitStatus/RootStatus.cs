@@ -2,10 +2,10 @@
 {
     public class RootStatus : UnitStatus
     {
-        public override void Init(Unit unit)
+        public override bool Init(Unit unit)
         {
-            base.Init(unit);
             unit.OnRootStart();
+            return base.Init(unit);
         }
 
         public override void OnStatusEnd(Unit unit)

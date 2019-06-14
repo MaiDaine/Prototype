@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace Prototype
 {
-    public class Bullet : MeleeSpell
+    public class Rifle : MeleeSpell
     {
         public Projectile projectileRef;
         public float spellRange;
 
         private Projectile projectile = null;
-        private RootStatus rootStatus;
+        private RootStatus rootStatus = null;
         private Material material;
         private const int maxCharge = 3;
         private const float chargeTime = 0.5f;
@@ -21,7 +21,8 @@ namespace Prototype
             spellIndicator.GetComponent<DecalProjectorComponent>().m_Size = new Vector3(spellRange * 2f, 2f, 1f);
             material = spellIndicator.GetComponent<DecalProjectorComponent>().m_Material;
             rootStatus = new RootStatus();
-            rootStatus.Init(unit.GetComponent<Unit>());
+            if (!rootStatus.Init(unit.GetComponent<Unit>()))
+                rootStatus = null;
         }
 
         public override void Placement(Vector3 position)
@@ -41,8 +42,11 @@ namespace Prototype
             Destroy(spellIndicator);
             spellIndicator = null;
             unit.GetComponent<UnitStatusManager>().UnRegisterStatus(rootStatus);
-            rootStatus.OnStatusEnd(unit.GetComponent<Unit>());
-            rootStatus = null;
+            if (rootStatus != null)
+            {
+                rootStatus.OnStatusEnd(unit.GetComponent<Unit>());
+                rootStatus = null;
+            }
             base.Launch();
             int projectileCount = (int)Mathf.Clamp(castTime / chargeTime, 1f, maxCharge);
             for (int i = 0; i < projectileCount; i++)
@@ -85,8 +89,11 @@ namespace Prototype
         public override void Cancel()
         {
             gameObject.SetActive(false);
-            unit.GetComponent<UnitStatusManager>().UnRegisterStatus(rootStatus);
-            rootStatus.OnStatusEnd(unit.GetComponent<Unit>());
+            if (rootStatus != null)
+            {
+                unit.GetComponent<UnitStatusManager>().UnRegisterStatus(rootStatus);
+                rootStatus.OnStatusEnd(unit.GetComponent<Unit>());
+            }
             if (spellIndicator != null)
                 Destroy(spellIndicator);
             if (projectile != null)

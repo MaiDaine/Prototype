@@ -1,16 +1,19 @@
-﻿namespace Prototype
+﻿using UnityEngine;
+
+namespace Prototype
 {
     public abstract class UnitStatus
     {
         public enum statusTypes { None, Stun, Root, Speed };
         public float duration;
 
-        public virtual void Init(Unit unit)
+        public virtual bool Init(Unit unit)//Return false if status can't apply
         {
             if (duration > 0f)
                 unit.GetComponent<UnitStatusManager>().RegisterTimedStatus(this);
             else
                 unit.GetComponent<UnitStatusManager>().RegisterStatus(this);
+            return true;
         }
 
         public virtual void Update() { }

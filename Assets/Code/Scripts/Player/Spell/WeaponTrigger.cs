@@ -17,6 +17,5 @@ namespace Prototype
         {
             weapon.OnTriggerEnter(other);
         }
-
     }
 }

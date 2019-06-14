@@ -47,7 +47,7 @@ MonoBehaviour:
   spellIndicatorRef: {fileID: 0}
   visualEffectRef: {fileID: 0}
   cooldown: 5
-  spellPower: 50
+  spellPower: 20
   useCursor: 0
-  shieldDuration: 5
+  shieldDuration: 2
   speedModifier: 0.25
