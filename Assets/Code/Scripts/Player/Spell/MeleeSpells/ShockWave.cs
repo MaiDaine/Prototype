@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Prototype
 {
-    public class MeleeLineStun : MeleeSpell
+    public class ShockWave : MeleeSpell
     {
         public float spellRange;
         public float stunDuration;

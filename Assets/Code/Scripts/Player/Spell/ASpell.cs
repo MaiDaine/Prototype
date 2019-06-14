@@ -17,10 +17,7 @@ namespace Prototype
         protected GameObject spellIndicator = null;
         protected GameObject spellVisual = null;
 
-        public virtual void Init(string tag, GameObject unit)
-        {
-            this.tag = tag;
-        }
+        public virtual void Init(string tag, GameObject unit) { this.tag = tag; }
 
         public virtual void Placement(Vector3 position) { }
 

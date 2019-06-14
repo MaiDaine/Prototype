@@ -3,7 +3,7 @@ using UnityEngine.Experimental.Rendering.HDPipeline;
 
 namespace Prototype
 {
-    public class MeleeLineBack : MeleeSpell
+    public class BlastVault : MeleeSpell
     {
         public float spellRange;
         public float jumpLenght;

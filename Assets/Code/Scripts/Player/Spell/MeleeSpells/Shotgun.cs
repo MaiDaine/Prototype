@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Prototype
 {
-    public class MeleeShotgun : MeleeSpell
+    public class Shotgun : MeleeSpell
     {
         public float radius = 5f;
 

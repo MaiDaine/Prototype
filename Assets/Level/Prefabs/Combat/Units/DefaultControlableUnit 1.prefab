@@ -215,7 +215,8 @@ MonoBehaviour:
   - spellRef: {fileID: 5338281651036008373, guid: bf825855c2dce614e90c6cec05440689,
       type: 3}
     spellCooldown: 0
-  - spellRef: {fileID: 0}
+  - spellRef: {fileID: 5899808085313460086, guid: a5b6a60db964cdd48b90e6480d7170a3,
+      type: 3}
     spellCooldown: 0
   - spellRef: {fileID: 5777985665694753280, guid: 4f4a7a7603c68f9469de0d7e0b022187,
       type: 3}

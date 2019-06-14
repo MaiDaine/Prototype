@@ -9,9 +9,9 @@ namespace Prototype
         public int explosionDamage;
         public float speed = 1f;
 
-        private Vector3 direction;
-        private string ownerTag;
-        private bool alive = true;
+        protected Vector3 direction;
+        protected string ownerTag;
+        protected bool alive = true;
 
         public virtual void Initialize(Vector3 direction, string ownerTag)
         {
@@ -21,17 +21,19 @@ namespace Prototype
 
         protected virtual void Update()
         {
-            this.transform.position += direction * speed;
+            if (!alive)
+                return;
+            transform.position += direction * speed;
             timer -= Time.deltaTime;
             if (timer < 0)
                 Effect();
         }
 
-        protected virtual void Effect()
+        public virtual void Effect()
         {
             if (!alive)
                 return;
-            Ray ray = new Ray(this.transform.position, this.transform.up);
+            Ray ray = new Ray(transform.position, transform.up);
             RaycastHit[] hits = Physics.SphereCastAll(ray, explosionRadius);
             foreach (RaycastHit hit in hits)
             {
@@ -44,7 +46,7 @@ namespace Prototype
                 }
             }
             alive = false;
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
 
         protected virtual void OnTriggerEnter(Collider other)

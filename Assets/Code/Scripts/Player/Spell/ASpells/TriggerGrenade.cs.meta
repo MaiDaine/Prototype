@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 919bee0f2511f3e4b920de54fd412bae
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - spellIndicatorRef: {instanceID: 0}
+  - visualEffectRef: {instanceID: 0}
+  - projectileRef: {fileID: 4688659009376067537, guid: b23b0f13d83a6d6428722c4a997720aa,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

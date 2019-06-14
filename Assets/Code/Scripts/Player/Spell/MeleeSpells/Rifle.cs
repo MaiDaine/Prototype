@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Prototype
 {
-    public class Bullet : MeleeSpell
+    public class Rifle : MeleeSpell
     {
         public Projectile projectileRef;
         public float spellRange;
