@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Prototype
 {
@@ -106,7 +107,8 @@ namespace Prototype
             if (index == -1)
             {
                 this.enabled = false;
-                Application.Quit();//TODO GAMEOVER
+                GetComponent<CameraController>().enabled = false;
+                SceneManager.LoadScene("TrainingGround");
             }
             else
                 SwitchUnit(index);

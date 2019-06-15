@@ -18,7 +18,7 @@ namespace Prototype
 
         private Encounter encounterEvent;
         private int spawnPointCount;
-        private float timerEvent;
+        private float timerEvent = 0f;
         private float timerSpawn;
         private List<CardData> nextSpawn;
         private bool lastWave;
@@ -28,6 +28,8 @@ namespace Prototype
             if (instance == null)
             {
                 instance = this;
+                if (encounterEventRef == null)
+                    return;
                 spawnPointCount = spawnPoints.Length;
                 nextSpawn = new List<CardData>();
                 encounterEvent = ScriptableObject.CreateInstance(encounterEventRef.name) as Encounter;

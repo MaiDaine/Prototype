@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1627934261534610107}
   - component: {fileID: 4688659009376067537}
+  - component: {fileID: 3990479173599189558}
   m_Layer: 0
   m_Name: TriggerGrenade_E
-  m_TagString: Untagged
+  m_TagString: Arena
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068f48a6b82dce74db2343dc7e999cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 3
+  timer: 1.5
   explosionRadius: 1.5
   explosionDamage: 50
   speed: 0.7
@@ -51,3 +52,16 @@ MonoBehaviour:
     type: 3}
   explosionEffectRef: {fileID: 3301564370184949058, guid: 3d9b5097260161b45b50aa5f555c9959,
     type: 3}
+--- !u!135 &3990479173599189558
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7632202642206047240}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

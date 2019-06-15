@@ -14,6 +14,7 @@ namespace Prototype
         {
             base.Initialize(direction, ownerTag);
             charginEffect = Instantiate(charginEffectRef, transform);
+            this.tag = "Arena";
         }
 
         public override void Effect()
@@ -35,12 +36,19 @@ namespace Prototype
             alive = false;
             Destroy(charginEffect);
             explosionEffect = Instantiate(explosionEffectRef, transform);
+            Destroy(GetComponentInChildren<Light>().gameObject, 0.1f);
             Invoke("Clean", 0.3f);
         }
 
         private void Clean()
         {
             Destroy(explosionEffect);
+        }
+
+        protected override void OnTriggerEnter(Collider other)
+        {
+            if (other.tag == "Arena")
+                Effect();
         }
     }
 }
