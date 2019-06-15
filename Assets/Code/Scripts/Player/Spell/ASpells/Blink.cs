@@ -31,6 +31,7 @@ namespace Prototype
                         unit.transform.position = new Vector3(hit.position.x, unit.transform.position.y, hit.position.z);
                 }
             }
+            Clean();
         }
     }
 }

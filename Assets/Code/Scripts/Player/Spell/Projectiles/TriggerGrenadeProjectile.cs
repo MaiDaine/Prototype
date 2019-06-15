@@ -37,12 +37,13 @@ namespace Prototype
             Destroy(charginEffect);
             explosionEffect = Instantiate(explosionEffectRef, transform);
             Destroy(GetComponentInChildren<Light>().gameObject, 0.1f);
-            Invoke("Clean", 0.3f);
+            Invoke("Clean", 0.35f);
         }
 
         private void Clean()
         {
             Destroy(explosionEffect);
+            Destroy(gameObject);
         }
 
         protected override void OnTriggerEnter(Collider other)

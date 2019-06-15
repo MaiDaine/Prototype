@@ -30,17 +30,16 @@ namespace Prototype
             speedStatus.speedModifier = speedModifier;
             if (!speedStatus.Init(unit.GetComponent<Unit>()))
                 speedStatus = null;
-            //Instantiate(visualEffectRef, unit.transform);
-            Debug.Log(spellVisual);//TMP
+            spellVisual = Instantiate(visualEffectRef, unit.transform);
         }
 
         public void OnShieldBreak() { }
 
         public override void Clean()
         {
-            //Destroy(spellVisual);
+            Destroy(spellVisual);
             if (speedStatus != null) { }
-                speedStatus.OnStatusEnd(unit.GetComponent<Unit>());
+            speedStatus.OnStatusEnd(unit.GetComponent<Unit>());
             if (phaseStatus != null)
             {
                 phaseStatus.OnStatusEnd(unit.GetComponent<Unit>());

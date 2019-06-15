@@ -45,7 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   castType: 2
   spellIndicatorRef: {fileID: 0}
-  visualEffectRef: {fileID: 0}
+  visualEffectRef: {fileID: 7683384664498927914, guid: b8923d6977488ec46af4bcaf9bc004c8,
+    type: 3}
   cooldown: 5
   spellPower: 20
   useCursor: 0

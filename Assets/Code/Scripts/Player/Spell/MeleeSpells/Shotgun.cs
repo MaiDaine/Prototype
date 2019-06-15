@@ -24,6 +24,8 @@ namespace Prototype
             UnitHealth tmpUnit;
             Vector2 tmpPos = new Vector2();
 
+            spellVisual = Instantiate(visualEffectRef, unit.transform);
+            spellVisual.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);//TODO SCALE_CORRECTOR
             foreach (RaycastHit hit in Physics.SphereCastAll(unit.transform.position, radius, Vector3.up))
                 if ((tmpUnit = hit.collider.GetComponent<UnitHealth>()) != null)
                 {
@@ -33,7 +35,7 @@ namespace Prototype
                         tmpUnit.TakeDamage(spellPower);
                 }
             base.Launch();
-            Clean();
+            Invoke("Clean", 0.2f);
         }
 
         private float GetDelta(Vector2 a, Vector2 b, Vector2 p)
@@ -44,12 +46,15 @@ namespace Prototype
         public override void Clean()
         {
             Destroy(gameObject);
+            Destroy(spellVisual);
         }
 
         public override void Cancel()
         {
             if (spellIndicator != null)
                 Destroy(spellIndicator);
+            if (spellVisual != null)
+                Destroy(spellVisual);
             Destroy(gameObject);
         }
     }

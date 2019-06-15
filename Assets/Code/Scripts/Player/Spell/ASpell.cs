@@ -23,7 +23,14 @@ namespace Prototype
 
         public virtual void Launch() { }
 
-        public virtual void Clean() { }
+        public virtual void Clean()
+        {
+            if (spellIndicator != null)
+                Destroy(spellIndicator);
+            if (spellVisual != null)
+                Destroy(spellVisual);
+            Destroy(gameObject);
+        }
 
         public virtual void Cancel()
         {
