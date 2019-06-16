@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2657598997252372713}
   - component: {fileID: 6023788252501739357}
   m_Layer: 0
-  m_Name: MeleeLineStun
+  m_Name: ShockWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,8 +46,9 @@ MonoBehaviour:
   castType: 2
   spellIndicatorRef: {fileID: 2110963215477219469, guid: e4385f37d7491c9479b5b043f497a818,
     type: 3}
-  visualEffectRef: {fileID: 0}
-  cooldown: 10
+  visualEffectRef: {fileID: 1344457166417818, guid: 0310b8628b5599c4295215fedba1a232,
+    type: 3}
+  cooldown: 1
   spellPower: 10
   useCursor: 0
   spellRange: 6

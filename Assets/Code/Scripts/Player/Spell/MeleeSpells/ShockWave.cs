@@ -50,11 +50,13 @@ namespace Prototype
                 slowStatus = null;
             }
             base.Launch();
-            Clean();
+            spellVisual = Instantiate(visualEffectRef, unit.transform);
+            Invoke("Clean", 0.2f);
         }
 
         public override void Clean()
         {
+            Destroy(spellVisual);
             Destroy(gameObject);
         }
 

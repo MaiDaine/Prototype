@@ -23,6 +23,7 @@ namespace Prototype
         public override void Launch()
         {
             projectile.Effect();
+            Destroy(gameObject, 0.35f);
         }
     }
 }
