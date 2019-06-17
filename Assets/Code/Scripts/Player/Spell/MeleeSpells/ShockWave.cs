@@ -50,7 +50,8 @@ namespace Prototype
                 slowStatus = null;
             }
             base.Launch();
-            spellVisual = Instantiate(visualEffectRef, unit.transform);
+            Transform spellOrigin = unit.GetComponent<ControllableUnit>().spellOrigin;
+            spellVisual = Instantiate(visualEffectRef, spellOrigin.position, spellOrigin.rotation);
             Invoke("Clean", 0.2f);
         }
 

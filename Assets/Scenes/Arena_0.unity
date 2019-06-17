@@ -1144,7 +1144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848922477}
   m_LocalRotation: {x: 0.53729963, y: 0, z: 0, w: 0.8433915}
-  m_LocalPosition: {x: -2.22, y: 32.33, z: -31.86}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1175,15 +1175,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   units:
-  - {fileID: 1135275971868968234, guid: 3562d815e0d00d34ebf3baefab999b82, type: 3}
-  - {fileID: 1135275971868968234, guid: 0b5b0ee0522caf14ca8eff53fd0f9783, type: 3}
+  - {fileID: 8459619982387338885, guid: 6384a755d714b3842bf841108b9e12e4, type: 3}
   - {fileID: 0}
   - {fileID: 0}
-  spawnPoints:
-  - {x: 0, y: 2, z: 5}
-  - {x: -5, y: 2, z: 0}
-  - {x: 5, y: 2, z: 0}
-  - {x: 0, y: 2, z: -5}
+  - {fileID: 0}
+  playerSpawn: {x: 0, y: 0, z: 0}
   currentUnit: {fileID: 0}
   useJoyStick: 1
   playerUnits: {fileID: 11400000, guid: 9e65a0f6255a8064cb2bcb4bdc494358, type: 2}

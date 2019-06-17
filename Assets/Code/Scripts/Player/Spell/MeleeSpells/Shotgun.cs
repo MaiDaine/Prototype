@@ -6,6 +6,17 @@ namespace Prototype
     {
         public float radius = 5f;
 
+        protected override void Awake()
+        {
+        }
+
+        public override void Init(string tag, GameObject unit)
+        {
+            this.tag = tag;
+            this.unit = unit;
+            spellIndicator = Instantiate(spellIndicatorRef, unit.GetComponent<ControllableUnit>().spellOrigin.transform);
+        }
+
         public override void Placement(Vector3 position)
         {
             spellIndicator.transform.position = new Vector3(unit.transform.position.x, 0.5f, unit.transform.position.z);
@@ -24,8 +35,8 @@ namespace Prototype
             UnitHealth tmpUnit;
             Vector2 tmpPos = new Vector2();
 
-            spellVisual = Instantiate(visualEffectRef, unit.transform);
-            spellVisual.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);//TODO SCALE_CORRECTOR
+            Transform spellOrigin = unit.GetComponent<ControllableUnit>().spellOrigin;
+            spellVisual = Instantiate(visualEffectRef, spellOrigin.transform.position, spellOrigin.transform.rotation);
             foreach (RaycastHit hit in Physics.SphereCastAll(unit.transform.position, radius, Vector3.up))
                 if ((tmpUnit = hit.collider.GetComponent<UnitHealth>()) != null)
                 {
@@ -35,7 +46,7 @@ namespace Prototype
                         tmpUnit.TakeDamage(spellPower);
                 }
             base.Launch();
-            Invoke("Clean", 0.2f);
+            Invoke("Clean", 0.31f);
         }
 
         private float GetDelta(Vector2 a, Vector2 b, Vector2 p)

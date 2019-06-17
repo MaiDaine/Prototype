@@ -9,7 +9,7 @@ namespace Prototype
         protected GameObject unit;
         protected float castTime;
 
-        protected void Awake()
+        protected virtual void Awake()
         {
             spellIndicator = Instantiate(spellIndicatorRef);
         }

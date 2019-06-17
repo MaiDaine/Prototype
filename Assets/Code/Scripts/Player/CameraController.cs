@@ -5,17 +5,17 @@ namespace Prototype
     public class CameraController : MonoBehaviour
     {
         public GameObject target;
-        public Vector3 offset = new Vector3(0f, 25f, -5f);
         public float positionLerpTime = 0.2f;
 
         private CameraState targetCameraState = new CameraState();
         private CameraState interpolatingCameraState = new CameraState();
+        private Vector3 offset = new Vector3(0f, 10f, -7f);
 
         public void UpdateTarget(GameObject target)
         {
             this.target = target;
             targetCameraState.x = target.transform.position.x;
-            targetCameraState.z = target.transform.position.z;
+            targetCameraState.z = target.transform.position.z + offset.z;
         }
 
         private void Update()

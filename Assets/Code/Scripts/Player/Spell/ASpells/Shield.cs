@@ -30,7 +30,7 @@ namespace Prototype
             speedStatus.speedModifier = speedModifier;
             if (!speedStatus.Init(unit.GetComponent<Unit>()))
                 speedStatus = null;
-            spellVisual = Instantiate(visualEffectRef, unit.transform);
+            spellVisual = Instantiate(visualEffectRef, unit.GetComponent<ControllableUnit>().unitCenter);
         }
 
         public void OnShieldBreak() { }

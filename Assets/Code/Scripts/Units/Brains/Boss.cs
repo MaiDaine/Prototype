@@ -39,7 +39,7 @@ namespace Prototype
             }
             if (currentTarget == null || !currentTarget.isActiveAndEnabled)
                 currentTarget = EncounterController.instance.activeHero;
-            if (Vector3.Distance(unit.transform.position, currentTarget.transform.position) <= unit.currentStats.atkRange)
+            else if (Vector3.Distance(unit.transform.position, currentTarget.transform.position) <= unit.currentStats.atkRange)
                 unitMovement.StopMovement();
             else
                 unitMovement.SetAgentDestination(currentTarget.transform.position);

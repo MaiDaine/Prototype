@@ -6,7 +6,7 @@ namespace Prototype
     public class PlayerController : MonoBehaviour
     {
         public ControllableUnit[] units;
-        public Vector3[] spawnPoints;
+        public Vector3 playerSpawn;
         public ControllableUnit currentUnit = null;
         public bool useJoyStick = false;
         public UnitSet playerUnits;
@@ -16,6 +16,7 @@ namespace Prototype
         private Vector3 joystickCursor;
         private SpellCasting spellCasting;
         private RayCast rayCast;
+        private Animator currentAnimator;
 
         private void Awake()
         {
@@ -31,7 +32,8 @@ namespace Prototype
                 units[i].Initialize(this);
             }
             currentUnit = units[0];
-            currentUnit.transform.position = spawnPoints[0];
+            currentAnimator = currentUnit.GetComponent<Animator>();
+            currentUnit.transform.position = playerSpawn;
             currentUnit.gameObject.SetActive(true);
             EncounterController.instance.activeHero = currentUnit;
             playerUnits.Add(currentUnit);
@@ -139,6 +141,8 @@ namespace Prototype
             playerUnits.items[0] = units[index];
             currentUnit.gameObject.SetActive(false);
             currentUnit = units[index];
+            currentAnimator = currentUnit.GetComponent<Animator>();
+
             //Animation
 
             EncounterController.instance.activeHero = currentUnit;
@@ -151,6 +155,12 @@ namespace Prototype
         //Movement
         private void Move()
         {
+            float y = Input.GetAxis("Horizontal") * currentUnit.transform.forward.x + Input.GetAxis("Vertical") * currentUnit.transform.forward.z;
+            float x = Input.GetAxis("Horizontal") * currentUnit.transform.forward.z + Input.GetAxis("Vertical") * currentUnit.transform.forward.x;
+            //Debug.Log("X:" + x + " Y:" + y + " " + (Mathf.Abs(x) < Mathf.Abs(y)).ToString());
+            currentAnimator.SetFloat("Move_X", x);
+            currentAnimator.SetFloat("Move_Y", y);
+            currentAnimator.SetBool("MoveForward", Mathf.Abs(x) < Mathf.Abs(y));
             float modifier = currentUnit.currentSpeed * Time.deltaTime;
             currentUnit.transform.position += new Vector3(
                 Input.GetAxis("Horizontal") * modifier,

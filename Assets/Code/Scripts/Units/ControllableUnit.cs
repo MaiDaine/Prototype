@@ -8,6 +8,8 @@ namespace Prototype
         public UnitStats unitStats;
         public SpellSlot[] spellBook;
         public float currentSpeed;
+        public Transform spellOrigin;
+        public Transform unitCenter;
 
         private PlayerController playerController;
 
