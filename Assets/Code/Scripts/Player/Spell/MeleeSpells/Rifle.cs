@@ -23,6 +23,7 @@ namespace Prototype
             rootStatus = new RootStatus();
             if (!rootStatus.Init(unit.GetComponent<Unit>()))
                 rootStatus = null;
+            unit.GetComponentInChildren<Animator>().SetBool("FireRoot", true);
         }
 
         public override void Placement(Vector3 position)
@@ -47,6 +48,7 @@ namespace Prototype
                 rootStatus.OnStatusEnd(unit.GetComponent<Unit>());
                 rootStatus = null;
             }
+            unit.GetComponentInChildren<Animator>().SetBool("FireRoot", false);
             base.Launch();
             int projectileCount = (int)Mathf.Clamp(castTime / chargeTime, 1f, maxCharge);
             for (int i = 0; i < projectileCount; i++)

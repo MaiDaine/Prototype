@@ -23,6 +23,7 @@ namespace Prototype
             rayCast = this.GetComponent<Prototype.RayCast>();
             joystickController = new JoystickController();
             keyboardController = new KeyboardController(rayCast);
+            spellCasting = new SpellCasting(this);
 
             playerUnits.items.Clear();
             for (int i = 0; i < units.Length && units[i] != null; i++)
@@ -32,15 +33,17 @@ namespace Prototype
                 units[i].Initialize(this);
             }
             currentUnit = units[0];
-            currentAnimator = currentUnit.GetComponent<Animator>();
+            currentAnimator = currentUnit.GetComponentInChildren<Animator>();
             currentUnit.transform.position = playerSpawn;
             currentUnit.gameObject.SetActive(true);
-            EncounterController.instance.activeHero = currentUnit;
             playerUnits.Add(currentUnit);
-
             GetComponent<CameraController>().UpdateTarget(currentUnit.gameObject);
-            spellCasting = new SpellCasting(this);
             spellCasting.UpdateSpellBook(ref currentUnit.spellBook);
+        }
+
+        private void Start()
+        {
+            EncounterController.instance.activeHero = currentUnit;
         }
 
         private void Update()
@@ -56,7 +59,6 @@ namespace Prototype
             SpellUpdate();
             if (currentUnit.roots == 0)
                 Move();
-
             if (useJoyStick)
             {
                 if (spellCasting.casting && spellCasting.useCursor)
@@ -141,8 +143,7 @@ namespace Prototype
             playerUnits.items[0] = units[index];
             currentUnit.gameObject.SetActive(false);
             currentUnit = units[index];
-            currentAnimator = currentUnit.GetComponent<Animator>();
-
+            currentAnimator = currentUnit.GetComponentInChildren<Animator>();
             //Animation
 
             EncounterController.instance.activeHero = currentUnit;
@@ -156,11 +157,10 @@ namespace Prototype
         private void Move()
         {
             float y = Input.GetAxis("Horizontal") * currentUnit.transform.forward.x + Input.GetAxis("Vertical") * currentUnit.transform.forward.z;
-            float x = Input.GetAxis("Horizontal") * currentUnit.transform.forward.z + Input.GetAxis("Vertical") * currentUnit.transform.forward.x;
-            //Debug.Log("X:" + x + " Y:" + y + " " + (Mathf.Abs(x) < Mathf.Abs(y)).ToString());
+            float x = Input.GetAxis("Horizontal") * currentUnit.transform.forward.z + Input.GetAxis("Vertical") * -currentUnit.transform.forward.x;
             currentAnimator.SetFloat("Move_X", x);
             currentAnimator.SetFloat("Move_Y", y);
-            currentAnimator.SetBool("MoveForward", Mathf.Abs(x) < Mathf.Abs(y));
+            currentAnimator.SetFloat("AnimationSpeed", (Mathf.Abs(x) + Mathf.Abs(y) / 2f));
             float modifier = currentUnit.currentSpeed * Time.deltaTime;
             currentUnit.transform.position += new Vector3(
                 Input.GetAxis("Horizontal") * modifier,

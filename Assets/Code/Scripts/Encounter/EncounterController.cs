@@ -26,21 +26,23 @@ namespace Prototype
         private void Awake()
         {
             if (instance == null)
-            {
                 instance = this;
-                if (encounterEventRef == null)
-                    return;
-                spawnPointCount = spawnPoints.Length;
-                nextSpawn = new List<CardData>();
-                encounterEvent = ScriptableObject.CreateInstance(encounterEventRef.name) as Encounter;
-                encounterEvent.Init(this, encounterEventRef.decks, encounterEventRef.phases);
-                encounterEvent.NextPhase(ref nextSpawn);
-                timerSpawn = Time.deltaTime;
-                lastWave = false;
-                enemyUnits.items.Clear();
-            }
             else
-                Destroy(this);
+                Destroy(gameObject);
+        }
+
+        private void Start()
+        {
+            if (encounterEventRef == null)
+                return;
+            spawnPointCount = spawnPoints.Length;
+            nextSpawn = new List<CardData>();
+            encounterEvent = ScriptableObject.CreateInstance(encounterEventRef.name) as Encounter;
+            encounterEvent.Init(this, encounterEventRef.decks, encounterEventRef.phases);
+            encounterEvent.NextPhase(ref nextSpawn);
+            timerSpawn = Time.deltaTime;
+            lastWave = false;
+            enemyUnits.items.Clear();
         }
 
         private void Update()
@@ -83,7 +85,7 @@ namespace Prototype
         {
             enemyUnits.Remove(unit);
             if (enemyUnits.items.Count == 0 && lastWave)
-                Application.Quit();//TODO GAMEOVER
+                Application.Quit();//TODO EventClear
         }
 
         private float SpawnUnit(CardData unitData)
@@ -92,7 +94,7 @@ namespace Prototype
             {
                 NonControllableUnit tmp = Instantiate((NonControllableUnit)unitData.unit, spawnPoints[i]);
                 tmp.Initialize(FindClosestTarget(spawnPoints[i].position), unitData.unitStats, "EnemyTeam");
-                enemyUnits.Add(tmp);//TODO EVENT CLEAR
+                enemyUnits.Add(tmp);
             }
             return unitData.unitStats.cooldown;
         }

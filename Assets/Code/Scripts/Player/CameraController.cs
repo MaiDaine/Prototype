@@ -4,23 +4,22 @@ namespace Prototype
 {
     public class CameraController : MonoBehaviour
     {
-        public GameObject target;
-        public float positionLerpTime = 0.2f;
+        public float positionLerpTime = 0.5f;
 
         private CameraState targetCameraState = new CameraState();
         private CameraState interpolatingCameraState = new CameraState();
-        private Vector3 offset = new Vector3(0f, 10f, -7f);
+        private float zOffset = -5f;
+        private Rigidbody target;
 
         public void UpdateTarget(GameObject target)
         {
-            this.target = target;
-            targetCameraState.x = target.transform.position.x;
-            targetCameraState.z = target.transform.position.z + offset.z;
+            this.target = target.GetComponent<Rigidbody>();
         }
 
-        private void Update()
+        private void LateUpdate()
         {
-            UpdateTarget(target);
+            targetCameraState.x = target.transform.position.x;
+            targetCameraState.z = target.transform.position.z + zOffset;
             var positionLerpPct = 1f - Mathf.Exp((Mathf.Log(1f - 0.99f) / positionLerpTime) * Time.deltaTime);
             interpolatingCameraState.LerpTowards(targetCameraState, positionLerpPct);
             interpolatingCameraState.UpdateTransform(transform);

@@ -201,6 +201,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
+      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -262,16 +272,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
         type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: triggerEvent
@@ -440,6 +440,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1346668643}
     m_Modifications:
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
+      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -501,16 +511,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3174c0ffbd77dd447a94fcdf8b5da3c7,
         type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: triggerEvent
@@ -964,240 +964,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3443670148259873571}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &848922477
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 848922481}
-  - component: {fileID: 848922480}
-  - component: {fileID: 848922479}
-  - component: {fileID: 848922478}
-  - component: {fileID: 848922482}
-  - component: {fileID: 848922483}
-  - component: {fileID: 848922484}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &848922478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848922477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 5
-  m_ObsoleteRenderingPath: 0
-  m_ObsoleteFrameSettings:
-    overrides: 0
-    enableShadow: 0
-    enableContactShadows: 0
-    enableShadowMask: 0
-    enableSSR: 0
-    enableSSAO: 0
-    enableSubsurfaceScattering: 0
-    enableTransmission: 0
-    enableAtmosphericScattering: 0
-    enableVolumetrics: 0
-    enableReprojectionForVolumetrics: 0
-    enableLightLayers: 0
-    enableExposureControl: 1
-    diffuseGlobalDimmer: 0
-    specularGlobalDimmer: 0
-    shaderLitMode: 0
-    enableDepthPrepassWithDeferredRendering: 0
-    enableTransparentPrepass: 0
-    enableMotionVectors: 0
-    enableObjectMotionVectors: 0
-    enableDecals: 0
-    enableRoughRefraction: 0
-    enableTransparentPostpass: 0
-    enableDistortion: 0
-    enablePostprocess: 0
-    enableOpaqueObjects: 0
-    enableTransparentObjects: 0
-    enableRealtimePlanarReflection: 0
-    enableMSAA: 0
-    enableAsyncCompute: 0
-    runLightListAsync: 0
-    runSSRAsync: 0
-    runSSAOAsync: 0
-    runContactShadowsAsync: 0
-    runVolumeVoxelizationAsync: 0
-    lightLoopSettings:
-      overrides: 0
-      enableDeferredTileAndCluster: 0
-      enableComputeLightEvaluation: 0
-      enableComputeLightVariants: 0
-      enableComputeMaterialVariants: 0
-      enableFptlForForwardOpaque: 0
-      enableBigTilePrepass: 0
-      isFptlEnabled: 0
-  clearColorMode: 0
-  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
-  clearDepth: 1
-  volumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  volumeAnchorOverride: {fileID: 0}
-  antialiasing: 2
-  SMAAQuality: 2
-  dithering: 1
-  stopNaNs: 0
-  physicalParameters:
-    m_Iso: 200
-    m_ShutterSpeed: 0.005
-    m_Aperture: 16
-    m_BladeCount: 5
-    m_Curvature: {x: 2, y: 11}
-    m_BarrelClipping: 0.25
-    m_Anamorphism: 0
-  flipYMode: 0
-  fullscreenPassthrough: 0
-  allowDynamicResolution: 0
-  customRenderingSettings: 0
-  invertFaceCulling: 0
-  probeLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPathCustomFrameSettings:
-    bitDatas:
-      data1: 69284255760157
-      data2: 4539628424389459968
-    lodBias: 1
-    lodBiasMode: 0
-    maximumLODLevel: 0
-    maximumLODLevelMode: 0
-  renderingPathCustomFrameSettingsOverrideMask:
-    mask:
-      data1: 0
-      data2: 0
-  defaultFrameSettings: 0
---- !u!81 &848922479
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848922477}
-  m_Enabled: 1
---- !u!20 &848922480
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848922477}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 90
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 0
-  m_AllowMSAA: 0
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &848922481
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848922477}
-  m_LocalRotation: {x: 0.53729963, y: 0, z: 0, w: 0.8433915}
-  m_LocalPosition: {x: 0, y: 15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
---- !u!114 &848922482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848922477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 336dfc3aeb9440644a434255c26efa17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &848922483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848922477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 595f16829b26fa74bbd3166ad7b34866, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  units:
-  - {fileID: 8459619982387338885, guid: 6384a755d714b3842bf841108b9e12e4, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  playerSpawn: {x: 0, y: 0, z: 0}
-  currentUnit: {fileID: 0}
-  useJoyStick: 1
-  playerUnits: {fileID: 11400000, guid: 9e65a0f6255a8064cb2bcb4bdc494358, type: 2}
---- !u!114 &848922484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848922477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2d110c90bb31404b974b60c29309fc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  offset: {x: 0, y: 25, z: -10}
-  positionLerpTime: 0.2
 --- !u!4 &867192895 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5143869347917398354, guid: fae3b21abe8326a43ab7f0a84b0022f1,
@@ -1306,6 +1072,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1346668643}
     m_Modifications:
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
+      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1367,16 +1143,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3174c0ffbd77dd447a94fcdf8b5da3c7,
         type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: triggerEvent
@@ -1601,6 +1367,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1300097322
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4032517001546641295, guid: 6fc57ab0ea9bdae419e415c2027b7f63,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032517001546641299, guid: 6fc57ab0ea9bdae419e415c2027b7f63,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032517001546641299, guid: 6fc57ab0ea9bdae419e415c2027b7f63,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032517001546641299, guid: 6fc57ab0ea9bdae419e415c2027b7f63,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032517001546641299, guid: 6fc57ab0ea9bdae419e415c2027b7f63,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.60876137
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032517001546641299, guid: 6fc57ab0ea9bdae419e415c2027b7f63,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032517001546641299, guid: 6fc57ab0ea9bdae419e415c2027b7f63,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032517001546641299, guid: 6fc57ab0ea9bdae419e415c2027b7f63,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7933534
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032517001546641299, guid: 6fc57ab0ea9bdae419e415c2027b7f63,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032517001546641299, guid: 6fc57ab0ea9bdae419e415c2027b7f63,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032517001546641299, guid: 6fc57ab0ea9bdae419e415c2027b7f63,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032517001546641299, guid: 6fc57ab0ea9bdae419e415c2027b7f63,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6fc57ab0ea9bdae419e415c2027b7f63, type: 3}
 --- !u!1 &1342293252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,6 +1513,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
+      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1739,16 +1584,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
         type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: triggerEvent
@@ -1789,6 +1624,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1346668643}
     m_Modifications:
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
+      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1850,16 +1695,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3174c0ffbd77dd447a94fcdf8b5da3c7,
         type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: triggerEvent
@@ -2000,6 +1835,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
+      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2061,16 +1906,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
         type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: triggerEvent
@@ -2111,6 +1946,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
+      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2172,16 +2017,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
         type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: triggerEvent
@@ -2222,6 +2057,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1346668643}
     m_Modifications:
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
+      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2283,16 +2128,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3174c0ffbd77dd447a94fcdf8b5da3c7,
         type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: triggerEvent
@@ -2333,6 +2168,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
+      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2394,16 +2239,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
         type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: triggerEvent
@@ -2915,6 +2750,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342293253}
     m_Modifications:
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultLauncher
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyTeam
+      objectReference: {fileID: 0}
     - target: {fileID: 4978185624507592566, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2976,16 +2821,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a82f0c5c50ad5534cb22a6498de28569,
         type: 2}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultLauncher
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249304294713300764, guid: 8329db5122994b34ab5061ce7479e1dc,
-        type: 3}
-      propertyPath: m_TagString
-      value: EnemyTeam
-      objectReference: {fileID: 0}
     - target: {fileID: 5881422238508675373, guid: 8329db5122994b34ab5061ce7479e1dc,
         type: 3}
       propertyPath: triggerEvent
