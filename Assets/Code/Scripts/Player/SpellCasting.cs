@@ -80,6 +80,10 @@ namespace Prototype
         {
             currentSpell.Launch();
             currentSpellBook[currentSpellIndex].spellCooldown = currentSpell.cooldown;
+            UnitPortrait.SpellSlot spellSlot = player.currentUnit.portrait.spellSlots[currentSpellIndex];
+            spellSlot.mask.gameObject.SetActive(true);
+            spellSlot.coolDown.gameObject.SetActive(true);
+            spellSlot.coolDown.text = currentSpell.cooldown.ToString();
             currentSpell = null;
             casting = false;
             currentSpellIndex = -1;

@@ -6,6 +6,7 @@ namespace Prototype
     public class PlayerController : MonoBehaviour
     {
         public ControllableUnit[] units;
+        public UnitPortrait[] unitPortraits = new UnitPortrait[4];
         public Vector3 playerSpawn;
         public ControllableUnit currentUnit = null;
         public bool useJoyStick = false;
@@ -28,9 +29,10 @@ namespace Prototype
             playerUnits.items.Clear();
             for (int i = 0; i < units.Length && units[i] != null; i++)
             {
+                unitPortraits[i].gameObject.SetActive(true);
                 units[i] = Instantiate(units[i]);
                 units[i].gameObject.SetActive(false);
-                units[i].Initialize(this);
+                units[i].Initialize(this, unitPortraits[i]);
             }
             currentUnit = units[0];
             currentAnimator = currentUnit.GetComponentInChildren<Animator>();
