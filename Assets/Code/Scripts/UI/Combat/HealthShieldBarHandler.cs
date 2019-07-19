@@ -24,7 +24,6 @@ namespace Prototype
                 tmp = 1f - value;
             else
                 tmp = healthFillBar.fillAmount;
-            shieldRect.localPosition = new Vector3(tmp * barLenght, 0f, 0f);
             shieldFillBar.fillAmount = value;
         }
     }

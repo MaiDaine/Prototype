@@ -24,8 +24,8 @@ namespace Prototype
             currentStats = ScriptableObject.CreateInstance("UnitStats") as UnitStats;
             currentStats.Assign(stats);
             unitHealth = GetComponent<UnitHealth>();
+            unitHealth.Initialize(this);
             this.tag = tag;
-            GetComponent<UnitHealth>().Initialize(this);
         }
 
         public virtual void OnDeath()

@@ -7,6 +7,7 @@ namespace Prototype
     public struct SpellSlot
     {
         public ASpell spellRef;
+        public Sprite spellIcone;
         [HideInInspector]
         public float spellCooldown;
     }

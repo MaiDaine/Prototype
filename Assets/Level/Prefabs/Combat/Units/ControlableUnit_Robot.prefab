@@ -130,6 +130,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5700147567599365781, guid: 7014be4f10583404991a7cc6867fc10c,
         type: 3}
+    - target: {fileID: 1135275971868968234, guid: 9afd7d68b58208c48b20543d43b51436,
+        type: 3}
+      propertyPath: spellBook.Array.data[0].spellIcone
+      value: 
+      objectReference: {fileID: 21300000, guid: 70284cd546c203944bfa9fe82a1cbefd,
+        type: 3}
+    - target: {fileID: 1135275971868968234, guid: 9afd7d68b58208c48b20543d43b51436,
+        type: 3}
+      propertyPath: spellBook.Array.data[1].spellIcone
+      value: 
+      objectReference: {fileID: 21300000, guid: 690f2097268ebf1449cd45ee01061739,
+        type: 3}
+    - target: {fileID: 1135275971868968234, guid: 9afd7d68b58208c48b20543d43b51436,
+        type: 3}
+      propertyPath: spellBook.Array.data[2].spellIcone
+      value: 
+      objectReference: {fileID: 21300000, guid: a56c9b4b214ced740934b3f3a638663a,
+        type: 3}
+    - target: {fileID: 1135275971868968234, guid: 9afd7d68b58208c48b20543d43b51436,
+        type: 3}
+      propertyPath: spellBook.Array.data[3].spellIcone
+      value: 
+      objectReference: {fileID: 21300000, guid: d7e6f09f13d0b0d4f853ffa722170eff,
+        type: 3}
     - target: {fileID: 9028664326804103481, guid: 9afd7d68b58208c48b20543d43b51436,
         type: 3}
       propertyPath: m_Name

@@ -6,6 +6,8 @@ namespace Prototype
     {
         public enum OrderType { None, Def, Atk, Reg };//Items will replace order later
         public UnitStats unitStats;
+        [HideInInspector]
+        public UnitPortrait portrait;
         public SpellSlot[] spellBook;
         public float currentSpeed;
         public Transform spellOrigin;
@@ -19,13 +21,19 @@ namespace Prototype
             currentStats.Assign(unitStats);
             currentSpeed = currentStats.moveSpeed;
             for (int i = 0; i < spellBook.Length; i++)
-                    spellBook[i].spellCooldown = 0f;
+                spellBook[i].spellCooldown = 0f;
         }
 
-        public void Initialize(PlayerController playerController)
+        public void Initialize(PlayerController playerController, UnitPortrait unitPortrait)
         {
             this.playerController = playerController;
-            base.Initialize(currentStats, "PlayerTeam");
+            unitHealth = GetComponent<UnitHealth>();
+            unitHealth.healthBar = unitPortrait.GetComponent<HealthShieldBarHandler>();
+            unitHealth.Initialize(this);
+            portrait = unitPortrait;
+            for (int i = 0; i < spellBook.Length; i++)
+                portrait.spellSlots[i].icone.sprite = spellBook[i].spellIcone;
+            this.tag = "PlayerTeam";
         }
 
         public void ChangeOrder(OrderType order)
@@ -36,7 +44,15 @@ namespace Prototype
         public void UpdateSpellCooldowns()
         {
             for (int i = 0; i < spellBook.Length; i++)
+            {
                 spellBook[i].spellCooldown -= Time.deltaTime;
+                portrait.spellSlots[i].coolDown.text = spellBook[i].spellCooldown.ToString("#.0");
+                if (spellBook[i].spellCooldown < 0f)
+                {
+                    portrait.spellSlots[i].mask.gameObject.SetActive(false);
+                    portrait.spellSlots[i].coolDown.gameObject.SetActive(false);
+                }
+            }
         }
 
         public override void OnDeath()
